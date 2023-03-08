@@ -35,26 +35,19 @@ Cada atividade possui as seguintes informações:
 
 ## Requisitos Funcionais
 
-    1) Permitir a criação e remoção de informações referentes aos produtos, movimentações e funcionários/responsáveis.
-    
-    2) Permitir a edição de informações referentes aos produtos, movimentações e funcionários/responsáveis.
-    
-    3) Permitir a associação de produto a uma localidade do estoque.
-    
-    4) Permitir a alteração do status:
-        • “Em estoque”, “Sem estoque”, “quantidade” etc.
-        
-    5) Permitir consultas de informações.
-    
-    6) O sistema deve fornecer um relatório de entrada, saída do produto.
-    
-    7) O sistema deve permitir o intercâmbio de usuários entre lojas para realização de get.
-    
-    8) O sistema deve suportar o gerenciamento de pagamento dos produtos. 
-    
-    9) O sistema deve suportar controle de acesso através de usuário e senha com possibilidade para recuperação de senha.
-    
-    10) Permitir operações de undo e redo de informações referentes aos produtos, movimentações e funcionários/responsáveis.
+   
+| Func.  | Título | Descrição   |
+| ------ | ------ | ----------- |
+| 1  | Produtos | Permitir a criação e remoção de informações referentes aos produtos, movimentações e funcionários/responsáveis; Permitir que novos produtos adicionados tenham como base uma classe master com o método - Polimorfismo   |
+| 2  | Informações do produto | Permitir a edição de informações referentes aos produtos, movimentações e funcionários/responsáveis; As informações dos produtos precisam ter um serial(id) de identificação que está integrado com a classe abstrata do produto - Interface   |
+| 3  | Localidade do produto | Permitir a associação de produto a uma localidade do estoque   |
+| 4  | Alteração dos status | “Em estoque”, “Sem estoque”, “quantidade” etc.   |
+| 5  | Consultar produtos | Permitir consultas de informações;   |
+| 6  | Relatório dos produtos | O sistema deve fornecer um relatório de entrada, saída do produto   |
+| 7  | Gerenciamento de Usuários | Cadastro de usuário como uma classe base, e as classes derivadas (quais os tipos de usuário); - Herança O sistema deve permitir o intercâmbio de usuários entre lojas para realização de get.   |
+| 8  | Gerenciamento de pagamentos | O sistema deve suportar o gerenciamento de pagamento dos produtos   |
+| 9  | Controle de acessos | O sistema deve suportar controle de acesso através de usuário e senha com possibilidade para recuperação de senha;   |
+| 10  | Undo/redo | Permitir operações de undo e redo de informações referentes aos produtos,movimentações e funcionários/responsáveis.   |
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Classes
@@ -159,3 +152,11 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 ## Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+## Atualizações (08/03):
+Adição de Herança, Polimorfismo e Interface nas funcionalidades do projeto.
+
+Funcionalidades feitas:
+-Interface para imprimir, adicionar e editar na classe de funcionários, produtos e movimentações.
+-Herança feita para o cadastro dos funcionários.
+-Polimorfismo para as classes de funcionários para gerenciar cargos e permissões.
