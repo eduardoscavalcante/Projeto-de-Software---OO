@@ -2,7 +2,7 @@ package classes;
 
 import java.util.Scanner;
 
-public class Movimentacao{
+public class Movimentacao implements Base{
 
     private String dataMovimentacao;
     private String Destino;
@@ -94,7 +94,7 @@ public class Movimentacao{
         return  dataMovimentacao;
     }
 
-    public void imp_m() {
+    public void imprimir() {
 
         if (getIdMovimentacao() != -1) {
             System.out.println("********RELATÓRIO DA MOVIMENTAÇÃO:********");
@@ -116,13 +116,13 @@ public class Movimentacao{
         int aux1;
         System.out.println("Informe a Categoria do Produto(somente numeros):");
         System.out.println("Roupa Feminina(1);\n" + "Roupa Masculina(2);\n" + "Roupa Infantil(3);\n"
-        + "Calçados(4);\n" + "Artigos de Casa(5);\n" + "Acessórios(6);\n" + "Eletrônicos(7);\n" + "Perfumes(8)");
+                + "Calçados(4);\n" + "Artigos de Casa(5);\n" + "Acessórios(6);\n" + "Eletrônicos(7);\n" + "Perfumes(8)");
         aux1 = input.nextInt();
         setTipoProduto(aux1);
         input.nextLine();
     }
-    
-    public void add_m(int ficha) {// Adição de um empregado
+
+    public void adicionar(int ficha) {// Adição de uma movimentacao
 
         int aux1;
         String aux2;
@@ -149,17 +149,17 @@ public class Movimentacao{
         aux2 = input.nextLine();
         setDataMovimentacao(aux2);
         System.out.println();
-        imp_m();
+        imprimir();
     }
 
     public void M_Inicial() {// função de apoio
 
         System.out.println("Informe o campo que deseja alterar:");
         System.out.println("Identificação do Responsavel(1);\n" + "Identificação do Produto(2);\n" + "Categoria do Produto(3);\n"
-        + "Destino do Produto(4);\n" + "Origem do Produto(5);\n" + "Data da Movimentação do Produto(6);\n" + "Sair(7).");
+                + "Destino do Produto(4);\n" + "Origem do Produto(5);\n" + "Data da Movimentação do Produto(6);\n" + "Sair(7).");
     }
 
-    public void ed_m() {// Alterar detalhes de um empregado
+    public void editar() {// Alterar detalhes de uma movimentacao
 
         int opcao = 1;
         int aux1;
@@ -172,54 +172,54 @@ public class Movimentacao{
             opcao = input.nextInt();
             input.nextLine();
             switch (opcao) {
-            case 1:
-                System.out.println("Informe a Nova Identificação do Responsavel: ");
-                aux1 = input.nextInt();
-                setIdResponsavel(aux1);
-                input.nextLine();
-                System.out.println();
-                break;
-            case 2:
-                System.out.println("Informe a Nova Identificação do Produto:  ");
-                aux1 = input.nextInt();
-                setIdProduto(aux1);
-                input.nextLine();
-                System.out.println();
-                break;
-            case 3:
-                //Categoria do Produto
-                CategoriaProduto();
-                //Categoria do Produto
-                System.out.println();
-                break;
-            case 4:
-                System.out.println("Informe O Novo Destino do Produto: ");
-                aux2 = input.nextLine();
-                setDestino(aux2);
-                System.out.println();
-                break;
-            case 5:
-                System.out.println("Informe a Nova Origem do Produto:");
-                aux2 = input.nextLine();
-                setOrigem(aux2);
-                System.out.println();
-                break;
-            case 6:
-                System.out.println("Informe a Nova Data da Movimentação do Produto:(hh:mm DD/MM/YYYY)");
-                aux2 = input.nextLine();
-                setDataMovimentacao(aux2);
-                System.out.println();
-                break;   
-            case 7:
-                System.out.println("Modificações Salvas!!");
-                System.out.println();
-                break;
-            default:
-                System.out.println("Opção Invalida!!!");
-                System.out.println("Digite Novamente");
-                System.out.println();
+                case 1:
+                    System.out.println("Informe a Nova Identificação do Responsavel: ");
+                    aux1 = input.nextInt();
+                    setIdResponsavel(aux1);
+                    input.nextLine();
+                    System.out.println();
+                    break;
+                case 2:
+                    System.out.println("Informe a Nova Identificação do Produto:  ");
+                    aux1 = input.nextInt();
+                    setIdProduto(aux1);
+                    input.nextLine();
+                    System.out.println();
+                    break;
+                case 3:
+                    //Categoria do Produto
+                    CategoriaProduto();
+                    //Categoria do Produto
+                    System.out.println();
+                    break;
+                case 4:
+                    System.out.println("Informe O Novo Destino do Produto: ");
+                    aux2 = input.nextLine();
+                    setDestino(aux2);
+                    System.out.println();
+                    break;
+                case 5:
+                    System.out.println("Informe a Nova Origem do Produto:");
+                    aux2 = input.nextLine();
+                    setOrigem(aux2);
+                    System.out.println();
+                    break;
+                case 6:
+                    System.out.println("Informe a Nova Data da Movimentação do Produto:(hh:mm DD/MM/YYYY)");
+                    aux2 = input.nextLine();
+                    setDataMovimentacao(aux2);
+                    System.out.println();
+                    break;
+                case 7:
+                    System.out.println("Modificações Salvas!!");
+                    System.out.println();
+                    break;
+                default:
+                    System.out.println("Opção Invalida!!!");
+                    System.out.println("Digite Novamente");
+                    System.out.println();
             }
         }
-        imp_m();
+        imprimir();
     }
 }
