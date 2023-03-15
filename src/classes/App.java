@@ -72,7 +72,7 @@ public class App {
             switch(option){
                 case 1: // adiciona novo produto
                     System.out.println();
-                    produto.add_produto(indice);
+                    produto.adicionar(indice);
                     System.out.println();
                     option = startOptions();
                     break;
@@ -86,7 +86,7 @@ public class App {
                     System.out.println();
                     //ArrayList<Colaborador> autores = new ArrayList<Colaborador>(); // autores de uma publicacao
                     //newProdAcad(colaboradores, autores, professores, alunos);
-                    produto.editar_produto();
+                    produto.editar();
                     System.out.println();
                     option = startOptions(); 
                     break;
@@ -115,7 +115,7 @@ public class App {
                     System.out.println();
                     //Relatorio relatorio = new Relatorio();
                     //relatorio.relatorio();
-                    mov.add_m(indice);
+                    mov.adicionar(indice);
                     System.out.println();
                     option = startOptions();
                     break;
@@ -140,8 +140,8 @@ public class App {
                     break;
                 case 10: // Relatório
                     System.out.println();
-                    produto.imp_p();
-                    mov.imp_m();
+                    produto.imprimir();
+                    mov.imprimir();
                     funcionario.imp_e();
                     System.out.println();
                     option = startOptions();
