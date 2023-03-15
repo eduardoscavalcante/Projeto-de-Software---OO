@@ -1,14 +1,8 @@
-/*1) Permitir a criação e remoção de informações referentes aos produtos, movimentações e funcionários/responsáveis;
-2) Permitir a edição de informações referentes aos produtos, movimentações e funcionários/responsáveis;
-3) Permitir a associação de produto a uma localidade do estoque;
-4) Permitir a alteração do status
-• “Em estoque”, “Sem estoque”, “quantidade” etc.*/
-
 package classes;
 
 import java.util.Scanner;
 
-public class Funcionarios{
+public class Funcionarios implements Base{
 
     private String nome;
     private long cpf;
@@ -59,16 +53,14 @@ public class Funcionarios{
         return cpf;
     }
 
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
-	}
-	
-    public String getCargo() {
-		return cargo;
-	}
-    /*
-    public void imp_e() {
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
 
+    public String getCargo() {
+        return cargo;
+    }
+    public void imprimir() {
         if (getId() != -1) {
             System.out.println("********RELATÓRIO DO FUNCIONÁRIO:*********");
             System.out.println("Identificação: " + getId());
@@ -83,12 +75,9 @@ public class Funcionarios{
         }
         System.out.println();
     }
-
-    public void add_e(int ficha) {// Adição de um empregado
-
+    public void adicionar(int ficha) {// Adição de um empregado
         long aux1;
         String aux2;
-
         setId(ficha);
         System.out.println("Informe o Nome Completo: ");
         aux2 = input.nextLine();
@@ -107,39 +96,30 @@ public class Funcionarios{
         aux2 = input.nextLine();
         setCargo(aux2);
         System.out.println();
-        imp_e();
+        imprimir();
     }
-
     public void rem_e() {// Remoção de um empregado
-
         int aux1 = -1;
         String aux2 = null;
-
         setId(aux1);
         setNome(aux2);
         setEmail(aux2);
         setTelefone(aux1);
         setCPF(aux1);
         setCargo(aux2);
-        imp_e();
+        imprimir();
     }
-
     public void M_Inicial() {// função de apoio
-
         System.out.println("Informe o campo que deseja alterar:");
         System.out.println("Nome Completo(1);\n" + "Email(2);\n" + "Telefone(3);\n" + "CPF(4);\n"
                 + "Cargo(5);\n" + "Sair(6).");
     }
-
-    public void ed_e() {// Alterar detalhes de um empregado
-
+    public void editar() {// Alterar detalhes de um empregado
         int opcao = 1;
         long aux1;
         String aux2;
         double aux3;
-
         while (opcao != 6) {
-
             M_Inicial();
             opcao = input.nextInt();
             input.nextLine();
@@ -186,8 +166,6 @@ public class Funcionarios{
                 System.out.println();
             }
         }
-        imp_e();
+        imprimir();
     }
-
-*/
 }
