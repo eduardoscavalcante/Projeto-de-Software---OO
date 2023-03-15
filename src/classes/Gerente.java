@@ -1,14 +1,8 @@
-/*1) Permitir a criação e remoção de informações referentes aos produtos, movimentações e funcionários/responsáveis;
-2) Permitir a edição de informações referentes aos produtos, movimentações e funcionários/responsáveis;
-3) Permitir a associação de produto a uma localidade do estoque;
-4) Permitir a alteração do status
-• “Em estoque”, “Sem estoque”, “quantidade” etc.*/
-
 package classes;
 
 import java.util.Scanner;
 
-public class Gerente extends Funcionarios{
+public class Gerente extends Funcionarios implements Base{
 
     private int idGerente;
 
@@ -22,7 +16,7 @@ public class Gerente extends Funcionarios{
         return idGerente;
     }
     
-    public void imp_e() {
+    public void imprimir() {
 
         if (getId() != -1) {
             System.out.println("********RELATÓRIO DO FUNCIONÁRIO:*********");
@@ -39,7 +33,7 @@ public class Gerente extends Funcionarios{
         System.out.println();
     }
 
-    public void add_e(int ficha) {// Adição de um empregado
+    public void adicionar(int ficha) {// Adição de um empregado
 
         long aux1;
         String aux2;
@@ -62,7 +56,7 @@ public class Gerente extends Funcionarios{
         aux2 = input.nextLine();
         setCargo(aux2);
         System.out.println();
-        imp_e();
+        imprimir();
     }
 
     public void rem_e() {// Remoção de um empregado
@@ -76,7 +70,7 @@ public class Gerente extends Funcionarios{
         setTelefone(aux1);
         setCPF(aux1);
         setCargo(aux2);
-        imp_e();
+        imprimir();
     }
 
     public void M_Inicial() {// função de apoio
@@ -86,7 +80,7 @@ public class Gerente extends Funcionarios{
                 + "Cargo(5);\n" + "Sair(6).");
     }
 
-    public void ed_e() {// Alterar detalhes de um empregado
+    public void editar() {// Alterar detalhes de um empregado
 
         int opcao = 1;
         long aux1;
@@ -141,7 +135,7 @@ public class Gerente extends Funcionarios{
                 System.out.println();
             }
         }
-        imp_e();
+        imprimir();
     }
 
 
