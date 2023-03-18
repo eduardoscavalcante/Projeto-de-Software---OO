@@ -78,7 +78,7 @@ public class App {
                     break;
                 case 2: //adiciona novo funcionário
                     System.out.println();
-                    funcionario.add_e(indice);
+                    funcionario.adicionar(indice);
                     System.out.println();
                     option = startOptions(); 
                     break;
@@ -93,7 +93,7 @@ public class App {
                 case 4: //edita funcionário existente
                     System.out.println();
                     //editProjeto(projetos, colaboradores);
-                    funcionario.ed_e();
+                    funcionario.editar();
                     System.out.println();
                     option = startOptions(); 
                     break;
@@ -142,13 +142,12 @@ public class App {
                     System.out.println();
                     produto.imprimir();
                     mov.imprimir();
-                    funcionario.imp_e();
+                    funcionario.imprimir();
                     System.out.println();
                     option = startOptions();
                     break;
                 default:
                     System.out.println("Selecione uma opção válida!");
-
                     option = startOptions();
                     break;
             }
