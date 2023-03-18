@@ -137,6 +137,4 @@ public class Vendedor extends Funcionarios implements Base{
         }
         imprimir();
     }
-
-
 }
