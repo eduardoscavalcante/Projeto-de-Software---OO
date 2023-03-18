@@ -137,6 +137,4 @@ public class Gerente extends Funcionarios implements Base{
         }
         imprimir();
     }
-
-
 }
