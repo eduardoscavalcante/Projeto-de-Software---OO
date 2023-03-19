@@ -62,6 +62,7 @@ public class UndoRedo<E> implements Iterable<E>{
         stack2.clear();
     }
 
+    @Override
     public Iterator<E> iterator(){
         return new MyIterator();
     }
@@ -70,22 +71,24 @@ public class UndoRedo<E> implements Iterable<E>{
 
         private int index = 0;
 
+        @Override
         public boolean hasNext(){
             if (index < stack1.size()){
                 return true;
-            }else if (index < stack1.size() + stack2.size()){
+            }else if (index < (stack1.size() + stack2.size())){
                 return true;
             }else{
                 return false;
             }
         }
 
+        @Override
         public E next(){
             if (index < stack1.size()){
                 return stack1.elementAt(index++);
             }else {
                 return stack2.elementAt(index++ - stack1.size());
             }
-        }
+        }      
     }
 }
