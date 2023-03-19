@@ -17,6 +17,7 @@ public class teste extends javax.swing.JFrame {
         body.add(form);
         body.revalidate();
         body.repaint();
+        checkButton();
     }
     
     public void undo() {
@@ -24,6 +25,7 @@ public class teste extends javax.swing.JFrame {
         body.add(forms.undo());
         body.revalidate();
         body.repaint();
+        checkButton();
     }
     
     public void redo() {
@@ -31,6 +33,7 @@ public class teste extends javax.swing.JFrame {
         body.add(forms.redo());
         body.revalidate();
         body.repaint();
+        checkButton();
     }
     
     public void refresh() {
@@ -45,9 +48,14 @@ public class teste extends javax.swing.JFrame {
         //inicia Form1
         showForm(new Form1 ());
     }
+    
+    private void checkButton(){
+        cmdUndo.setEnabled(forms.isUndoAble());
+        cmdRedo.setEnabled(forms.isRedoAble());
+    }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         header = new javax.swing.JPanel();
@@ -118,19 +126,19 @@ public class teste extends javax.swing.JFrame {
 
         pack();
         setLocationRelativeTo(null);
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void cmdUndoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdUndoActionPerformed
+    private void cmdUndoActionPerformed(java.awt.event.ActionEvent evt) {                                        
         undo();
-    }//GEN-LAST:event_cmdUndoActionPerformed
+    }                                       
 
-    private void cmdRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdRefreshActionPerformed
+    private void cmdRefreshActionPerformed(java.awt.event.ActionEvent evt) {                                           
         refresh();
-    }//GEN-LAST:event_cmdRefreshActionPerformed
+    }                                          
 
-    private void cmdRedoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdRedoActionPerformed
+    private void cmdRedoActionPerformed(java.awt.event.ActionEvent evt) {                                        
         redo();
-    }//GEN-LAST:event_cmdRedoActionPerformed
+    }                                       
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -165,12 +173,12 @@ public class teste extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JPanel body;
     private javax.swing.JButton cmdRedo;
     private javax.swing.JButton cmdRefresh;
     private javax.swing.JButton cmdUndo;
     private javax.swing.JPanel header;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 
 }
