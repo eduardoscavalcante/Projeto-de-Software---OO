@@ -56,7 +56,8 @@ public class App {
         Pagamento pag = new Pagamento();
         Login log = new Login();
 
-        Gerenciamento gerenciamento = new Gerenciamento(); //onde está a lista
+        Gerenciamento gp = new Gerenciamento(); //onde está a lista
+        GerenciamentoFuncionarios gf = new GerenciamentoFuncionarios();
 
         System.out.println("***************************************");
         System.out.println("*                                     *");
@@ -74,7 +75,7 @@ public class App {
                     System.out.println();
                     produto.adicionar(indice);
                     System.out.println();
-                    gerenciamento.adicionarProdutos(produto);
+                    gp.adicionarProdutos(produto);
                     produto = new Produtos();
                     option = startOptions();
                     break;
@@ -82,29 +83,33 @@ public class App {
                     System.out.println();
                     funcionario.adicionar(indice);
                     System.out.println();
+                    gf.adicionarFuncionarios(funcionario);
+                    funcionario = new Funcionarios();
                     option = startOptions();
                     break;
                 case 3: //edita produto existente
                     System.out.println();
-                    gerenciamento.editarProdutos();
+                    gp.editarProdutos();
                     System.out.println();
                     option = startOptions();
                     break;
                 case 4: //edita funcionário existente
                     System.out.println();
-                    funcionario.editar();
+                    //funcionario.editar();
+                    gf.editarFuncionarios();
                     System.out.println();
                     option = startOptions();
                     break;
                 case 5: //remove produto existente
                     System.out.println();
-                    gerenciamento.removerProduto();
+                    gp.removerProduto();
                     System.out.println();
                     option = startOptions();
                     break;
                 case 6: // remove funcionario existente
                     System.out.println();
-                    funcionario.rem_e();
+                    //funcionario.rem_e();
+                    gf.removerfuncionarios();
                     System.out.println();
                     option = startOptions();
                     break;
@@ -139,9 +144,10 @@ public class App {
                     System.out.println("*           RELATÓRIO DO GERAL:           *");
                     System.out.println("*******************************************");
                     System.out.println();
-                    gerenciamento.imprimirProdutos(); //imprime as informações de todos os produtos existentes
+                    gp.imprimirProdutos(); //imprime as informações de todos os produtos existentes
                     mov.imprimir();
-                    funcionario.imprimir();
+                    //funcionario.imprimir();
+                    gf.imprimirFuncionarios();
                     System.out.println();
                     option = startOptions();
                     break;
