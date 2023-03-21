@@ -9,9 +9,8 @@ public class Produtos implements Base{
     public String tamanho;
     public String cor;
     public String marca;
-    public int preco;
-    public String tipo;
-    public String categoria;
+    public float preco;
+    public int categoria;
     public String fabricante;
     public String fornecedor;
     public int quantidade;
@@ -59,27 +58,19 @@ public class Produtos implements Base{
         return marca;
     }
 
-    public void setPreco(int preco){
+    public void setPreco(float preco){
         this.preco = preco;
     }
 
-    public int getPreco(){
+    public float getPreco(){
         return preco;
     }
 
-    public void setTipo(String tipo){
-        this.tipo = tipo;
-    }
-
-    public String getTipo(){
-        return tipo;
-    }
-
-    public void setCategoria(String categoria){
+    public void setCategoria(int categoria){
         this.categoria = categoria;
     }
 
-    public String getCategoria(){
+    public int getCategoria(){
         return categoria;
     }
 
@@ -115,6 +106,28 @@ public class Produtos implements Base{
         return status;
     }
 
+    public String getCategoriaString(int tipoProduto){//função de apoio
+        if (tipoProduto == 1) {
+            return "Roupa Feminina";
+        } else if (tipoProduto == 2) {
+            return "Roupa Masculina";
+        } else if (tipoProduto == 3) {
+            return "Roupa Infantil";
+        } else if (tipoProduto == 4) {
+            return "Calçados";
+        }else if (tipoProduto == 5) {
+            return "Artigos de Casa";
+        }else if (tipoProduto == 6) {
+            return "Acessórios";
+        }else if (tipoProduto == 7) {
+            return "Eletrônicos";
+        }else if (tipoProduto == 8) {
+            return "Perfumes";
+        }else {
+            return "Tipo Invalido!!";
+        }
+    }
+
     public void imprimir() {
 
         if (getId() != -1) {
@@ -125,25 +138,35 @@ public class Produtos implements Base{
             System.out.println("Cor: " + getCor());
             System.out.println("Marca: " + getMarca());
             System.out.println("Preço: " + getPreco());
-            System.out.println("Tipo: " + getTipo());
-            System.out.println("Categoria: " + getCategoria());
+            System.out.println("Categoria: " + getCategoriaString(getCategoria()));
             System.out.println("Fabricante: " + getFabricante());
             System.out.println("Fornecedor: " + getFornecedor());
             System.out.println("Quantidade: " + getQuantidade());
             System.out.println("Status do Produto: " + getStatus());
             System.out.println("Localidade: Matriz");
             System.out.println("******************************************");
-
         } else {
             System.out.println("Produto não existente");
         }
         System.out.println();
     }
 
+    public void CategoriaProduto() {// função de apoio
+
+        int aux1;
+        System.out.println("Informe a Categoria do Produto(somente numeros):");
+        System.out.println("Roupa Feminina(1);\n" + "Roupa Masculina(2);\n" + "Roupa Infantil(3);\n"
+                + "Calçados(4);\n" + "Artigos de Casa(5);\n" + "Acessórios(6);\n" + "Eletrônicos(7);\n" + "Perfumes(8)");
+        aux1 = input.nextInt();
+        setCategoria(aux1);
+        input.nextLine();
+    }
+
     public void adicionar(int ficha) {// Adição de um produto
 
         int aux1;
         String aux2;
+        float aux3;
 
         setId(ficha);
         System.out.println("Informe o código de identificação do produto: ");
@@ -163,15 +186,12 @@ public class Produtos implements Base{
         aux2 = input.nextLine();
         setMarca(aux2);
         System.out.println("Informe o preco: ");
-        aux1 = input.nextInt();
+        aux3 = input.nextFloat();
         input.nextLine();
-        setPreco(aux1);
-        System.out.println("Informe o tipo: ");
-        aux2 = input.nextLine();
-        setTipo(aux2);
-        System.out.println("Informe a categoria: ");
-        aux2 = input.nextLine();
-        setCategoria(aux2);
+        setPreco(aux3);
+        //Categoria do Produto
+        CategoriaProduto();
+        //Categoria do Produto
         System.out.println("Informe o fabricante: ");
         aux2 = input.nextLine();
         setFabricante(aux2);
@@ -183,7 +203,7 @@ public class Produtos implements Base{
         input.nextLine();
         setQuantidade(aux1);
 
-        if (getQuantidade()!=0){
+        if (getQuantidade() > 0){
             setStatus("Em estoque");
         }
 
@@ -197,15 +217,15 @@ public class Produtos implements Base{
 
         int aux1 = -1;
         String aux2 = null;
+        float aux3 = -1;
 
         setId(aux1);
         setNome(aux2);
         setTamanho(aux2);
         setCor(aux2);
         setMarca(aux2);
-        setPreco(aux1);
-        setTipo(aux2);
-        setCategoria(aux2);
+        setPreco(aux3);
+        setCategoria(aux1);
         setFabricante(aux2);
         setFornecedor(aux2);
         setQuantidade(aux1);
@@ -217,9 +237,9 @@ public class Produtos implements Base{
 
         System.out.println("Informe o campo que deseja alterar:");
         System.out.println("ID(1);\n" + "Nome(2);\n" + "Tamanho(3);\n" +
-                "Cor(4);\n" + "Marca(5);\n" + "Preço(6);\n" + "Tipo(7);\n" + "Categoria(8);\n" +
-                "Fabricante(9);\n" + "Fornecedor(10);\n" + "Quantidade(11);\n" + "Status(12)\n"
-                + "Sair(13).");
+                "Cor(4);\n" + "Marca(5);\n" + "Preço(6);\n" + "Categoria(7);\n" +
+                "Fabricante(8);\n" + "Fornecedor(9);\n" + "Quantidade(10);\n" + "Status(11)\n"
+                + "Sair(12).");
     }
 
     public void editar() {// Alterar detalhes de um produto
@@ -227,11 +247,13 @@ public class Produtos implements Base{
         int opcao = 1;
         int aux1;
         String aux2;
+        float aux3;
 
-        while (opcao != 13) {
+        while (opcao != 12) {
 
             M_Inicial();
             opcao = input.nextInt();
+            input.nextLine();
             switch (opcao) {
                 case 1:
                     System.out.println("Informe o Novo Id (atual: " + getId() + "): ");
@@ -244,82 +266,66 @@ public class Produtos implements Base{
                     System.out.println("Informe o Novo Nome (atual: " + getNome() + "): ");
                     aux2 = input.nextLine();
                     setNome(aux2);
-                    input.nextLine();
                     System.out.println();
                     break;
                 case 3:
                     System.out.println("Informe o Novo Tamanho (atual: " + getTamanho() + " ): ");
                     aux2 = input.nextLine();
                     setTamanho(aux2);
-                    input.nextLine();
                     System.out.println();
                     break;
                 case 4:
                     System.out.println("Informe a Nova Cor (atual: " + getCor() + "): ");
                     aux2 = input.nextLine();
                     setCor(aux2);
-                    input.nextLine();
                     System.out.println();
                     break;
                 case 5:
                     System.out.println("Informe a Nova Marca (atual: " + getMarca() + "): ");
                     aux2 = input.nextLine();
                     setMarca(aux2);
-                    input.nextLine();
                     System.out.println();
                     break;
                 case 6:
                     System.out.println("Informe o Novo Preço (atual: " + getPreco() + "): ");
-                    aux1 = input.nextInt();
-                    setPreco(aux1);
+                    aux3 = input.nextFloat();
+                    setPreco(aux3);
                     input.nextLine();
                     System.out.println();
                     break;
                 case 7:
-                    System.out.println("Informe o Novo Tipo (atual: " + getTipo() + "): ");
-                    aux2 = input.nextLine();
-                    setTipo(aux2);
-                    input.nextLine();
+                    System.out.println("Categoria Atual: " + getCategoria());
+                    //Categoria do Produto
+                    CategoriaProduto();
+                    //Categoria do Produto
                     System.out.println();
                     break;
                 case 8:
-                    System.out.println("Informe a Nova Categoria (atual: " + getCategoria() + "): ");
-                    aux2 = input.nextLine();
-                    setCategoria(aux2);
-                    input.nextLine();
-                    System.out.println();
-                    break;
-                case 9:
                     System.out.println("Informe o Novo Fabricante (atual: " + getFabricante() + "): ");
                     aux2 = input.nextLine();
                     setFabricante(aux2);
-                    input.nextLine();
                     System.out.println();
                     break;
-                case 10:
+                case 9:
                     System.out.println("Informe o Novo Fornecedor (atual: " + getFornecedor() + "): ");
                     aux2 = input.nextLine();
                     setFornecedor(aux2);
-                    input.nextLine();
                     System.out.println();
                     break;
-
-                case 11:
+                case 10:
                     System.out.println("Informe a Nova Quantidade (atual: " + getQuantidade() + "): ");
                     aux1 = input.nextInt();
                     setQuantidade(aux1);
                     input.nextLine();
                     System.out.println();
                     break;
-                case 12:
+                case 11:
                     System.out.println("Informe o Novo Status (atual: " + getStatus() + "): ");
                     aux2 = input.nextLine();
                     setStatus(aux2);
-                    input.nextLine();
                     System.out.println();
                     break;
-
-                case 13:
+                case 12:
                     System.out.println("Modificações Salvas!!");
                     System.out.println();
                     break;
@@ -331,5 +337,4 @@ public class Produtos implements Base{
         }
         imprimir();
     }
-
 }
