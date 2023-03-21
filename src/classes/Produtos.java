@@ -234,70 +234,70 @@ public class Produtos implements Base{
             opcao = input.nextInt();
             switch (opcao) {
                 case 1:
-                    System.out.println("Informe o Novo Id: ");
+                    System.out.println("Informe o Novo Id (atual: " + getId() + "): ");
                     aux1 = input.nextInt();
                     setId(aux1);
                     input.nextLine();
                     System.out.println();
                     break;
                 case 2:
-                    System.out.println("Informe o Novo Nome: ");
+                    System.out.println("Informe o Novo Nome (atual: " + getNome() + "): ");
                     aux2 = input.nextLine();
                     setNome(aux2);
                     input.nextLine();
                     System.out.println();
                     break;
                 case 3:
-                    System.out.println("Informe o Novo Tamanho: ");
+                    System.out.println("Informe o Novo Tamanho (atual: " + getTamanho() + " ): ");
                     aux2 = input.nextLine();
                     setTamanho(aux2);
                     input.nextLine();
                     System.out.println();
                     break;
                 case 4:
-                    System.out.println("Informe a Nova Cor: ");
+                    System.out.println("Informe a Nova Cor (atual: " + getCor() + "): ");
                     aux2 = input.nextLine();
                     setCor(aux2);
                     input.nextLine();
                     System.out.println();
                     break;
                 case 5:
-                    System.out.println("Informe a Nova Marca: ");
+                    System.out.println("Informe a Nova Marca (atual: " + getMarca() + "): ");
                     aux2 = input.nextLine();
                     setMarca(aux2);
                     input.nextLine();
                     System.out.println();
                     break;
                 case 6:
-                    System.out.println("Informe o Novo Preço: ");
+                    System.out.println("Informe o Novo Preço (atual: " + getPreco() + "): ");
                     aux1 = input.nextInt();
                     setPreco(aux1);
                     input.nextLine();
                     System.out.println();
                     break;
                 case 7:
-                    System.out.println("Informe o Novo Tipo: ");
+                    System.out.println("Informe o Novo Tipo (atual: " + getTipo() + "): ");
                     aux2 = input.nextLine();
-                    setCor(aux2);
+                    setTipo(aux2);
                     input.nextLine();
                     System.out.println();
                     break;
                 case 8:
-                    System.out.println("Informe a Nova Categoria: ");
+                    System.out.println("Informe a Nova Categoria (atual: " + getCategoria() + "): ");
                     aux2 = input.nextLine();
                     setCategoria(aux2);
                     input.nextLine();
                     System.out.println();
                     break;
                 case 9:
-                    System.out.println("Informe o Novo Fabricante: ");
+                    System.out.println("Informe o Novo Fabricante (atual: " + getFabricante() + "): ");
                     aux2 = input.nextLine();
                     setFabricante(aux2);
                     input.nextLine();
                     System.out.println();
                     break;
                 case 10:
-                    System.out.println("Informe o Novo Fornecedor: ");
+                    System.out.println("Informe o Novo Fornecedor (atual: " + getFornecedor() + "): ");
                     aux2 = input.nextLine();
                     setFornecedor(aux2);
                     input.nextLine();
@@ -305,14 +305,14 @@ public class Produtos implements Base{
                     break;
 
                 case 11:
-                    System.out.println("Informe a Nova Quantidade: ");
+                    System.out.println("Informe a Nova Quantidade (atual: " + getQuantidade() + "): ");
                     aux1 = input.nextInt();
                     setQuantidade(aux1);
                     input.nextLine();
                     System.out.println();
                     break;
                 case 12:
-                    System.out.println("Informe o Novo Status: ");
+                    System.out.println("Informe o Novo Status (atual: " + getStatus() + "): ");
                     aux2 = input.nextLine();
                     setStatus(aux2);
                     input.nextLine();
