@@ -88,7 +88,7 @@ public class App {
                     System.out.println();
                     //ArrayList<Colaborador> autores = new ArrayList<Colaborador>(); // autores de uma publicacao
                     //newProdAcad(colaboradores, autores, professores, alunos);
-                    produto.editar();
+                    gerenciamento.editarProdutos();
                     System.out.println();
                     option = startOptions(); 
                     break;
