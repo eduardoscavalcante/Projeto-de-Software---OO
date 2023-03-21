@@ -46,30 +46,6 @@ public class Movimentacao implements Base{
         return tipoProduto;
     }
 
-    public String getTipoProduto_string(){//possui erro
-        int tipoProduto;
-        tipoProduto = getTipoProduto();
-        if (tipoProduto == 1) {
-            return "Roupa Feminina";
-        } else if (tipoProduto == 2) {
-            return "Roupa Masculina";
-        } else if (tipoProduto == 3) {
-            return "Roupa Infantil";
-        } else if (tipoProduto == 4) {
-            return "Calçados";
-        }else if (tipoProduto == 5) {
-            return "Artigos de Casa";
-        }else if (tipoProduto == 6) {
-            return "Acessórios";
-        }else if (tipoProduto == 7) {
-            return "Eletrônicos";
-        }else if (tipoProduto == 8) {
-            return "Perfumes";
-        }else {
-            return "Tipo Invalido!!";
-        }
-    }
-
     public void setDestino(String Destino){
         this.Destino = Destino;
     }
@@ -94,13 +70,35 @@ public class Movimentacao implements Base{
         return  dataMovimentacao;
     }
 
+    public String getCategoriaString(int tipoProduto){// função de apoio
+        if (tipoProduto == 1) {
+            return "Roupa Feminina";
+        } else if (tipoProduto == 2) {
+            return "Roupa Masculina";
+        } else if (tipoProduto == 3) {
+            return "Roupa Infantil";
+        } else if (tipoProduto == 4) {
+            return "Calçados";
+        }else if (tipoProduto == 5) {
+            return "Artigos de Casa";
+        }else if (tipoProduto == 6) {
+            return "Acessórios";
+        }else if (tipoProduto == 7) {
+            return "Eletrônicos";
+        }else if (tipoProduto == 8) {
+            return "Perfumes";
+        }else {
+            return "Tipo Invalido!!";
+        }
+    }
+
     public void imprimir() {
 
         if (getIdMovimentacao() != -1) {
             System.out.println("********RELATÓRIO DA MOVIMENTAÇÃO:********");
             System.out.println("Data da Movimentação: " + getDataMovimentacao());
             System.out.println("Produto: " + getIdProduto());
-            System.out.println("Categoria do Produto: " +  getTipoProduto_string() );
+            System.out.println("Categoria do Produto: " +  getCategoriaString(getTipoProduto()));
             System.out.println("Origem da Movimentação: " + getOrigem());
             System.out.println("Destino da Movimentação: " + getDestino());
             System.out.println("ID do Responsavel da Movimentação: " + getIdResponsavel());
