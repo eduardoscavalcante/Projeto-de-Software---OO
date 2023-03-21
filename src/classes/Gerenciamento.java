@@ -20,8 +20,7 @@ public class Gerenciamento {
             System.out.println("Cor: " + p.getCor());
             System.out.println("Marca: " + p.getMarca());
             System.out.println("Preço: " + p.getPreco());
-            System.out.println("Tipo: " + p.getTipo());
-            System.out.println("Categoria: " + p.getCategoria());
+            System.out.println("Categoria: " + p.getCategoriaString(p.getCategoria()));
             System.out.println("Fabricante: " + p.getFabricante());
             System.out.println("Fornecedor: " + p.getFornecedor());
             System.out.println("Quantidade: " + p.getQuantidade());
