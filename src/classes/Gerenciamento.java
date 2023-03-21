@@ -1,11 +1,12 @@
 package classes;
 
 import java.util.List;
+import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Gerenciamento {
 	List<Produtos> produtos = new ArrayList<>();
-
+	
 	public void adicionarProdutos(Produtos cp) {
 	    produtos.add(cp);
 	}
@@ -29,5 +30,31 @@ public class Gerenciamento {
             System.out.println("******************************************");
 	    });
 	}
+	
+	public void editarProdutos() {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Informe o número do ID a ser localizado: ");
+		int busca;
+		busca = input.nextInt();
+        input.nextLine();
+		
+        int i, achou=-1;
+        System.out.println();
+        
+		for(i = 0; i < produtos.size(); i++)
+		{
+			int idteste = produtos.get(i).getId();
+			if (idteste == busca) {
+				produtos.get(i).editar();
+                achou=1;
+                break;
+            }
+		}
+		
+		if (achou==-1){
+			System.out.println("ID de produto não encontrado! Tente novamente");
+			System.out.println();
+		}
+	}
 }
-
