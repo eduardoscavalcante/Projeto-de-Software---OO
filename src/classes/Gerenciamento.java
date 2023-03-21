@@ -57,4 +57,33 @@ public class Gerenciamento {
 			System.out.println();
 		}
 	}
+	
+	public void removerProduto() {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Informe o número do ID do produto a ser removido: ");
+		int busca;
+		busca = input.nextInt();
+        input.nextLine();
+		
+        int i, achou=-1;
+        System.out.println();
+        
+		for(i = 0; i < produtos.size(); i++)
+		{
+			int idteste = produtos.get(i).getId();
+			if (idteste == busca) {
+				produtos.remove(i);
+				System.out.println("Produto removido com sucesso!");
+				System.out.println();
+                achou=1;
+                break;
+            }
+		}
+		
+		if (achou==-1){
+			System.out.println("ID de produto não encontrado! Tente novamente");
+			System.out.println();
+		}
+	}
 }
