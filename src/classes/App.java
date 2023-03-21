@@ -3,14 +3,11 @@ package classes;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import teste.CadastroProduto;
+
 public class App {
 
     Scanner input = new Scanner(System.in);
-    Produtos produto = new Produtos();
-    Funcionarios funcionario = new Funcionarios();
-    Movimentacao mov = new Movimentacao();
-    Pagamento pag = new Pagamento();
-    Login log = new Login();
 
     public static void msgErroDados() {
         System.err.println("Dados informados incorretamente! Por favor, informe os dados corretamente.");
@@ -53,10 +50,13 @@ public class App {
 
         Scanner input = new Scanner(System.in);
         Produtos produto = new Produtos();
+        
         Funcionarios funcionario = new Funcionarios();
         Movimentacao mov = new Movimentacao();
         Pagamento pag = new Pagamento();
         Login log = new Login();
+        
+        Gerenciamento gerenciamento = new Gerenciamento(); //onde está a lista
 
         System.out.println("***************************************");
         System.out.println("*                                     *");
@@ -74,6 +74,8 @@ public class App {
                     System.out.println();
                     produto.adicionar(indice);
                     System.out.println();
+                    gerenciamento.adicionarProdutos(produto);
+	                produto = new Produtos();
                     option = startOptions();
                     break;
                 case 2: //adiciona novo funcionário
@@ -140,7 +142,7 @@ public class App {
                     break;
                 case 10: // Relatório
                     System.out.println();
-                    produto.imprimir();
+                    gerenciamento.imprimirProdutos(); //imprime as informações de todos os produtos existentes
                     mov.imprimir();
                     funcionario.imprimir();
                     System.out.println();
@@ -154,4 +156,3 @@ public class App {
         }
     }
 }
-
