@@ -102,7 +102,7 @@ public class App {
                 case 5: //remove produto existente
                     System.out.println();
                     //Colaborador.queryColaborador(colaboradores);
-                    produto.remover_produto();
+                    gerenciamento.removerProduto();
                     System.out.println();
                     option = startOptions(); 
                     break;
