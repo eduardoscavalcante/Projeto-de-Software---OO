@@ -3,7 +3,7 @@ package classes;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import teste.CadastroProduto;
+//import teste.CadastroProduto;
 
 public class App {
 
@@ -50,12 +50,12 @@ public class App {
 
         Scanner input = new Scanner(System.in);
         Produtos produto = new Produtos();
-        
+
         Funcionarios funcionario = new Funcionarios();
         Movimentacao mov = new Movimentacao();
         Pagamento pag = new Pagamento();
         Login log = new Login();
-        
+
         Gerenciamento gerenciamento = new Gerenciamento(); //onde está a lista
 
         System.out.println("***************************************");
@@ -75,48 +75,41 @@ public class App {
                     produto.adicionar(indice);
                     System.out.println();
                     gerenciamento.adicionarProdutos(produto);
-	                produto = new Produtos();
+                    produto = new Produtos();
                     option = startOptions();
                     break;
                 case 2: //adiciona novo funcionário
                     System.out.println();
                     funcionario.adicionar(indice);
                     System.out.println();
-                    option = startOptions(); 
+                    option = startOptions();
                     break;
                 case 3: //edita produto existente
                     System.out.println();
-                    //ArrayList<Colaborador> autores = new ArrayList<Colaborador>(); // autores de uma publicacao
-                    //newProdAcad(colaboradores, autores, professores, alunos);
                     gerenciamento.editarProdutos();
                     System.out.println();
-                    option = startOptions(); 
+                    option = startOptions();
                     break;
                 case 4: //edita funcionário existente
                     System.out.println();
-                    //editProjeto(projetos, colaboradores);
                     funcionario.editar();
                     System.out.println();
-                    option = startOptions(); 
+                    option = startOptions();
                     break;
                 case 5: //remove produto existente
                     System.out.println();
-                    //Colaborador.queryColaborador(colaboradores);
                     gerenciamento.removerProduto();
                     System.out.println();
-                    option = startOptions(); 
+                    option = startOptions();
                     break;
                 case 6: // remove funcionario existente
                     System.out.println();
-                    //Projeto.queryProjeto(projetos);
                     funcionario.rem_e();
                     System.out.println();
-                    option = startOptions(); 
+                    option = startOptions();
                     break;
                 case 7: // realiza uma movimentação de estoque
                     System.out.println();
-                    //Relatorio relatorio = new Relatorio();
-                    //relatorio.relatorio();
                     mov.adicionar(indice);
                     System.out.println();
                     option = startOptions();
@@ -141,6 +134,10 @@ public class App {
                     option = startOptions();
                     break;
                 case 10: // Relatório
+                    System.out.println();
+                    System.out.println("*******************************************");
+                    System.out.println("*           RELATÓRIO DO GERAL:           *");
+                    System.out.println("*******************************************");
                     System.out.println();
                     gerenciamento.imprimirProdutos(); //imprime as informações de todos os produtos existentes
                     mov.imprimir();
