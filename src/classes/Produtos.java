@@ -162,13 +162,12 @@ public class Produtos implements Base{
         input.nextLine();
     }
 
-    public void adicionar(int ficha) {// Adição de um produto
+    public void adicionar() {// Adição de um produto
 
         int aux1;
         String aux2;
         float aux3;
 
-        setId(ficha);
         System.out.println("Informe o código de identificação do produto: ");
         aux1 = input.nextInt();
         input.nextLine();
