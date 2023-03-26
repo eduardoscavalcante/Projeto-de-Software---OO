@@ -10,16 +10,16 @@ public class Movimentacao implements Base{
     private int idProduto;
     private int tipoProduto;
     private int idResponsavel;
-    private int idMovimentacao;
+    private int id;
 
     Scanner input = new Scanner(System.in);
 
-    public void setIdMovimentacao(int idMovimentacao) {
-        this.idMovimentacao = idMovimentacao;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getIdMovimentacao() {
-        return idMovimentacao;
+    public int getId() {
+        return id;
     }
 
     public void setIdResponsavel(int idResponsavel){
@@ -94,8 +94,9 @@ public class Movimentacao implements Base{
 
     public void imprimir() {
 
-        if (getIdMovimentacao() != -1) {
+        if (getId() != -1) {
             System.out.println("********RELATÓRIO DA MOVIMENTAÇÃO:********");
+            System.out.println("Identificação da Movimentação: " + getId());
             System.out.println("Data da Movimentação: " + getDataMovimentacao());
             System.out.println("Produto: " + getIdProduto());
             System.out.println("Categoria do Produto: " +  getCategoriaString(getTipoProduto()));
@@ -120,12 +121,15 @@ public class Movimentacao implements Base{
         input.nextLine();
     }
 
-    public void adicionar(int ficha) {// Adição de uma movimentacao
+    public void adicionar() {// Adição de uma movimentacao
 
         int aux1;
         String aux2;
 
-        setIdMovimentacao(ficha);
+        System.out.println("Informe o código de identificação do produto: ");
+        aux1 = input.nextInt();
+        input.nextLine();
+        setId(aux1);
         System.out.println("Informe a Identificação do Responsavel: ");
         aux1 = input.nextInt();
         setIdResponsavel(aux1);
@@ -153,8 +157,8 @@ public class Movimentacao implements Base{
     public void M_Inicial() {// função de apoio
 
         System.out.println("Informe o campo que deseja alterar:");
-        System.out.println("Identificação do Responsavel(1);\n" + "Identificação do Produto(2);\n" + "Categoria do Produto(3);\n"
-                + "Destino do Produto(4);\n" + "Origem do Produto(5);\n" + "Data da Movimentação do Produto(6);\n" + "Sair(7).");
+        System.out.println("ID(1);\n" + "Identificação do Responsavel(2);\n" + "Identificação do Produto(3);\n" + "Categoria do Produto(4);\n"
+                + "Destino do Produto(5);\n" + "Origem do Produto(6);\n" + "Data da Movimentação do Produto(7);\n" + "Sair(8).");
     }
 
     public void editar() {// Alterar detalhes de uma movimentacao
@@ -164,51 +168,59 @@ public class Movimentacao implements Base{
         String aux2;
         double aux3;
 
-        while (opcao != 7) {
+        while (opcao != 8) {
 
             M_Inicial();
             opcao = input.nextInt();
             input.nextLine();
             switch (opcao) {
                 case 1:
-                    System.out.println("Informe a Nova Identificação do Responsavel: ");
+                    System.out.println("Informe o Novo Id (atual: " + getId() + "): ");
+                    aux1 = input.nextInt();
+                    setId(aux1);
+                    input.nextLine();
+                    System.out.println();
+                    break;
+                case 2:
+                    System.out.println("Informe a Nova Identificação do Responsavel (atual: " + getIdResponsavel() + "): ");
                     aux1 = input.nextInt();
                     setIdResponsavel(aux1);
                     input.nextLine();
                     System.out.println();
                     break;
-                case 2:
-                    System.out.println("Informe a Nova Identificação do Produto:  ");
+                case 3:
+                    System.out.println("Informe a Nova Identificação do Produto (atual: " + getIdProduto() + "): ");
                     aux1 = input.nextInt();
                     setIdProduto(aux1);
                     input.nextLine();
                     System.out.println();
                     break;
-                case 3:
+                case 4:
+                    System.out.println("Categoria Atual: " + getTipoProduto());
                     //Categoria do Produto
                     CategoriaProduto();
                     //Categoria do Produto
                     System.out.println();
                     break;
-                case 4:
-                    System.out.println("Informe O Novo Destino do Produto: ");
+                case 5:
+                    System.out.println("Informe O Novo Destino do Produto (atual: " + getDestino() + "): ");
                     aux2 = input.nextLine();
                     setDestino(aux2);
                     System.out.println();
                     break;
-                case 5:
-                    System.out.println("Informe a Nova Origem do Produto:");
+                case 6:
+                    System.out.println("Informe a Nova Origem do Produto (atual: " + getOrigem() + "): ");
                     aux2 = input.nextLine();
                     setOrigem(aux2);
                     System.out.println();
                     break;
-                case 6:
-                    System.out.println("Informe a Nova Data da Movimentação do Produto:(hh:mm DD/MM/YYYY)");
+                case 7:
+                    System.out.println("Informe a Nova Data da Movimentação do Produto:(hh:mm DD/MM/YYYY) (atual: " + getDataMovimentacao() + "): ");
                     aux2 = input.nextLine();
                     setDataMovimentacao(aux2);
                     System.out.println();
                     break;
-                case 7:
+                case 8:
                     System.out.println("Modificações Salvas!!");
                     System.out.println();
                     break;
