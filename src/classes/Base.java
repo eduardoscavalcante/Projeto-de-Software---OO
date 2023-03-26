@@ -4,7 +4,7 @@ public interface Base{
 	
 	public void M_Inicial();
 	
-	public void adicionar(int ficha);
+	public void adicionar();
 	
 	public void editar();
 	
