@@ -58,6 +58,7 @@ public class App {
 
         Gerenciamento gp = new Gerenciamento(); //onde está a lista
         GerenciamentoFuncionarios gf = new GerenciamentoFuncionarios();
+        GerenciamentoMovimentacao gm = new GerenciamentoMovimentacao();
 
         System.out.println("***************************************");
         System.out.println("*                                     *");
@@ -69,11 +70,10 @@ public class App {
         int option = startOptions();
 
         while(option != 0){ // enquanto não for dado o comando de parar o programa
-            int indice = 1;
             switch(option){
                 case 1: // adiciona novo produto
                     System.out.println();
-                    produto.adicionar(indice);
+                    produto.adicionar();
                     System.out.println();
                     gp.adicionarProdutos(produto);
                     produto = new Produtos();
@@ -81,7 +81,7 @@ public class App {
                     break;
                 case 2: //adiciona novo funcionário
                     System.out.println();
-                    funcionario.adicionar(indice);
+                    funcionario.adicionar();
                     System.out.println();
                     gf.adicionarFuncionarios(funcionario);
                     funcionario = new Funcionarios();
@@ -115,8 +115,10 @@ public class App {
                     break;
                 case 7: // realiza uma movimentação de estoque
                     System.out.println();
-                    mov.adicionar(indice);
+                    mov.adicionar();
                     System.out.println();
+                    gm.adicionarMovimentacao(mov);
+                    mov = new Movimentacao();
                     option = startOptions();
                     break;
                 case 8: // Realizar Pagamento
@@ -145,8 +147,7 @@ public class App {
                     System.out.println("*******************************************");
                     System.out.println();
                     gp.imprimirProdutos(); //imprime as informações de todos os produtos existentes
-                    mov.imprimir();
-                    //funcionario.imprimir();
+                    gm.imprimirMovimentacao();
                     gf.imprimirFuncionarios();
                     System.out.println();
                     option = startOptions();
