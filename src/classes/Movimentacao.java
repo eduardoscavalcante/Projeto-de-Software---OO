@@ -126,7 +126,7 @@ public class Movimentacao implements Base{
         int aux1;
         String aux2;
 
-        System.out.println("Informe o código de identificação do produto: ");
+        System.out.println("Informe o código de identificação da Movimentação: ");
         aux1 = input.nextInt();
         input.nextLine();
         setId(aux1);
