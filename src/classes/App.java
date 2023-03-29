@@ -75,6 +75,7 @@ public class App {
                     System.out.println();
                     produto.adicionar();
                     System.out.println();
+                    gp.correcaoId(produto);
                     gp.adicionarProdutos(produto);
                     produto = new Produtos();
                     option = startOptions();
@@ -83,6 +84,7 @@ public class App {
                     System.out.println();
                     funcionario.adicionar();
                     System.out.println();
+                    gf.correcaoId(funcionario);
                     gf.adicionarFuncionarios(funcionario);
                     funcionario = new Funcionarios();
                     option = startOptions();
@@ -117,6 +119,7 @@ public class App {
                     System.out.println();
                     mov.adicionar();
                     System.out.println();
+                    gm.correcaoId(mov);
                     gm.adicionarMovimentacao(mov);
                     mov = new Movimentacao();
                     option = startOptions();
