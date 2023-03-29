@@ -85,4 +85,31 @@ public class Gerenciamento {
 			System.out.println();
 		}
 	}
+	//CORREÇÃO ID
+	public Produtos correcaoId(Produtos p) {
+
+		Scanner input = new Scanner(System.in);
+
+		int busca;
+		busca = p.getId();
+
+		int i, aux1;
+
+		if(produtos.size() > 0){
+			for (i = 0; i < produtos.size(); i++) {
+				int idteste = produtos.get(i).getId();
+				if (idteste == busca) {
+					System.out.println("ID Ja Existente!!");
+					System.out.println("Digite Novamente");
+					System.out.println("Informe o código de identificação do produto: ");
+					aux1 = input.nextInt();
+					input.nextLine();
+					p.setId(aux1);
+					correcaoId(p);
+					break;
+				}
+			}
+		}
+		return p;
+	}
 }
