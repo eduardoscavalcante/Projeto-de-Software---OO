@@ -50,8 +50,6 @@ public class App {
 
         Scanner input = new Scanner(System.in);
         Produtos produto = new Produtos();
-
-        Funcionarios funcionario = new Funcionarios();
         Movimentacao mov = new Movimentacao();
         Pagamento pag = new Pagamento();
         Login log = new Login();
@@ -82,11 +80,8 @@ public class App {
                     break;
                 case 2: //adiciona novo funcionário
                     System.out.println();
-                    funcionario.adicionar();
+                    gf.gerenciamentoCargo();
                     System.out.println();
-                    gf.correcaoId(funcionario);
-                    gf.adicionarFuncionarios(funcionario);
-                    funcionario = new Funcionarios();
                     option = startOptions();
                     break;
                 case 3: //edita produto existente
@@ -97,7 +92,6 @@ public class App {
                     break;
                 case 4: //edita funcionário existente
                     System.out.println();
-                    //funcionario.editar();
                     gf.editarFuncionarios();
                     System.out.println();
                     option = startOptions();
@@ -110,7 +104,6 @@ public class App {
                     break;
                 case 6: // remove funcionario existente
                     System.out.println();
-                    //funcionario.rem_e();
                     gf.removerfuncionarios();
                     System.out.println();
                     option = startOptions();
