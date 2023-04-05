@@ -27,10 +27,10 @@ public class GerenciamentoFuncionarios {
 			System.out.println("CPF: " + f.getCPF());
 			System.out.println("Cargo: " + getCargoString(f.getCargo()));
 			if (f.getCargo() == 1) {
-				System.out.println("Quantidade de vendas: " + f.getQnt());
+				System.out.println("Meta mensal de vendas: " + f.getQnt());
 			}
 			else if (f.getCargo() == 2) {
-				System.out.println("Quantidade de horas: " + f.getQnt());
+				System.out.println("Quantidade de pessoas supervisionadas: " + f.getQnt());
 			}
 			System.out.println("******************************************");
 		});
