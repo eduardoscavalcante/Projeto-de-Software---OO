@@ -18,8 +18,8 @@ public class Produtos implements Base{
 
     Scanner input = new Scanner(System.in);
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int aux1) {
+        this.id = aux1;
     }
 
     public int getId() {
@@ -163,6 +163,56 @@ public class Produtos implements Base{
     }
 
     public void adicionar() {// Adição de um produto
+
+        int aux1;
+        String aux2;
+        float aux3;
+
+        System.out.println("Informe o código de identificação do produto: ");
+        aux1 = input.nextInt();
+        input.nextLine();
+        setId(aux1);
+        System.out.println("Informe o Nome: ");
+        aux2 = input.nextLine();
+        setNome(aux2);
+        System.out.println("Informe o Tamanho: ");
+        aux2 = input.nextLine();
+        setTamanho(aux2);
+        System.out.println("Informe a cor: ");
+        aux2 = input.nextLine();
+        setCor(aux2);
+        System.out.println("Informe a marca: ");
+        aux2 = input.nextLine();
+        setMarca(aux2);
+        System.out.println("Informe o preco: ");
+        aux3 = input.nextFloat();
+        input.nextLine();
+        setPreco(aux3);
+        //Categoria do Produto
+        CategoriaProduto();
+        //Categoria do Produto
+        System.out.println("Informe o fabricante: ");
+        aux2 = input.nextLine();
+        setFabricante(aux2);
+        System.out.println("Informe o fornecedor: ");
+        aux2 = input.nextLine();
+        setFornecedor(aux2);
+        System.out.println("Informe a quantidade: ");
+        aux1 = input.nextInt();
+        input.nextLine();
+        setQuantidade(aux1);
+
+        if (getQuantidade() > 0){
+            setStatus("Em estoque");
+        }
+
+        else{
+            setStatus("Esgotado");
+        }
+        imprimir();
+    }
+
+    public void adicionarFX() {// Adição de um produto
 
         int aux1;
         String aux2;

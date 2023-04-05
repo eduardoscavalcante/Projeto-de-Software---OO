@@ -3,9 +3,16 @@ package classes;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 //import teste.CadastroProduto;
 
-public class App {
+public class App extends Application{
+
 
     Scanner input = new Scanner(System.in);
 
@@ -46,7 +53,9 @@ public class App {
         return opt; // opção selecionada
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
+
+        launch (args);
 
         Scanner input = new Scanner(System.in);
         Produtos produto = new Produtos();
@@ -157,6 +166,55 @@ public class App {
                     option = startOptions();
                     break;
             }
+        }
+    }
+    // Navegando entre as telas
+    private static Stage stage;
+    private static Scene tela1;
+    private static Scene tela2;
+    private static Scene id_invalido;
+    private static Scene remover;
+
+    public void start(Stage primaryStage) throws Exception {
+            stage = primaryStage;
+
+            //tela principal
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("tela_inicial.fxml"));
+        Parent root1 = fxmlLoader1.load();
+        tela1 = new Scene(root1);
+            //tela de adicionar produto
+        FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("add_produto.fxml"));
+        Parent root2 = fxmlLoader2.load();
+        tela2 = new Scene(root2);
+            //Id invalido
+        FXMLLoader fxmlLoader3 = new FXMLLoader(getClass().getResource("sem_id.fxml"));
+        Parent root3 = fxmlLoader3.load();
+        id_invalido = new Scene(root3);
+            //remove 
+        FXMLLoader fxmlLoader4 = new FXMLLoader(getClass().getResource("remove.fxml"));
+        Parent root4 = fxmlLoader4.load();
+        remover = new Scene(root4);
+    
+        primaryStage.setTitle("Sistema de gerenciamento de produtos");
+        primaryStage.setScene(tela1);
+        primaryStage.show();
+
+    
+    }
+    public static void changeScreen(String scr){
+        switch(scr){
+            case "main":
+                stage.setScene(tela1);
+                break;
+            case "adcionar_produto":
+                stage.setScene(tela2);
+                break;
+            case "editar_produto":
+                stage.setScene(id_invalido);
+            case "remover_produto":
+                stage.setScene(remover);
+            case "remover_funcionario":
+                stage.setScene(remover);
         }
     }
 }
