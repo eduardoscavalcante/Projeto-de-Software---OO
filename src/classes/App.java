@@ -167,7 +167,6 @@ public class App extends Application{
     private static Stage stage;
     private static Scene tela1;
     private static Scene tela2;
-    private static Scene id_invalido;
     private static Scene remover;
 
     public void start(Stage primaryStage) throws Exception {
@@ -181,10 +180,6 @@ public class App extends Application{
         FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/view/add_produto.fxml"));
         Parent root2 = fxmlLoader2.load();
         tela2 = new Scene(root2);
-            //Id invalido
-        FXMLLoader fxmlLoader3 = new FXMLLoader(getClass().getResource("/view/sem_id.fxml"));
-        Parent root3 = fxmlLoader3.load();
-        id_invalido = new Scene(root3);
             //remove 
         FXMLLoader fxmlLoader4 = new FXMLLoader(getClass().getResource("/view/remove.fxml"));
         Parent root4 = fxmlLoader4.load();
@@ -205,8 +200,6 @@ public class App extends Application{
             case "adcionar_produto":
                 stage.setScene(tela2);
                 break;
-            case "editar_produto":
-                stage.setScene(id_invalido);
             case "remover_produto":
                 stage.setScene(remover);
             case "remover_funcionario":

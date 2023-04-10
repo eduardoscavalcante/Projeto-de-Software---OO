@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 
+//Controller para a tela principal
 public class controllerP implements Initializable{
 
     Produtos produto = new Produtos();
