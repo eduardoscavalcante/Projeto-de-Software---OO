@@ -173,7 +173,7 @@ public class App extends Application{
         stage = primaryStage;
 
             //tela principal
-        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/view/tela_inicial.fxml"));
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/view/home.fxml"));
         Parent root1 = fxmlLoader1.load();
         tela1 = new Scene(root1);
             //tela de adicionar produto
