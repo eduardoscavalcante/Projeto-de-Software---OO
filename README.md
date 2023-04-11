@@ -141,6 +141,3 @@ Funcionalidades feitas:
 -Interface para imprimir, adicionar e editar na classe de funcionários, produtos e movimentações.
 -Herança feita para o cadastro dos funcionários.
 -Polimorfismo para as classes de funcionários para gerenciar cargos e permissões.
-
-----------------------------
-##teste merge
