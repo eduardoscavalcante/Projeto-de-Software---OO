@@ -142,7 +142,12 @@ Funcionalidades feitas:
 -Herança feita para o cadastro dos funcionários.
 -Polimorfismo para as classes de funcionários para gerenciar cargos e permissões.
 
+<<<<<<< HEAD
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Como utilizar o JavaFX no Vscode
 link: https://www.youtube.com/watch?v=ombuBCzClzo&t=3s
+=======
+----------------------------
+##teste merge
+>>>>>>> 2c4a9198bf21f7657d128ba471e0d7d1cde20ab8
