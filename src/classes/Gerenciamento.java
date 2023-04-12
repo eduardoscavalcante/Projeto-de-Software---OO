@@ -45,8 +45,12 @@ public class Gerenciamento {
 		{
 			int idteste = produtos.get(i).getId();
 			if (idteste == busca) {
-				produtos.get(i).editar();
-                achou=1;
+				try {
+					produtos.get(i).editar();
+				}catch(Exception e){
+					System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
+				}
+				achou=1;
                 break;
             }
 		}

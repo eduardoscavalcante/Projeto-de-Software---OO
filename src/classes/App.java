@@ -79,10 +79,14 @@ public class App extends Application{
             switch(option){
                 case 1: // adiciona novo produto
                     System.out.println();
-                    produto.adicionar();
+                    try {
+                        produto.adicionar();
+                        gp.correcaoId(produto);
+                        gp.adicionarProdutos(produto);
+                    }catch(Exception e){
+                        System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
+                    }
                     System.out.println();
-                    gp.correcaoId(produto);
-                    gp.adicionarProdutos(produto);
                     produto = new Produtos();
                     option = startOptions();
                     break;
@@ -118,10 +122,14 @@ public class App extends Application{
                     break;
                 case 7: // realiza uma movimentação de estoque
                     System.out.println();
-                    mov.adicionar();
+                    try {
+                        mov.adicionar();
+                        gm.correcaoId(mov);
+                        gm.adicionarMovimentacao(mov);
+                    }catch(Exception e){
+                        System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
+                    }
                     System.out.println();
-                    gm.correcaoId(mov);
-                    gm.adicionarMovimentacao(mov);
                     mov = new Movimentacao();
                     option = startOptions();
                     break;

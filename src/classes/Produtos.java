@@ -1,5 +1,6 @@
 package classes;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Produtos implements Base{
@@ -162,7 +163,7 @@ public class Produtos implements Base{
         input.nextLine();
     }
 
-    public void adicionar() {// Adição de um produto
+    public void adicionar () throws Exception {// Adição de um produto
 
         int aux1;
         String aux2;
@@ -241,7 +242,7 @@ public class Produtos implements Base{
                 + "Sair(12).");
     }
 
-    public void editar() {// Alterar detalhes de um produto
+    public void editar() throws Exception{// Alterar detalhes de um produto
 
         int opcao = 1;
         int aux1;

@@ -12,20 +12,20 @@ public abstract class Funcionarios{
     private int cargo;
 
     Scanner input = new Scanner(System.in);
-    
+
     public Funcionarios(int id, String nome, String email, long telefone, long cpf, int cargo) {
-    	this.id = id;
-    	this.nome = nome;
-    	this.email = email;
-    	this.telefone = telefone;
-    	this.cpf = cpf;
-    	this.cargo = cargo;
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.cpf = cpf;
+        this.cargo = cargo;
     }
 
     public int getId() {
         return id;
     }
-    
+
     public void setId(int id) {
         this.id = id;
     }
@@ -49,16 +49,16 @@ public abstract class Funcionarios{
     public int getCargo() {
         return cargo;
     }
-    
+
     public abstract void imprimir();
-    
+
     public void M_Inicial() {// função de apoio
         System.out.println("Informe o campo que deseja alterar:");
         System.out.println("ID(1);\n" + "Nome Completo(2);\n" + "Email(3);\n" + "Telefone(4);\n" + "CPF(5);\n"
                 + "Cargo(6);\n" + "Sair(7).");
     }
-    
-    public void editar() {// Alterar detalhes de um empregado
+
+    public void editar() throws Exception{// Alterar detalhes de um empregado
         int opcao = 1;
 
         while (opcao != 7) {
