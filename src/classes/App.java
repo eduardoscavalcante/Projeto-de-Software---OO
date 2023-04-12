@@ -165,9 +165,11 @@ public class App extends Application{
     }
     // Navegando entre as telas
     private static Stage stage;
-    private static Scene tela1;
-    private static Scene tela2;
-    private static Scene remover;
+    private static Scene telaHome;
+    private static Scene telaProdutos;
+    private static Scene telaAddProdutos;
+    private static Scene telaEditProdutos;
+    private static Scene telaRemoveProdutos;
 
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
@@ -175,18 +177,27 @@ public class App extends Application{
             //tela principal
         FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/view/home.fxml"));
         Parent root1 = fxmlLoader1.load();
-        tela1 = new Scene(root1);
-            //tela de adicionar produto
-        FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/view/add_produto.fxml"));
+        telaHome = new Scene(root1);
+            //tela de produto
+        FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/view/produtos/produtos.fxml"));
         Parent root2 = fxmlLoader2.load();
-        tela2 = new Scene(root2);
-            //remove 
-        FXMLLoader fxmlLoader4 = new FXMLLoader(getClass().getResource("/view/remove.fxml"));
+        telaProdutos = new Scene(root2);
+            //tela de adicionar produto 
+        FXMLLoader fxmlLoader3 = new FXMLLoader(getClass().getResource("/view/produtos/add-produto.fxml"));
+        Parent root3 = fxmlLoader3.load();
+        telaAddProdutos = new Scene(root3);
+            //tela de editar produto
+        FXMLLoader fxmlLoader4 = new FXMLLoader(getClass().getResource("/view/produtos/editar-produto.fxml"));
         Parent root4 = fxmlLoader4.load();
-        remover = new Scene(root4);
+        telaEditProdutos = new Scene(root4);
+            //tela de remover produto
+        FXMLLoader fxmlLoader5 = new FXMLLoader(getClass().getResource("/view/produtos/removeProduto.fxml"));
+        Parent root5 = fxmlLoader5.load();
+        telaRemoveProdutos = new Scene(root5);
+        
 
         primaryStage.setTitle("Sistema de gerenciamento de produtos");
-        primaryStage.setScene(tela1);
+        primaryStage.setScene(telaHome);
         primaryStage.show();
 
 
@@ -195,15 +206,22 @@ public class App extends Application{
     public static void changeScreen(String scr){
         switch(scr){
             case "main":
-                stage.setScene(tela1);
+                stage.setScene(telaHome);
                 break;
-            case "adcionar_produto":
-                stage.setScene(tela2);
+            case "produto":
+                stage.setScene(telaProdutos);
                 break;
-            case "remover_produto":
-                stage.setScene(remover);
-            case "remover_funcionario":
-                stage.setScene(remover);
+            case "add_produto":
+                stage.setScene(telaAddProdutos);
+                break;
+            case "edit_produto":
+                stage.setScene(telaEditProdutos);
+                break;
+            case "remove_produto":
+                stage.setScene(telaRemoveProdutos);
+                break;
+
+                
         }
     }
 }
