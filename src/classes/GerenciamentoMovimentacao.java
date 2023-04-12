@@ -40,7 +40,11 @@ public class GerenciamentoMovimentacao {
 		{
 			int idteste = movimentacao.get(i).getId();
 			if (idteste == busca) {
-				movimentacao.get(i).editar();
+				try{
+					movimentacao.get(i).editar();
+				}catch(Exception e){
+					System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
+				}
 				achou=1;
 				break;
 			}
