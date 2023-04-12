@@ -15,7 +15,7 @@
             <AnchorPane prefHeight="439.0" prefWidth="628.0" style="-fx-background-color: #333645;">
                <children>
                   <Line endX="100.0" layoutX="285.0" layoutY="204.0" startX="-36.0" stroke="WHITE" />
-                  <Button layoutX="297.0" layoutY="399.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Sair" textFill="WHITE">
+                  <Button fx:id="botaoSair" layoutX="297.0" layoutY="399.0" mnemonicParsing="false" onAction="#exitButton" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Sair" textFill="WHITE">
                      <font>
                         <Font size="10.0" />
                      </font></Button>
