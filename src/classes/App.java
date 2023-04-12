@@ -131,7 +131,11 @@ public class App {
                     break;
                 case 8: // Realizar Pagamento
                     System.out.println();
-                    pag.setPagamento();
+                    try{
+                        pag.setPagamento();
+                    }catch(Exception e){
+                        System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
+                    }
                     System.out.println();
                     option = startOptions();
                     break;
