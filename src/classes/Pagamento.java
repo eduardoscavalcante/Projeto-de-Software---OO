@@ -3,7 +3,7 @@ package classes;
 import java.util.Scanner;
 
 public class Pagamento {
-    
+
     private double valor;
     private long nCartaoCredito;
     private String validadeCartaoCredito;
@@ -17,65 +17,65 @@ public class Pagamento {
     public void setValor(double val){
         this.valor = val;
     }
-    
+
     public double getValor(){
         return valor;
     }
-    
+
     //Cartao de Credito
     public void setNCartCred(long cart){
         this.nCartaoCredito = cart;
     }
-    
+
     public long getNCartCred(){
         return nCartaoCredito;
     }
-    
+
     public void setValidadeCartCred(String vldd){
         this.validadeCartaoCredito = vldd;
     }
-    
+
     public String getValidadeCartCred(){
         return validadeCartaoCredito;
     }
-    
+
     public void setCVCCartCred(int cvc){
         this.cvcCartaoCredito = cvc;
     }
-    
+
     public int getCVCCartCred(){
         return cvcCartaoCredito;
     }
-    
+
     //Cartao de Debito
     public void setNCartDebito(long cart){
         this.nCartaoDebito = cart;
     }
-    
+
     public long getNCartDebito(){
         return nCartaoDebito;
     }
-    
+
     public void setValidadeCartDebito(String vldd){
         this.validadeCartaoDebito = vldd;
     }
-    
+
     public String getValidadeCartDebito(){
         return validadeCartaoDebito;
     }
-    
+
     public void setCVCCartDebito(int cvc){
         this.cvcCartaoDebito = cvc;
     }
-    
+
     public int getCVCCartDebito(){
         return cvcCartaoDebito;
     }
-    
+
     public void setAtriCCred(){// função para atributos do cartão de credito
-        
+
         long aux1;
-        String aux2; 
+        String aux2;
         int aux3;
 
         System.out.println("Informe o Número do Cartao de Credito: ");
@@ -92,9 +92,9 @@ public class Pagamento {
     }
 
     public void setAtriCDeb(){// função para atributos do cartão de debito
-        
+
         long aux1;
-        String aux2; 
+        String aux2;
         int aux3;
 
         System.out.println("Informe o Número do Cartao de Debito: ");
@@ -117,8 +117,8 @@ public class Pagamento {
                 + "Transferencia Bancaria(5).\n");
     }
 
-    public void setPagamento(){
-        
+    public void setPagamento() throws Exception{
+
         double v;
 
         System.out.println("Informe o Valor da Compra: ");
@@ -129,7 +129,7 @@ public class Pagamento {
         int p;
 
         while(true){
-            
+
             M_Inicial();
             p = input.nextInt();
             input.nextLine();
@@ -138,7 +138,7 @@ public class Pagamento {
                 System.out.println("Digite Novamente");
             }else{
                 break;
-            } 
+            }
         }
         if(p == 1){
             double v2;
@@ -150,14 +150,13 @@ public class Pagamento {
         }else if(p == 3){
             setAtriCCred();
         }else if(p == 4){
-            System.out.println("Chaves Pix da Loja Super Estoque:"); 
-            System.out.println("314159265"); 
-            System.out.println("superestoque@gmail.com"); 
+            System.out.println("Chaves Pix da Loja Super Estoque:");
+            System.out.println("314159265");
+            System.out.println("superestoque@gmail.com");
         }else{
-            System.out.println("Banco: DELL"); 
-            System.out.println("Agencia: 2023"); 
-            System.out.println("Numero da Conta: 27182-8"); 
+            System.out.println("Banco: DELL");
+            System.out.println("Agencia: 2023");
+            System.out.println("Numero da Conta: 27182-8");
         }
     }
-
 }
