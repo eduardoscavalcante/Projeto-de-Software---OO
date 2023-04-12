@@ -37,5 +37,4 @@ public class controllerAddFuncionario {
     void voltarFuncionario(ActionEvent event) {
         App.changeScreen("funcionario");
     }
-
 }

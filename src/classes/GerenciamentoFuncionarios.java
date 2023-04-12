@@ -106,6 +106,10 @@ public class GerenciamentoFuncionarios {
 		System.out.println("*  [2] Gerente                        *");
 	}
 
+	public void addVendedor(Funcionarios v){
+		funcionarios.add(v);
+	}
+
 	public void gerenciamentoCargo() throws Exception{
 
 		Scanner input = new Scanner(System.in);

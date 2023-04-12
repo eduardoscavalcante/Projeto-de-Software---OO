@@ -21,7 +21,7 @@ public class controllerFuncionario {
 
     @FXML
     void addBotao(ActionEvent event) {
-        App.changeScreen("add_funcionario");
+        App.changeScreen("selecionar_funcionario");
     }
 
     @FXML

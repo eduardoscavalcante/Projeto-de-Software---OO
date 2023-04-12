@@ -191,6 +191,9 @@ public class App extends Application{
     private static Scene telaEditFuncionarios;
     private static Scene telaRemoveFuncionario;
     private static Scene telaMovimentacao;
+    private static Scene telaSelecionarFunc;
+    private static Scene telaAddVendedor;
+    private static Scene telaAddGerente;
 
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
@@ -235,6 +238,18 @@ public class App extends Application{
         FXMLLoader fxmlLoader10 = new FXMLLoader(getClass().getResource("/view/movimentacao/movimentacao.fxml"));
         Parent root10 = fxmlLoader10.load();
         telaMovimentacao = new Scene(root10);
+            //tela de selecionar tipo de funcionario
+        FXMLLoader fxmlLoader11 = new FXMLLoader(getClass().getResource("/view/Funcionarios/selecFuncionario.fxml"));
+        Parent root11 = fxmlLoader11.load();
+        telaSelecionarFunc = new Scene(root11);
+            //tela de adicionar vendedor
+        FXMLLoader fxmlLoader12 = new FXMLLoader(getClass().getResource("/view/Funcionarios/add-vendedor.fxml"));
+        Parent root12 = fxmlLoader12.load();
+        telaAddVendedor = new Scene(root12);
+            //tela de adicionar gerente
+        FXMLLoader fxmlLoader13 = new FXMLLoader(getClass().getResource("/view/Funcionarios/add-gerente.fxml"));
+        Parent root13 = fxmlLoader13.load();
+        telaAddGerente = new Scene(root13);
         
 
         primaryStage.setTitle("Sistema de gerenciamento de produtos");
@@ -275,6 +290,15 @@ public class App extends Application{
                 break;
             case "movimentacao":
                 stage.setScene(telaMovimentacao);
+                break;
+            case "selecionar_funcionario":
+                stage.setScene(telaSelecionarFunc);
+                break;
+            case "add_vendedor":
+                stage.setScene(telaAddVendedor);
+                break;
+            case "add_gerente":
+                stage.setScene(telaAddGerente);
                 break;
 
                 
