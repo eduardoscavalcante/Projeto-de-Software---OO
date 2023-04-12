@@ -84,7 +84,11 @@ public class App {
                     break;
                 case 2: //adiciona novo funcionário
                     System.out.println();
-                    gf.gerenciamentoCargo();
+                    try {
+                        gf.gerenciamentoCargo();
+                    }catch(Exception e){
+                        System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
+                    }
                     System.out.println();
                     option = startOptions();
                     break;
