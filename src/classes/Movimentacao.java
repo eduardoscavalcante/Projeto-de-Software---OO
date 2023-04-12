@@ -121,7 +121,7 @@ public class Movimentacao implements Base{
         input.nextLine();
     }
 
-    public void adicionar() {// Adição de uma movimentacao
+    public void adicionar() throws Exception {// Adição de uma movimentacao
 
         int aux1;
         String aux2;
@@ -161,7 +161,7 @@ public class Movimentacao implements Base{
                 + "Destino do Produto(5);\n" + "Origem do Produto(6);\n" + "Data da Movimentação do Produto(7);\n" + "Sair(8).");
     }
 
-    public void editar() {// Alterar detalhes de uma movimentacao
+    public void editar() throws Exception{// Alterar detalhes de uma movimentacao
 
         int opcao = 1;
         int aux1;
