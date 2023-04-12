@@ -28,7 +28,11 @@ public class GerenciamentoFuncionarios {
 		{
 			int idteste = funcionarios.get(i).getId();
 			if (idteste == busca) {
-				funcionarios.get(i).editar();
+				try{
+					funcionarios.get(i).editar();
+				}catch(Exception e){
+					System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
+				}
 				achou=1;
 				break;
 			}
@@ -102,7 +106,7 @@ public class GerenciamentoFuncionarios {
 		System.out.println("*  [2] Gerente                        *");
 	}
 
-	public void gerenciamentoCargo() {
+	public void gerenciamentoCargo() throws Exception{
 
 		Scanner input = new Scanner(System.in);
 

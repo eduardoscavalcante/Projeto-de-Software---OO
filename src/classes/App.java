@@ -92,7 +92,11 @@ public class App extends Application{
                     break;
                 case 2: //adiciona novo funcionário
                     System.out.println();
-                    gf.gerenciamentoCargo();
+                    try {
+                        gf.gerenciamentoCargo();
+                    }catch(Exception e){
+                        System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
+                    }
                     System.out.println();
                     option = startOptions();
                     break;
@@ -135,7 +139,11 @@ public class App extends Application{
                     break;
                 case 8: // Realizar Pagamento
                     System.out.println();
-                    pag.setPagamento();
+                    try{
+                        pag.setPagamento();
+                    }catch(Exception e){
+                        System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
+                    }
                     System.out.println();
                     option = startOptions();
                     break;
