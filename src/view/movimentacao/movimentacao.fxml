@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controllerMovimentacao">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" />
       <AnchorPane prefHeight="439.0" prefWidth="314.0" scaleShape="false">
@@ -20,7 +20,7 @@
                   <Font name="Tahoma Bold" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="-14.0" layoutY="3.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: trnasparent; -fx-cursor: hand;" text="Voltar" textFill="#64a8bf">
+            <Button fx:id="botaoVoltar" layoutX="-14.0" layoutY="3.0" mnemonicParsing="false" onAction="#voltarMain" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: trnasparent; -fx-cursor: hand;" text="Voltar" textFill="#64a8bf">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -29,17 +29,17 @@
                </graphic>
             </Button>
             <Line endX="100.0" layoutX="314.0" layoutY="57.0" startX="-100.0" stroke="#64a8bf" />
-            <Button layoutX="148.0" layoutY="220.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #64A8BF; -fx-cursor: hand;" text="Adicionar" textFill="WHITE">
+            <Button fx:id="botaoAdicionar" layoutX="148.0" layoutY="220.0" mnemonicParsing="false" onAction="#addBotao" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #64A8BF; -fx-cursor: hand;" text="Adicionar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="265.0" layoutY="220.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #64A8BF; -fx-cursor: hand;" text="Editar" textFill="WHITE">
+            <Button fx:id="botaoEditar" layoutX="265.0" layoutY="220.0" mnemonicParsing="false" onAction="#editBotao" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #64A8BF; -fx-cursor: hand;" text="Editar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="381.0" layoutY="220.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #64A8BF; -fx-cursor: hand;" text="Remover" textFill="WHITE">
+            <Button fx:id="botaoRemover" layoutX="381.0" layoutY="220.0" mnemonicParsing="false" onAction="#removeBotao" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #64A8BF; -fx-cursor: hand;" text="Remover" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

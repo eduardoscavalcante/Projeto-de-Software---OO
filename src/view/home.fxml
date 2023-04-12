@@ -23,10 +23,10 @@
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Button>
-                  <Button layoutX="268.0" layoutY="246.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Funcionários" textFill="WHITE" />
-                  <Button layoutX="259.0" layoutY="272.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Movimentações" textFill="WHITE" />
-                  <Button layoutX="261.0" layoutY="298.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Relatório Geral" textFill="WHITE" />
+                  <Button fx:id="botaoFuncionario" layoutX="268.0" layoutY="246.0" mnemonicParsing="false" onAction="#funcionario" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Funcionários" textFill="WHITE" />
+                  <Button fx:id="botaoMovimentacao" layoutX="259.0" layoutY="272.0" mnemonicParsing="false" onAction="#movBotao" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Movimentações" textFill="WHITE" />
                   <Icons525View fill="WHITE" glyphName="USER" layoutX="287.0" layoutY="140.0" selectionStart="1" size="5EM" text="" />
+                  <Button fx:id="botaoRelatorio" layoutX="261.0" layoutY="298.0" mnemonicParsing="false" onAction="#telaRelatorio" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Relatório Geral" textFill="WHITE" />
                   <Label layoutX="282.0" layoutY="146.0" text="Bem-vindo," textFill="WHITE">
                      <font>
                         <Font name="Tahoma" size="14.0" />
@@ -37,7 +37,7 @@
                         <Font name="Tahoma Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Button layoutX="270.0" layoutY="324.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Undo | Redo" textFill="WHITE" />
+                  <Button fx:id="botaoRedo" layoutX="270.0" layoutY="324.0" mnemonicParsing="false" onAction="#telaRedo" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Undo | Redo" textFill="WHITE" />
                </children>
             </AnchorPane>
          </children>

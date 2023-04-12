@@ -7,8 +7,14 @@ import javafx.scene.control.Button;
 
 public class controllerProdutos {
 
+    Gerenciamento gp = new Gerenciamento();
+    Produtos produto = new Produtos();
+
     @FXML
     private Button adicionarProduto;
+
+    @FXML
+    private Button botaoGerar;
 
     @FXML
     private Button editarProduto;
@@ -46,4 +52,10 @@ public class controllerProdutos {
     void backProduto(ActionEvent event) {
         App.changeScreen("produto");
     }
+
+    @FXML
+    void gerarRelatorio(ActionEvent event) {
+        produto.imprimir();
+    }
+
 }

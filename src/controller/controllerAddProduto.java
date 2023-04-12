@@ -66,7 +66,7 @@ public class controllerAddProduto implements Initializable{
     public float precoConvert;
     public int quantidadeConvert;
     //adiciona um produto
-    public void add(ActionEvent event) {
+    public void add(ActionEvent event) throws Exception{
         produto.setId(id);
         id = Integer.parseInt(Identificação.getText());
         precoConvert = Float.parseFloat(preco.getText());
@@ -86,6 +86,5 @@ public class controllerAddProduto implements Initializable{
             alert.setHeaderText("PRODUTO ADICIONADO!");
             alert.show();
         App.changeScreen("produto");
-
     }
 }

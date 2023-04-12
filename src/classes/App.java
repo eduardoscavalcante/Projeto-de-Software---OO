@@ -186,6 +186,11 @@ public class App extends Application{
     private static Scene telaAddProdutos;
     private static Scene telaEditProdutos;
     private static Scene telaRemoveProdutos;
+    private static Scene telaFuncionarios;
+    private static Scene telaAddFuncionarios;
+    private static Scene telaEditFuncionarios;
+    private static Scene telaRemoveFuncionario;
+    private static Scene telaMovimentacao;
 
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
@@ -210,6 +215,26 @@ public class App extends Application{
         FXMLLoader fxmlLoader5 = new FXMLLoader(getClass().getResource("/view/produtos/removeProduto.fxml"));
         Parent root5 = fxmlLoader5.load();
         telaRemoveProdutos = new Scene(root5);
+            //tela de funcionarios
+        FXMLLoader fxmlLoader6 = new FXMLLoader(getClass().getResource("/view/Funcionarios/funcionario.fxml"));
+        Parent root6 = fxmlLoader6.load();
+        telaFuncionarios = new Scene(root6);
+            //tela de adicionar funcionarios
+        FXMLLoader fxmlLoader7 = new FXMLLoader(getClass().getResource("/view/Funcionarios/add-funcionario.fxml"));
+        Parent root7 = fxmlLoader7.load();
+        telaAddFuncionarios = new Scene(root7);
+            //tela de editar funcionario
+        FXMLLoader fxmlLoader8 = new FXMLLoader(getClass().getResource("/view/Funcionarios/editar-funcionario.fxml"));
+        Parent root8 = fxmlLoader8.load();
+        telaEditFuncionarios = new Scene(root8);
+            //tela de remover funcionario
+        FXMLLoader fxmlLoader9 = new FXMLLoader(getClass().getResource("/view/Funcionarios/removeFuncionario.fxml"));
+        Parent root9 = fxmlLoader9.load();
+        telaRemoveFuncionario = new Scene(root9);
+            //tela de movimentações
+        FXMLLoader fxmlLoader10 = new FXMLLoader(getClass().getResource("/view/movimentacao/movimentacao.fxml"));
+        Parent root10 = fxmlLoader10.load();
+        telaMovimentacao = new Scene(root10);
         
 
         primaryStage.setTitle("Sistema de gerenciamento de produtos");
@@ -236,8 +261,24 @@ public class App extends Application{
             case "remove_produto":
                 stage.setScene(telaRemoveProdutos);
                 break;
+            case "funcionario":
+                stage.setScene(telaFuncionarios);
+                break;
+            case "add_funcionario":
+                stage.setScene(telaAddFuncionarios);
+                break;
+            case "edit_funcionario":
+                stage.setScene(telaEditFuncionarios);
+                break;
+            case "remove_funcionario":
+                stage.setScene(telaRemoveFuncionario);
+                break;
+            case "movimentacao":
+                stage.setScene(telaMovimentacao);
+                break;
 
                 
         }
     }
 }
+ 
