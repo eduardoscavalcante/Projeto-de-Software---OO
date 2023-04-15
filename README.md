@@ -84,7 +84,7 @@ Cada atividade possui as seguintes informações:
     
     Funcionarios (Classe Abstrata/Superclasse)
     
-        Construtor: Funcionarios(int id, String nome, String email, long telefone, long cpf, int cargo).
+        # Construtor: Funcionarios(int id, String nome, String email, long telefone, long cpf, int cargo).
         
         # Funções: 
         
@@ -107,7 +107,23 @@ Cada atividade possui as seguintes informações:
         removerProduto: Encontra o ID Desejado no Array List para Remoção de um Produto;
         
         correcaoId: Checa se o ID do Novo Produto ja se Encontra no Array List antes de Adiciona-lo;
+    
+    GerenciamentoFuncionarios (Array List - Funcionarios)
+    
+        # Funções:
         
+        imprimirFuncionarios: Percorrer o Array List Imprimindo as Informações de cada Tipo de Funcionario;
+        
+        editarFuncionarios: Encontra o ID Desejado no Array List para Alterar Detalhes de um Funcionario;
+        
+        removerfuncionarios: Encontra o ID Desejado no Array List para Remoção de um Funcionario;
+        
+        correcaoId: Checa se o ID do Novo Funcionario ja se Encontra no Array List antes de Adiciona-lo;
+        
+        M_Inicial: Função de Apoio para gerenciamentoCargo;
+        
+        gerenciamentoCargo: Adição de um Novo Funcionario baseado no Tipo do Funcionario;
+    
     Movimentacao
     
         # Funções: 
