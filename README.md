@@ -70,6 +70,7 @@ Cada atividade possui as seguintes informações:
         
                         Tipo de Dado Inválido
     
+    
     Base (Interface)
         
         # Funções:
@@ -82,6 +83,7 @@ Cada atividade possui as seguintes informações:
         
         imprimir: Impressão dos Dados;
     
+    
     Funcionarios (Classe Abstrata/Superclasse)
     
         # Construtor: Funcionarios(int id, String nome, String email, long telefone, long cpf, int cargo).
@@ -93,6 +95,7 @@ Cada atividade possui as seguintes informações:
         M_Inicial: Função de Apoio para editar;
     
         editar: Alterar Detalhes de um Funcionario;
+    
     
     Gerenciamento (Array List - Produtos)
     
@@ -108,6 +111,7 @@ Cada atividade possui as seguintes informações:
         
         correcaoId: Checa se o ID do Novo Produto ja se Encontra no Array List antes de Adiciona-lo;
     
+    
     GerenciamentoFuncionarios (Array List - Funcionarios)
     
         # Funções:
@@ -122,7 +126,30 @@ Cada atividade possui as seguintes informações:
         
         M_Inicial: Função de Apoio para gerenciamentoCargo;
         
-        gerenciamentoCargo: Adição de um Novo Funcionario baseado no Tipo do Funcionario;
+        gerenciamentoCargo: Adição de um Novo Funcionario baseado no Tipo do Funcionario no Array List;
+    
+    
+    GerenciamentoMovimentacao (Array List - Movimentação)
+    
+        # Funções:
+        
+        adicionarMovimentacao: Adição de uma Movimentação no Array List;
+        
+        imprimirMovimentacao: Percorrer o Array List Imprimindo as Informações de cada Movimentação;
+        
+        editarMovimentacao: Encontra o ID Desejado no Array List para Alterar Detalhes de uma Movimentação;
+        
+        correcaoId: Checa se o ID da Nova Movimentação ja se Encontra no Array List antes de Adiciona-la;
+        
+    
+    Gerente (Subclasse de Funcionarios)
+    
+        # Construtor: Gerente(int id, String nome, String email, long telefone, long cpf, int cargo, int pesSuperv).
+        
+        # Funções:  
+        
+        getpessoasSupervisionadas: Retorna o Valor da Quantidade de Pessoas Supervisionadas daquele Gerente;
+    
     
     Movimentacao
     
@@ -138,6 +165,7 @@ Cada atividade possui as seguintes informações:
     
         ed_m: Alterar Detalhes de uma Movimentação;
 
+
     Produto
     
         # Funções: 
@@ -150,6 +178,7 @@ Cada atividade possui as seguintes informações:
         
         editar_produto: Alterar Detalhes de um Produto;
         
+        
     Pagamento
     
         # Funções: 
@@ -161,6 +190,7 @@ Cada atividade possui as seguintes informações:
         M_Inicial: Função de Apoio para setPagamento;
         
         setPagamento: Função Principal para Pagamentos.
+        
         
     Login
     
