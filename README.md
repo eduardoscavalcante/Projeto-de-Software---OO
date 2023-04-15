@@ -81,7 +81,7 @@ Cada atividade possui as seguintes informações:
         
         editar: Alterar Detalhes dos Dados Cadastrados;
         
-        imprimir: Impressão dos Dados;
+        imprimir: Impressão dos Dados.
     
     
     Funcionarios (Classe Abstrata/Superclasse)
@@ -94,7 +94,7 @@ Cada atividade possui as seguintes informações:
     
         M_Inicial: Função de Apoio para editar;
     
-        editar: Alterar Detalhes de um Funcionario;
+        editar: Alterar Detalhes de um Funcionario.
     
     
     Gerenciamento (Array List - Produtos)
@@ -109,7 +109,7 @@ Cada atividade possui as seguintes informações:
         
         removerProduto: Encontra o ID Desejado no Array List para Remoção de um Produto;
         
-        correcaoId: Checa se o ID do Novo Produto ja se Encontra no Array List antes de Adiciona-lo;
+        correcaoId: Checa se o ID do Novo Produto ja se Encontra no Array List antes de Adiciona-lo.
     
     
     GerenciamentoFuncionarios (Array List - Funcionarios)
@@ -126,7 +126,7 @@ Cada atividade possui as seguintes informações:
         
         M_Inicial: Função de Apoio para gerenciamentoCargo;
         
-        gerenciamentoCargo: Adição de um Novo Funcionario baseado no Tipo do Funcionario no Array List;
+        gerenciamentoCargo: Adição de um Novo Funcionario baseado no Tipo do Funcionario no Array List.
     
     
     GerenciamentoMovimentacao (Array List - Movimentação)
@@ -139,7 +139,7 @@ Cada atividade possui as seguintes informações:
         
         editarMovimentacao: Encontra o ID Desejado no Array List para Alterar Detalhes de uma Movimentação;
         
-        correcaoId: Checa se o ID da Nova Movimentação ja se Encontra no Array List antes de Adiciona-la;
+        correcaoId: Checa se o ID da Nova Movimentação ja se Encontra no Array List antes de Adiciona-la.
         
     
     Gerente (Subclasse de Funcionarios)
@@ -150,6 +150,7 @@ Cada atividade possui as seguintes informações:
         
         getpessoasSupervisionadas: Retorna o Valor da Quantidade de Pessoas Supervisionadas daquele Gerente;
     
+        imprimir (Sobrescrita de Metodo): Impressão dos Dados de um Gerente.
     
     Movimentacao
     
@@ -163,7 +164,7 @@ Cada atividade possui as seguintes informações:
     
         M_Inicial: Função de Apoio para ed_m;
     
-        ed_m: Alterar Detalhes de uma Movimentação;
+        ed_m: Alterar Detalhes de uma Movimentação.
 
 
     Produto
@@ -176,7 +177,7 @@ Cada atividade possui as seguintes informações:
         
         M_Inicial: Função de Apoio para editar_produto;
         
-        editar_produto: Alterar Detalhes de um Produto;
+        editar_produto: Alterar Detalhes de um Produto.
         
         
     Pagamento
