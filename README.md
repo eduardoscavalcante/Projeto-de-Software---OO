@@ -152,7 +152,19 @@ Cada atividade possui as seguintes informações:
     
         imprimir (Sobrescrita de Metodo): Impressão dos Dados de um Gerente.
     
-    Movimentacao
+    
+    Login
+    
+        # Funções: 
+        
+        add_login: Função para Cadastrar Novo Login;
+        
+        recSenha(): Função para Recuperar Senha;
+        
+        acesso() Função para Acessar o Sistema.
+        
+        
+    Movimentacao (Implementa Base)
     
         # Funções: 
         
@@ -192,16 +204,6 @@ Cada atividade possui as seguintes informações:
         
         setPagamento: Função Principal para Pagamentos.
         
-        
-    Login
-    
-        # Funções: 
-        
-        add_login: Função para Cadastrar Novo Login;
-        
-        recSenha(): Função para Recuperar Senha;
-        
-        acesso() Função para Acessar o Sistema.
         
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
