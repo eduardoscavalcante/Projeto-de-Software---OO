@@ -70,19 +70,29 @@ Cada atividade possui as seguintes informações:
         
                         Tipo de Dado Inválido
     
-    Funcionarios
+    Base (Interface)
+        
+        # Funções:
+        
+        M_Inicial: Função de Apoio para editar;
+        
+        adicionar: Adição de Dados;
+        
+        editar: Alterar Detalhes dos Dados Cadastrados;
+        
+        imprimir: Impressão dos Dados
     
+    Funcionarios (Classe Abstrata/Superclasse)
+    
+        Construtor: Funcionarios(int id, String nome, String email, long telefone, long cpf, int cargo).
+        
         # Funções: 
         
-        imp_e: Impressão dos Dados de um Funcionario;
+        imprimir (Metodo Abstrato): Impressão dos Dados de um Funcionario;
     
-        add_e: Adição de um Funcionario;
+        M_Inicial: Função de Apoio para editar;
     
-        rem_e: Remoção de um Funcionario;
-    
-        M_Inicial: Função de Apoio para ed_e;
-    
-        ed_e: Alterar Detalhes de um Funcionario;
+        editar: Alterar Detalhes de um Funcionario;
 
     Movimentacao
     
