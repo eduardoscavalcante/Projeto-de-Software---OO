@@ -168,30 +168,19 @@ Cada atividade possui as seguintes informações:
     
         # Funções: 
         
-        imp_m: Impressão dos Dados de uma Movimentação;
+        getCategoriaString: Função de Apoio para imprimir;
+        
+        imprimir: Impressão dos Dados de uma Movimentação;
     
-        add_m: Adição de uma Movimentação;
+        adicionar: Adição de uma Movimentação;
     
-        CategoriaProduto: Função de Apoio para add_m e ed_m;
+        CategoriaProduto: Função de Apoio para adicionar e editar;
     
-        M_Inicial: Função de Apoio para ed_m;
+        M_Inicial: Função de Apoio para editar;
     
-        ed_m: Alterar Detalhes de uma Movimentação.
+        editar: Alterar Detalhes de uma Movimentação.
 
 
-    Produto
-    
-        # Funções: 
-        
-        add_produto: Adição de um Produto;
-        
-        remover_produto: Remoção de um Produto;
-        
-        M_Inicial: Função de Apoio para editar_produto;
-        
-        editar_produto: Alterar Detalhes de um Produto.
-        
-        
     Pagamento
     
         # Funções: 
@@ -203,6 +192,40 @@ Cada atividade possui as seguintes informações:
         M_Inicial: Função de Apoio para setPagamento;
         
         setPagamento: Função Principal para Pagamentos.
+        
+        
+    Produtos (Implementa Base)
+    
+        # Funções: 
+        
+        getCategoriaString: Função de Apoio para imprimir;
+        
+        imprimir: Impressão dos Dados de um Produto;
+        
+        CategoriaProduto: Função de Apoio para adicionar e editar;
+        
+        adicionar: Adição de um Produto;
+        
+        remover_produto: Remoção de um Produto;
+        
+        M_Inicial: Função de Apoio para editar_produto;
+        
+        editar: Alterar Detalhes de um Produto.
+        
+ 
+    Vendedor (Subclasse de Funcionarios)
+    
+        # Construtor: Vendedor(int id, String nome, String email, long telefone, long cpf, int cargo, int metaVendas).
+        
+        # Funções:  
+        
+        getpessoasSupervisionadas: Retorna o Valor da Meta de Vendas daquele Vendedor;
+    
+        imprimir (Sobrescrita de Metodo): Impressão dos Dados de um Vendedor.
+        
+        
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Tratamento de Exceções
         
         
 
