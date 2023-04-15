@@ -80,7 +80,7 @@ Cada atividade possui as seguintes informações:
         
         editar: Alterar Detalhes dos Dados Cadastrados;
         
-        imprimir: Impressão dos Dados
+        imprimir: Impressão dos Dados;
     
     Funcionarios (Classe Abstrata/Superclasse)
     
@@ -93,7 +93,21 @@ Cada atividade possui as seguintes informações:
         M_Inicial: Função de Apoio para editar;
     
         editar: Alterar Detalhes de um Funcionario;
-
+    
+    Gerenciamento (Array List - Produtos)
+    
+        # Funções: 
+        
+        adicionarProdutos: Adição de um Produto no Array List;
+        
+        imprimirProdutos: Percorrer o Array List Imprimindo as Informações de cada Produto;
+        
+        editarProdutos: Encontra o ID Desejado no Array List para Alterar Detalhes de um Produto;
+        
+        removerProduto: Encontra o ID Desejado no Array List para Remoção de um Produto;
+        
+        correcaoId: Checa se o ID do Novo Produto ja se Encontra no Array List antes de Adiciona-lo;
+        
     Movimentacao
     
         # Funções: 
