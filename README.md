@@ -227,6 +227,11 @@ Cada atividade possui as seguintes informações:
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Tratamento de Exceções
     
-    Algumas Exceções mais Simples eram Tratadas pelo Switch e pela Função input.nextLine, dessa forma ate o presente momento so foi Identificada uma Exceção em todo o projeto comum na maioria das classes -- InputMismatchException -- Sendo tratada na Função Main e em algumas das Funções dos Array List
+    Algumas Exceções mais Simples eram Tratadas pelo Switch e pela Função input.nextLine, 
+    dessa forma ate o presente momento so foi Identificada uma Exceção em todo o projeto comum na maioria das classes 
+    
+    # InputMismatchException 
+    
+    Sendo tratada na Função Main e em algumas das Funções dos Array List.
         
 
