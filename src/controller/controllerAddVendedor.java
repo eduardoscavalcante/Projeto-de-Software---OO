@@ -1,7 +1,5 @@
 package controller;
 
-import javax.sql.rowset.spi.SyncResolver;
-
 import classes.*;
 
 import javafx.event.ActionEvent;

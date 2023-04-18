@@ -5,6 +5,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+//imports para gerar relatório
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 
 public class controllerHome {
 
@@ -55,11 +63,30 @@ public class controllerHome {
         alert.show();
     }
 
+    // Gerar PDF de Relatório
     @FXML
     void telaRelatorio(ActionEvent event) {
+
+        Document document = new Document();
+        try {
+
+            PdfWriter.getInstance(document, new FileOutputStream("C:/Users/Ronaldo/Documents/arquivos-gerados/RelatorioSGP.pdf"));
+            document.open();
+
+            // adicionando um parágrafo no documento
+            document.add(new Paragraph("Gerando PDF - BIG TESTE"));
+  }
+        catch(DocumentException de) {
+            System.err.println(de.getMessage());
+        }
+        catch(IOException ioe) {
+            System.err.println(ioe.getMessage());
+        }
+        document.close();
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Gerenciamento");
-        alert.setHeaderText("Em reforma!");
+        alert.setTitle("Relatório Geral");
+        alert.setHeaderText("Relatório Gerado em PDF!");
         alert.show();
     }
 }
