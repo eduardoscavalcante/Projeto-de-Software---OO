@@ -280,4 +280,7 @@ Cada atividade possui as seguintes informações:
 
     # Modificações: 
         
-        remover_produto - excluida pois se tornou inutil com a remoção de produto no array list
+        remover_produto - Excluida pois se tornou inutil com a remoção de produto no array list
+        
+        Long Method e Speculative Generality - Corrigidas
+        
