@@ -72,7 +72,7 @@ public class Pagamento {
         return cvcCartaoDebito;
     }
 
-    public void setAtriCCred(){// função para atributos do cartão de credito
+    public void setAtributosCartaoCredito(){ // função para atributos do cartão de credito
 
         long aux1;
         String aux2;
@@ -91,7 +91,7 @@ public class Pagamento {
         setCVCCartCred(aux3);
     }
 
-    public void setAtriCDeb(){// função para atributos do cartão de debito
+    public void setAtributosCartaoDebito(){ // função para atributos do cartão de debito
 
         long aux1;
         String aux2;
@@ -127,36 +127,48 @@ public class Pagamento {
         setValor(v);
 
         int p;
+        boolean flag = true;
 
-        while(true){
+        while(flag){
 
             M_Inicial();
             p = input.nextInt();
             input.nextLine();
-            if((p < 1) || (p > 5)){
-                System.out.println("Forma de Pagamento Invalida!!");
-                System.out.println("Digite Novamente");
-            }else{
-                break;
+            switch(p){
+                case 1:
+                    double v2;
+                    System.out.println("Informe o Valor Recebido: ");
+                    v2 = input.nextDouble();
+                    System.out.println("Seu Troco é de: " + (v2 - v));
+                    flag = false;
+                    break;
+                case 2:
+                    setAtributosCartaoDebito();
+                    flag = false;
+                    break;
+                case 3:
+                    setAtributosCartaoCredito();
+                    flag = false;
+                    break;
+                case 4:
+                    System.out.println("Chaves Pix da Loja Super Estoque:");
+                    System.out.println("314159265");
+                    System.out.println("superestoque@gmail.com");
+                    flag = false;
+                    break;
+                case 5:
+                    System.out.println("Banco: DELL");
+                    System.out.println("Agencia: 2023");
+                    System.out.println("Numero da Conta: 27182-8");
+                    flag = false;
+                    break;
+                default:
+                    System.out.println("Forma de Pagamento Invalida!!");
+                    System.out.println("Digite Novamente");
+                    System.out.println();
             }
         }
-        if(p == 1){
-            double v2;
-            System.out.println("Informe o Valor Recebido: ");
-            v2 = input.nextDouble();
-            System.out.println("Seu Troco é de: " + (v2 - v));
-        }else if(p == 2){
-            setAtriCDeb();
-        }else if(p == 3){
-            setAtriCCred();
-        }else if(p == 4){
-            System.out.println("Chaves Pix da Loja Super Estoque:");
-            System.out.println("314159265");
-            System.out.println("superestoque@gmail.com");
-        }else{
-            System.out.println("Banco: DELL");
-            System.out.println("Agencia: 2023");
-            System.out.println("Numero da Conta: 27182-8");
-        }
+        System.out.println();
+        System.out.println("Volte Sempre, Tenha um Bom Dia!");
     }
 }
