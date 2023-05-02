@@ -13,65 +13,52 @@ public class GerenciamentoFuncionarios {
 		});
 	}
 
-	public void editarFuncionarios() {
+	public int buscaId(){
 		Scanner input = new Scanner(System.in);
 
 		System.out.println("Informe o número do ID a ser localizado: ");
 		int busca;
 		busca = input.nextInt();
-		input.nextLine();
 
-		int i, achou=-1;
+		int i;
 		System.out.println();
 
 		for(i = 0; i < funcionarios.size(); i++)
 		{
 			int idteste = funcionarios.get(i).getId();
 			if (idteste == busca) {
-				try{
-					funcionarios.get(i).editar();
-				}catch(Exception e){
-					System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
-				}
-				achou=1;
-				break;
+				return i;
 			}
 		}
+		return (-1);
+	}
 
-		if (achou==-1){
-			System.out.println("ID do funcionario não encontrado! Tente novamente");
+	public void editarFuncionarios() {
+		int indice = buscaId();
+		if (indice == -1){
+			System.out.println("ID de produto não encontrado! Tente novamente");
 			System.out.println();
+		}else {
+			try {
+				funcionarios.get(indice).editar();
+			}catch(Exception e){
+				System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
+			}
 		}
 	}
 
 	public void removerfuncionarios() {
-		Scanner input = new Scanner(System.in);
-
-		System.out.println("Informe o número do ID do funcionario a ser removido: ");
-		int busca;
-		busca = input.nextInt();
-		input.nextLine();
-
-		int i, achou=-1;
-		System.out.println();
-
-		for(i = 0; i < funcionarios.size(); i++)
-		{
-			int idteste = funcionarios.get(i).getId();
-			if (idteste == busca) {
-				funcionarios.remove(i);
-				System.out.println("Funcionario removido com sucesso!");
-				System.out.println();
-				achou=1;
-				break;
-			}
-		}
-
-		if (achou==-1){
-			System.out.println("ID do funcionario não encontrado! Tente novamente");
+		int indice = buscaId();
+		if (indice == -1){
+			System.out.println("ID de produto não encontrado! Tente novamente");
+			System.out.println();
+		}else {
+			funcionarios.remove(indice);
+			System.out.println("Produto removido com sucesso!");
 			System.out.println();
 		}
 	}
+	
 	//CORREÇÃO ID
 	public Funcionarios correcaoId(Funcionarios f) {
 
@@ -148,7 +135,6 @@ public class GerenciamentoFuncionarios {
 					Funcionarios v = new Vendedor(id, nome, email, telefone, cpf, cargo, mVendas);
 					correcaoId(v);
 					funcionarios.add(v);
-					//funcionarios.add(new Vendedor(id, nome, email, telefone, cpf, cargo, qntVendas));
 
 					System.out.println("Vendedor "+ nome +" cadastrado com sucesso!");
 					flag = 1;
@@ -175,7 +161,6 @@ public class GerenciamentoFuncionarios {
 					Funcionarios g = new Gerente(id, nome, email, telefone, cpf, cargo, pSuperv);
 					correcaoId(g);
 					funcionarios.add(g);
-					//funcionarios.add(new Gerente(id, nome, email, telefone, cpf, cargo, qntHoras));
 
 					System.out.println("Gerente "+ nome +" cadastrado com sucesso!");
 					flag = 1;
