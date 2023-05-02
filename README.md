@@ -278,6 +278,6 @@ Cada atividade possui as seguintes informações:
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Padrões de Projeto Implementados
 
-    #Modificações: 
+    # Modificações: 
         
         remover_produto - excluida pois se tornou inutil com a remoção de produto no array list
