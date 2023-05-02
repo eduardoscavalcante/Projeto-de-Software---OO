@@ -288,3 +288,5 @@ Cada atividade possui as seguintes informações:
     Extract Method
     
         Gerenciamento
+        
+        GerenciamentoFuncionarios
