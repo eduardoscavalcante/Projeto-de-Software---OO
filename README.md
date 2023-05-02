@@ -274,5 +274,7 @@ Cada atividade possui as seguintes informações:
         # O nome de um método não revela sua finalidade:
         
             Pagamento: setAtriCCred()e setAtriCDeb()
-
+         
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Padrões de Projeto Implementados
 
