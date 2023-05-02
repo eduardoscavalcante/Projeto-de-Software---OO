@@ -71,13 +71,9 @@ public class Gerenciamento {
 			System.out.println("ID de produto não encontrado! Tente novamente");
 			System.out.println();
 		}else {
-			try {
-				produtos.remove(indice);
-				System.out.println("Produto removido com sucesso!");
-				System.out.println();
-			}catch(Exception e){
-				System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
-			}
+			produtos.remove(indice);
+			System.out.println("Produto removido com sucesso!");
+			System.out.println();
 		}
 	}
 
