@@ -233,5 +233,46 @@ Cada atividade possui as seguintes informações:
     # InputMismatchException 
     
     Sendo tratada na Função Main e em algumas das Funções dos Array List.
+         
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Lista dos Code Smells    
+
+    Duplicated Code
+    
+        # Similaridade entre duas expressões em dois métodos da mesma classe:
+            
+            Gerenciamento: removerProduto(), editarProdutos()
+            
+            GerenciamentoFuncionarios: removerfuncionarios(), editarFuncionarios()
+            
+            Pagamento: setAtriCCred(), setAtriCDeb()
+            
+        # Semelhança entre duas expressões em subclasses:
         
+            Gerente e Vendedor
+            
+        # Semelhança entre códigos em duas classes não relacionadas:
+        
+            Produtos e Movimentacao: CategoriaProduto(), getCategoriaString()
+            
+            Gerenciamento, GerenciamentoFuncionarios, GerenciamentoMovimentacao: correcaoId()
+            
+        # Similaridade entre a lógica condicional aplicada em todo o sistema para lidar com um objeto nulo:
+        
+            Não existe esse Tratamento Atualmente
+    
+    Long Method
+    
+        # A quantidade de instrução switch para despachar e manipular a solicitação:
+        
+            Pagamento: setPagamento()
+            
+            Produtos e Movimentacao: getCategoriaString()
+    
+    Speculative Generality
+    
+        # O nome de um método não revela sua finalidade:
+        
+            Pagamento: setAtriCCred()e setAtriCDeb()
+
 
