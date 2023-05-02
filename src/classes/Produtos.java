@@ -1,6 +1,5 @@
 package classes;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Produtos implements Base{
@@ -108,24 +107,25 @@ public class Produtos implements Base{
     }
 
     public String getCategoriaString(int tipoProduto){//função de apoio
-        if (tipoProduto == 1) {
-            return "Roupa Feminina";
-        } else if (tipoProduto == 2) {
-            return "Roupa Masculina";
-        } else if (tipoProduto == 3) {
-            return "Roupa Infantil";
-        } else if (tipoProduto == 4) {
-            return "Calçados";
-        }else if (tipoProduto == 5) {
-            return "Artigos de Casa";
-        }else if (tipoProduto == 6) {
-            return "Acessórios";
-        }else if (tipoProduto == 7) {
-            return "Eletrônicos";
-        }else if (tipoProduto == 8) {
-            return "Perfumes";
-        }else {
-            return "Tipo Invalido!!";
+        switch(tipoProduto){
+            case 1:
+                return "Roupa Feminina";
+            case 2:
+                return "Roupa Masculina";
+            case 3:
+                return "Roupa Infantil";
+            case 4:
+                return "Calçados";
+            case 5:
+                return "Artigos de Casa";
+            case 6:
+                return "Acessórios";
+            case 7:
+                return "Eletrônicos";
+            case 8:
+                return "Perfumes";
+            default:
+                return "Tipo Invalido!!";
         }
     }
 
@@ -210,26 +210,6 @@ public class Produtos implements Base{
         else{
             setStatus("Esgotado");
         }
-        imprimir();
-    }
-
-    public void remover_produto() {// Remoção de um produto
-
-        int aux1 = -1;
-        String aux2 = null;
-        float aux3 = -1;
-
-        setId(aux1);
-        setNome(aux2);
-        setTamanho(aux2);
-        setCor(aux2);
-        setMarca(aux2);
-        setPreco(aux3);
-        setCategoria(aux1);
-        setFabricante(aux2);
-        setFornecedor(aux2);
-        setQuantidade(aux1);
-        setStatus(aux2);
         imprimir();
     }
 
