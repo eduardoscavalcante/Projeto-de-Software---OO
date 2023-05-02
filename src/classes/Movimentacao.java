@@ -70,25 +70,26 @@ public class Movimentacao implements Base{
         return  dataMovimentacao;
     }
 
-    public String getCategoriaString(int tipoProduto){// função de apoio
-        if (tipoProduto == 1) {
-            return "Roupa Feminina";
-        } else if (tipoProduto == 2) {
-            return "Roupa Masculina";
-        } else if (tipoProduto == 3) {
-            return "Roupa Infantil";
-        } else if (tipoProduto == 4) {
-            return "Calçados";
-        }else if (tipoProduto == 5) {
-            return "Artigos de Casa";
-        }else if (tipoProduto == 6) {
-            return "Acessórios";
-        }else if (tipoProduto == 7) {
-            return "Eletrônicos";
-        }else if (tipoProduto == 8) {
-            return "Perfumes";
-        }else {
-            return "Tipo Invalido!!";
+    public String getCategoriaString(int tipoProduto){//função de apoio
+        switch(tipoProduto){
+            case 1:
+                return "Roupa Feminina";
+            case 2:
+                return "Roupa Masculina";
+            case 3:
+                return "Roupa Infantil";
+            case 4:
+                return "Calçados";
+            case 5:
+                return "Artigos de Casa";
+            case 6:
+                return "Acessórios";
+            case 7:
+                return "Eletrônicos";
+            case 8:
+                return "Perfumes";
+            default:
+                return "Tipo Invalido!!";
         }
     }
 
