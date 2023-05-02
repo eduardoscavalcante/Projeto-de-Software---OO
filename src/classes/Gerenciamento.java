@@ -36,7 +36,6 @@ public class Gerenciamento {
 		System.out.println("Informe o número do ID a ser localizado: ");
 		int busca;
 		busca = input.nextInt();
-		input.nextLine();
 
 		int i;
 		System.out.println();
