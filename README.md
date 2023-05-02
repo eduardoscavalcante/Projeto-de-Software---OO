@@ -284,3 +284,7 @@ Cada atividade possui as seguintes informações:
         
         Long Method e Speculative Generality - Corrigidas
         
+        
+    Extract Method
+    
+        Gerenciamento
