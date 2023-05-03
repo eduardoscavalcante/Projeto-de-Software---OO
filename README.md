@@ -277,16 +277,23 @@ Cada atividade possui as seguintes informações:
          
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Padrões de Projeto Implementados
-
-    # Modificações: 
-        
-        remover_produto - Excluida pois se tornou inutil com a remoção de produto no array list
-        
-        Long Method e Speculative Generality - Corrigidas
-        
-        
+    
     Extract Method
     
         Gerenciamento
         
         GerenciamentoFuncionarios
+        
+        Pagamento
+        
+        
+    # Modificações: 
+        
+        remover_produto - Excluida pois se tornou inutil com a remoção de produto no array list
+        
+        buscaId - adicionado ao Gerenciamento e GerenciamentoFuncionarios (Extract Method)
+        
+        setAtributosCartaoCredito e setAtributosCartaoDebito unificadas (Extract Method)
+        
+        Long Method e Speculative Generality - Corrigidas        
+         
