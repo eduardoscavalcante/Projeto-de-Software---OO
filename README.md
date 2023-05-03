@@ -286,6 +286,10 @@ Cada atividade possui as seguintes informações:
         
         Pagamento
         
+    Extract Class  
+    
+        TipoProduto
+        
         
     # Modificações: 
         
@@ -294,6 +298,8 @@ Cada atividade possui as seguintes informações:
         buscaId - adicionado ao Gerenciamento e GerenciamentoFuncionarios (Extract Method)
         
         setAtributosCartaoCredito e setAtributosCartaoDebito unificadas (Extract Method)
+        
+        getCategoriaString e CategoriaProduto unificadas e movidas pra uma nova classe (Extract Class)
         
         Long Method e Speculative Generality - Corrigidas        
          
