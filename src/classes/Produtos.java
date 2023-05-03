@@ -10,13 +10,14 @@ public class Produtos implements Base{
     public String cor;
     public String marca;
     public float preco;
-    public int categoria;
+    public String categoria;
     public String fabricante;
     public String fornecedor;
     public int quantidade;
     public String status;
 
     Scanner input = new Scanner(System.in);
+    TipoProduto tp = new TipoProduto();
 
     public void setId(int id) {
         this.id = id;
@@ -66,11 +67,11 @@ public class Produtos implements Base{
         return preco;
     }
 
-    public void setCategoria(int categoria){
+    public void setCategoria(String categoria){
         this.categoria = categoria;
     }
 
-    public int getCategoria(){
+    public String getCategoria(){
         return categoria;
     }
 
@@ -105,30 +106,7 @@ public class Produtos implements Base{
     public String getStatus(){
         return status;
     }
-
-    public String getCategoriaString(int tipoProduto){//função de apoio
-        switch(tipoProduto){
-            case 1:
-                return "Roupa Feminina";
-            case 2:
-                return "Roupa Masculina";
-            case 3:
-                return "Roupa Infantil";
-            case 4:
-                return "Calçados";
-            case 5:
-                return "Artigos de Casa";
-            case 6:
-                return "Acessórios";
-            case 7:
-                return "Eletrônicos";
-            case 8:
-                return "Perfumes";
-            default:
-                return "Tipo Invalido!!";
-        }
-    }
-
+    
     public void imprimir() {
 
         if (getId() != -1) {
@@ -139,7 +117,7 @@ public class Produtos implements Base{
             System.out.println("Cor: " + getCor());
             System.out.println("Marca: " + getMarca());
             System.out.println("Preço: " + getPreco());
-            System.out.println("Categoria: " + getCategoriaString(getCategoria()));
+            System.out.println("Categoria: " + getCategoria());
             System.out.println("Fabricante: " + getFabricante());
             System.out.println("Fornecedor: " + getFornecedor());
             System.out.println("Quantidade: " + getQuantidade());
@@ -150,17 +128,6 @@ public class Produtos implements Base{
             System.out.println("Produto não existente");
         }
         System.out.println();
-    }
-
-    public void CategoriaProduto() {// função de apoio
-
-        int aux1;
-        System.out.println("Informe a Categoria do Produto(somente numeros):");
-        System.out.println("Roupa Feminina(1);\n" + "Roupa Masculina(2);\n" + "Roupa Infantil(3);\n"
-                + "Calçados(4);\n" + "Artigos de Casa(5);\n" + "Acessórios(6);\n" + "Eletrônicos(7);\n" + "Perfumes(8)");
-        aux1 = input.nextInt();
-        setCategoria(aux1);
-        input.nextLine();
     }
 
     public void adicionar () throws Exception {// Adição de um produto
@@ -190,7 +157,8 @@ public class Produtos implements Base{
         input.nextLine();
         setPreco(aux3);
         //Categoria do Produto
-        CategoriaProduto();
+        aux2 = tp.CategoriaProduto();
+        setCategoria(aux2);
         //Categoria do Produto
         System.out.println("Informe o fabricante: ");
         aux2 = input.nextLine();
@@ -276,7 +244,8 @@ public class Produtos implements Base{
                 case 7:
                     System.out.println("Categoria Atual: " + getCategoria());
                     //Categoria do Produto
-                    CategoriaProduto();
+                    aux2 = tp.CategoriaProduto();
+                    setCategoria(aux2);
                     //Categoria do Produto
                     System.out.println();
                     break;
