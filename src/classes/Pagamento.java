@@ -5,12 +5,10 @@ import java.util.Scanner;
 public class Pagamento {
 
     private double valor;
-    private long nCartaoCredito;
-    private String validadeCartaoCredito;
-    private int cvcCartaoCredito;
-    private long nCartaoDebito;
-    private String validadeCartaoDebito;
-    private int cvcCartaoDebito;
+    private long nCartao;
+    private String validadeCartao;
+    private int cvcCartao;
+    private String tipoCartao;
 
     Scanner input = new Scanner(System.in);
 
@@ -22,92 +20,59 @@ public class Pagamento {
         return valor;
     }
 
-    //Cartao de Credito
-    public void setNCartCred(long cart){
-        this.nCartaoCredito = cart;
+    public void setNCartao(long cart){
+        this.nCartao = cart;
     }
 
-    public long getNCartCred(){
-        return nCartaoCredito;
+    public long getNCartao(){
+        return nCartao;
     }
 
-    public void setValidadeCartCred(String vldd){
-        this.validadeCartaoCredito = vldd;
+    public void setValidadeCartao(String vldd){
+        this.validadeCartao = vldd;
     }
 
-    public String getValidadeCartCred(){
-        return validadeCartaoCredito;
+    public String getValidadeCartao(){
+        return validadeCartao;
     }
 
-    public void setCVCCartCred(int cvc){
-        this.cvcCartaoCredito = cvc;
+    public void setCVCCartao(int cvc){
+        this.cvcCartao = cvc;
     }
 
-    public int getCVCCartCred(){
-        return cvcCartaoCredito;
+    public int getCVCCartao(){
+        return cvcCartao;
     }
 
-    //Cartao de Debito
-    public void setNCartDebito(long cart){
-        this.nCartaoDebito = cart;
+    public void setTipoCartao(int t){
+        if (t == 2){
+            this.tipoCartao = "Debito";
+        }else{// (t == 3)
+            this.tipoCartao = "Credito";
+        }
     }
 
-    public long getNCartDebito(){
-        return nCartaoDebito;
+    public String getTipoCartao(){
+        return tipoCartao;
     }
 
-    public void setValidadeCartDebito(String vldd){
-        this.validadeCartaoDebito = vldd;
-    }
-
-    public String getValidadeCartDebito(){
-        return validadeCartaoDebito;
-    }
-
-    public void setCVCCartDebito(int cvc){
-        this.cvcCartaoDebito = cvc;
-    }
-
-    public int getCVCCartDebito(){
-        return cvcCartaoDebito;
-    }
-
-    public void setAtributosCartaoCredito(){ // função para atributos do cartão de credito
+    public void setAtributosCartao(){ // função para atributos do cartão
 
         long aux1;
         String aux2;
         int aux3;
 
-        System.out.println("Informe o Número do Cartao de Credito: ");
+        System.out.println("Informe o Número do Cartao de " + getTipoCartao() + " : ");
         aux1 = input.nextLong();
         input.nextLine();
-        setNCartCred(aux1);
-        System.out.println("Informe a Validade do Cartao de Credito: ");
+        setNCartao(aux1);
+        System.out.println("Informe a Validade do Cartao de " + getTipoCartao() + " : ");
         aux2 = input.nextLine();
-        setValidadeCartCred(aux2);
-        System.out.println("Informe o CVC do Cartao de Credito: ");
+        setValidadeCartao(aux2);
+        System.out.println("Informe o CVC do Cartao de " + getTipoCartao() + " : ");
         aux3 = input.nextInt();
         input.nextLine();
-        setCVCCartCred(aux3);
-    }
-
-    public void setAtributosCartaoDebito(){ // função para atributos do cartão de debito
-
-        long aux1;
-        String aux2;
-        int aux3;
-
-        System.out.println("Informe o Número do Cartao de Debito: ");
-        aux1 = input.nextLong();
-        input.nextLine();
-        setNCartDebito(aux1);
-        System.out.println("Informe a Validade do Cartao de Debito: ");
-        aux2 = input.nextLine();
-        setValidadeCartDebito(aux2);
-        System.out.println("Informe o CVC do Cartao de Debito: ");
-        aux3 = input.nextInt();
-        input.nextLine();
-        setCVCCartDebito(aux3);
+        setCVCCartao(aux3);
     }
 
     public void M_Inicial() {// função de apoio
@@ -142,12 +107,14 @@ public class Pagamento {
                     System.out.println("Seu Troco é de: " + (v2 - v));
                     flag = false;
                     break;
-                case 2:
-                    setAtributosCartaoDebito();
+                case 2: // debito
+                    setTipoCartao(2);
+                    setAtributosCartao();
                     flag = false;
                     break;
-                case 3:
-                    setAtributosCartaoCredito();
+                case 3: // credito
+                    setTipoCartao(3);
+                    setAtributosCartao();
                     flag = false;
                     break;
                 case 4:
@@ -169,6 +136,6 @@ public class Pagamento {
             }
         }
         System.out.println();
-        System.out.println("Volte Sempre, Tenha um Bom Dia!");
+        System.out.println("Tenha um Bom Dia, Volte Sempre!");
     }
 }
