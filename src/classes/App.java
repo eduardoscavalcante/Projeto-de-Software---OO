@@ -3,8 +3,6 @@ package classes;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-//import teste.CadastroProduto;
-
 public class App {
 
     Scanner input = new Scanner(System.in);
@@ -43,7 +41,7 @@ public class App {
             opt = startOptions();
         }
 
-        return opt; // opção selecionada
+        return opt;
     }
 
     public static void main(String[] args) {
@@ -54,7 +52,8 @@ public class App {
         Pagamento pag = new Pagamento();
         Login log = new Login();
 
-        Gerenciamento gp = new Gerenciamento(); //onde está a lista
+        //Array_List
+        Gerenciamento gp = new Gerenciamento();
         GerenciamentoFuncionarios gf = new GerenciamentoFuncionarios();
         GerenciamentoMovimentacao gm = new GerenciamentoMovimentacao();
 
@@ -67,7 +66,7 @@ public class App {
 
         int option = startOptions();
 
-        while(option != 0){ // enquanto não for dado o comando de parar o programa
+        while(option != 0){
             switch(option){
                 case 1: // adiciona novo produto
                     System.out.println();
@@ -82,7 +81,7 @@ public class App {
                     produto = new Produtos();
                     option = startOptions();
                     break;
-                case 2: //adiciona novo funcionário
+                case 2: // adiciona novo funcionário
                     System.out.println();
                     try {
                         gf.gerenciamentoCargo();
@@ -92,19 +91,19 @@ public class App {
                     System.out.println();
                     option = startOptions();
                     break;
-                case 3: //edita produto existente
+                case 3: // edita produto existente
                     System.out.println();
                     gp.editarProdutos();
                     System.out.println();
                     option = startOptions();
                     break;
-                case 4: //edita funcionário existente
+                case 4: // edita funcionário existente
                     System.out.println();
                     gf.editarFuncionarios();
                     System.out.println();
                     option = startOptions();
                     break;
-                case 5: //remove produto existente
+                case 5: // remove produto existente
                     System.out.println();
                     gp.removerProduto();
                     System.out.println();
@@ -158,7 +157,7 @@ public class App {
                     System.out.println("*           RELATÓRIO DO GERAL:           *");
                     System.out.println("*******************************************");
                     System.out.println();
-                    gp.imprimirProdutos(); //imprime as informações de todos os produtos existentes
+                    gp.imprimirProdutos();
                     gm.imprimirMovimentacao();
                     gf.imprimirFuncionarios();
                     System.out.println();
