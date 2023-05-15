@@ -1,23 +1,14 @@
 package classes;
 
-import java.util.Scanner;
+public class EstadoDisponivel implements Estado{
 
-public class EstadoDisponivel extends Produtos implements Estado{
-
-    public String status;
-
-    public void setStatus(String status){
-        this.status = status;
+    @Override
+    public void adicionaProduto(Produtos p) {
+        p.setStatus("Disponivel");
     }
 
-    public String getStatus(){
-        return status;
-    }
+    @Override
+    public void removeProduto(Produtos p) {
 
-    public void adicionar(){
-        super.adicionar ();
-        if(super.getQuantidade() > 50){
-            setStatus("Disponivel");//EstadoDisponivel
-        }
     }
 }
