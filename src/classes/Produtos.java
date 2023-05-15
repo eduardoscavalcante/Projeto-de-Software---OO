@@ -14,7 +14,7 @@ public class Produtos implements Base{
     public String fabricante;
     public String fornecedor;
     public int quantidade;
-    //public String status;
+    public String status;
 
     Scanner input = new Scanner(System.in);
     TipoProduto tp = new TipoProduto();
@@ -99,13 +99,13 @@ public class Produtos implements Base{
         return quantidade;
     }
 
-    /*public void setStatus(String status){
+    public void setStatus(String status){
         this.status = status;
     }
 
     public String getStatus(){
         return status;
-    }*/
+    }
 
     public void imprimir() {
 
@@ -121,7 +121,7 @@ public class Produtos implements Base{
             System.out.println("Fabricante: " + getFabricante());
             System.out.println("Fornecedor: " + getFornecedor());
             System.out.println("Quantidade: " + getQuantidade());
-            //System.out.println("Status do Produto: " + getStatus());
+            System.out.println("Status do Produto: " + getStatus());
             System.out.println("Localidade: Matriz");
             System.out.println("******************************************");
         } else {
@@ -170,15 +170,6 @@ public class Produtos implements Base{
         aux1 = input.nextInt();
         input.nextLine();
         setQuantidade(aux1);
-
-        /*if (getQuantidade() > 0){
-            setStatus("Em estoque");
-        }
-
-        else{
-            setStatus("Esgotado");
-        }*/
-        imprimir();
     }
 
     public void M_Inicial() {// função de apoio
@@ -186,8 +177,7 @@ public class Produtos implements Base{
         System.out.println("Informe o campo que deseja alterar:");
         System.out.println("ID(1);\n" + "Nome(2);\n" + "Tamanho(3);\n" +
                 "Cor(4);\n" + "Marca(5);\n" + "Preço(6);\n" + "Categoria(7);\n" +
-                "Fabricante(8);\n" + "Fornecedor(9);\n" + "Quantidade(10);\n" + "Status(11)\n"
-                + "Sair(12).");
+                "Fabricante(8);\n" + "Fornecedor(9);\n" + "Quantidade(10);\n" + "Sair(11).");
     }
 
     public void editar() throws Exception{// Alterar detalhes de um produto
@@ -197,7 +187,7 @@ public class Produtos implements Base{
         String aux2;
         float aux3;
 
-        while (opcao != 12) {
+        while (opcao != 11) {
 
             M_Inicial();
             opcao = input.nextInt();
@@ -268,13 +258,7 @@ public class Produtos implements Base{
                     input.nextLine();
                     System.out.println();
                     break;
-                /*case 11:
-                    System.out.println("Informe o Novo Status (atual: " + getStatus() + "): ");
-                    aux2 = input.nextLine();
-                    setStatus(aux2);
-                    System.out.println();
-                    break;*/
-                case 12:
+                case 11:
                     System.out.println("Modificações Salvas!!");
                     System.out.println();
                     break;
