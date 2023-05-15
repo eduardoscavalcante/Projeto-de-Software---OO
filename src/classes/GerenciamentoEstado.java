@@ -1,33 +1,47 @@
 package classes;
 
-public class GerenciamentoEstado extends Produtos{
+public class GerenciamentoEstado{
 
-    public String status;
+    private Estado estadoAtual;
 
-    public void setStatus(String status){
-        this.status = status;
+    public GerenciamentoEstado() {
+        this.estadoAtual = new EstadoDisponivel();// define o estado inicial do estoque
     }
 
-    public String getStatus(){
-        return status;
+    public void mudarParaEstadoDisponivel() {
+        this.estadoAtual = new EstadoDisponivel();
     }
 
-    public String verificaQuantidade(){
-        if(super.getQuantidade() > 50){
-            return "Disponivel";//EstadoDisponivel
-        }else if(super.getQuantidade() <= 50){
-            return "Poucas Unidades";//EstadoPoucasUnidades
-        }else if(super.getQuantidade() == 0){
-            return"Sem Estoque";//EstadoSemEstoque
+    public void mudarParaEstadoPoucasUnidades() {
+        this.estadoAtual = new EstadoPoucasUnidades();
+    }
+
+    public void mudarParaEstadoSemEstoque() {
+        this.estadoAtual = new EstadoSemEstoque();
+    }
+
+    public void adicionaProduto(Produtos p) {
+        this.estadoAtual.adicionaProduto(p);
+    }
+
+    public void removeProduto(Produtos p) {
+        this.estadoAtual.removeProduto(p);
+    }
+
+    public void verificaQuantidade(Produtos p){
+        if(p.getQuantidade() > 50){
+            mudarParaEstadoDisponivel();//EstadoDisponivel
+        }else if(p.getQuantidade() <= 50 && p.getQuantidade() > 0){
+            mudarParaEstadoPoucasUnidades();//EstadoPoucasUnidades
+        }else{ // if(p.getQuantidade() == 0)
+            mudarParaEstadoSemEstoque() ;//EstadoSemEstoque
         }
     }
-
-    public void adicionar(){
-        super.adicionar();
-        setStatus(verificaQuantidade());
-    }
-
+/*
     public void trocaEstado(){
+        super.editar();
         setStatus(verificaQuantidade());
-    }
+    }*/
+
+
 }
