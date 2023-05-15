@@ -7,6 +7,9 @@ import java.util.ArrayList;
 public class Gerenciamento {
 	List<Produtos> produtos = new ArrayList<>();
 
+	//State
+	GerenciamentoEstado ge = new GerenciamentoEstado();
+
 	public void adicionarProdutos(Produtos cp) {
 		produtos.add(cp);
 	}
@@ -58,6 +61,11 @@ public class Gerenciamento {
 		}else {
 			try {
 				produtos.get(indice).editar();
+				//State
+				ge.verificaQuantidade(produtos.get(indice));
+				ge.adicionaProduto(produtos.get(indice));
+				//State
+				produtos.get(indice).imprimir();
 			}catch(Exception e){
 				System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
 			}
