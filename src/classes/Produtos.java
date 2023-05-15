@@ -14,7 +14,7 @@ public class Produtos implements Base{
     public String fabricante;
     public String fornecedor;
     public int quantidade;
-    public String status;
+    //public String status;
 
     Scanner input = new Scanner(System.in);
     TipoProduto tp = new TipoProduto();
@@ -99,14 +99,14 @@ public class Produtos implements Base{
         return quantidade;
     }
 
-    public void setStatus(String status){
+    /*public void setStatus(String status){
         this.status = status;
     }
 
     public String getStatus(){
         return status;
-    }
-    
+    }*/
+
     public void imprimir() {
 
         if (getId() != -1) {
@@ -121,7 +121,7 @@ public class Produtos implements Base{
             System.out.println("Fabricante: " + getFabricante());
             System.out.println("Fornecedor: " + getFornecedor());
             System.out.println("Quantidade: " + getQuantidade());
-            System.out.println("Status do Produto: " + getStatus());
+            //System.out.println("Status do Produto: " + getStatus());
             System.out.println("Localidade: Matriz");
             System.out.println("******************************************");
         } else {
@@ -171,13 +171,13 @@ public class Produtos implements Base{
         input.nextLine();
         setQuantidade(aux1);
 
-        if (getQuantidade() > 0){
+        /*if (getQuantidade() > 0){
             setStatus("Em estoque");
         }
 
         else{
             setStatus("Esgotado");
-        }
+        }*/
         imprimir();
     }
 
@@ -268,12 +268,12 @@ public class Produtos implements Base{
                     input.nextLine();
                     System.out.println();
                     break;
-                case 11:
+                /*case 11:
                     System.out.println("Informe o Novo Status (atual: " + getStatus() + "): ");
                     aux2 = input.nextLine();
                     setStatus(aux2);
                     System.out.println();
-                    break;
+                    break;*/
                 case 12:
                     System.out.println("Modificações Salvas!!");
                     System.out.println();
