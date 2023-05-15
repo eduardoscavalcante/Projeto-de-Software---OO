@@ -2,26 +2,22 @@ package classes;
 
 import java.util.Scanner;
 
-public class EstadoPoucasUnidades implements Estado{
+public class EstadoPoucasUnidades extends Produtos implements Estado{
 
-    private int quantidade;
+    public String status;
 
-    public setQuantidade(int qtd){
-        this.quantidade = qtd;
+    public void setStatus(String status){
+        this.status = status;
     }
 
-    @Override
-    public int quantidade() {
-        return 0;
+    public String getStatus(){
+        return status;
     }
 
-    @Override
-    public void trocaEstado(Produtos p) {
-
-        if(quantidade > 50){
-            p.setStatus();//EstadoDisponivel
-        }else if(quantidade == 0){
-            p.setStatus();//EstadoSemEstoque
+    public void adicionar(){
+        super.adicionar ();
+        if(super.getQuantidade() <= 50){
+            setStatus("Poucas Unidades");//EstadoPoucasUnidades
         }
     }
 }
