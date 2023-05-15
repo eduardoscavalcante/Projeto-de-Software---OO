@@ -268,6 +268,5 @@ public class Produtos implements Base{
                     System.out.println();
             }
         }
-        imprimir();
     }
 }
