@@ -57,6 +57,9 @@ public class App {
         GerenciamentoFuncionarios gf = new GerenciamentoFuncionarios();
         GerenciamentoMovimentacao gm = new GerenciamentoMovimentacao();
 
+        //State
+        GerenciamentoEstado ge = new GerenciamentoEstado();
+
         System.out.println("***************************************");
         System.out.println("*                                     *");
         System.out.println("* SISTEMA DE GERENCIAMENTO DE ESTOQUE *");
@@ -72,8 +75,15 @@ public class App {
                     System.out.println();
                     try {
                         produto.adicionar();
+                        //State
+                        ge.verificaQuantidade(produto);
+                        ge.adicionaProduto(produto);
+                        //State
+                        produto.imprimir();
+                        //arraylist
                         gp.correcaoId(produto);
                         gp.adicionarProdutos(produto);
+                        //arraylist
                     }catch(Exception e){
                         System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
                     }
