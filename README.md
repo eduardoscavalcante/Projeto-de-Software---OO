@@ -290,6 +290,18 @@ Cada atividade possui as seguintes informações:
     
         TipoProduto
         
+    State    
+    
+        As seguintes classes foram criadas: 
+        
+            GerencimentoEstado; (Classe de Transição)
+            Estado; (Interface)
+            EstadoDisponivel; 
+            EstadoPoucasUnidades; 
+            EstadoSemEstoque; 
+            
+        Para realizar a transição de estado do sistema em relação a classe Produtos.   
+        
         
     # Modificações: 
         
