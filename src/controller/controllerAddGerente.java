@@ -34,6 +34,14 @@ public class controllerAddGerente {
 
     @FXML
     private TextField telefoneG;
+    //Imprimir na tabela da tela de funcionarios
+    
+    class gerenteTabela{
+        static String name;
+        static String carg;
+        static String contact;
+        static int iden;
+    }
 
     @FXML
     void AddGerente(ActionEvent event) {
@@ -48,7 +56,13 @@ public class controllerAddGerente {
         String email = emailG.getText();
         long telefone = telefoneint;
         int pSuperv = supGint;
-        
+        // Dados para a tabela para a tabela
+        gerenteTabela.iden = idint;
+        gerenteTabela.name = nome;
+        gerenteTabela.carg = "Gerente";
+        gerenteTabela.contact = email;
+        System.out.println(gerenteTabela.iden);
+
         Funcionarios v = new Gerente(id, nome, email, telefone, cpf, cargo, pSuperv);
         // gf.correcaoId(v);
         gf.addVendedor(v);

@@ -70,11 +70,11 @@ public class controllerHome {
         Document document = new Document();
         try {
 
-            PdfWriter.getInstance(document, new FileOutputStream("C:/Users/Ronaldo/Documents/arquivos-gerados/RelatorioSGP.pdf"));
+            PdfWriter.getInstance(document, new FileOutputStream("RelatorioSGP.pdf"));
             document.open();
 
             // adicionando um parágrafo no documento
-            document.add(new Paragraph("Gerando PDF - BIG TESTE"));
+            document.add(new Paragraph("Gerando PDF - TESTE"));
   }
         catch(DocumentException de) {
             System.err.println(de.getMessage());
