@@ -10,7 +10,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="206.0" prefWidth="351.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controllerSelecionarFuncionario">
    <children>
-      <Button fx:id="botaoVoltarSelect" mnemonicParsing="false" onAction="#voltarFuncionario" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: trnasparent; -fx-cursor: hand;" text="Voltar" textFill="#64a8bf">
+      <Button fx:id="botaoVoltarSelect" mnemonicParsing="false" onAction="#voltarFuncionario" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Voltar" textFill="#64a8bf">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

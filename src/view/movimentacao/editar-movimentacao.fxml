@@ -23,7 +23,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="-14.0" layoutY="3.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: trnasparent; -fx-cursor: hand;" text="Voltar" textFill="#64a8bf">
+            <Button layoutX="-14.0" layoutY="3.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Voltar" textFill="#64a8bf">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
