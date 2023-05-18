@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controllerHome">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane prefHeight="439.0" prefWidth="628.0" style="-fx-background-color: #333645;">
+               <children>
+                  <Line endX="100.0" layoutX="285.0" layoutY="204.0" startX="-36.0" stroke="WHITE" />
+                  <Button fx:id="botaoSair" layoutX="297.0" layoutY="399.0" mnemonicParsing="false" onAction="#exitButton" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Sair" textFill="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font></Button>
+                  <Button fx:id="botaoProduto" layoutX="279.0" layoutY="220.0" mnemonicParsing="false" onAction="#telaProduto" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Produtos" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="botaoFuncionario" layoutX="268.0" layoutY="246.0" mnemonicParsing="false" onAction="#funcionario" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Funcionários" textFill="WHITE" />
+                  <Button fx:id="botaoMovimentacao" layoutX="259.0" layoutY="272.0" mnemonicParsing="false" onAction="#movBotao" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Movimentações" textFill="WHITE" />
+                  <Icons525View fill="WHITE" glyphName="USER" layoutX="287.0" layoutY="140.0" selectionStart="1" size="5EM" text="" />
+                  <Button fx:id="botaoRelatorio" layoutX="261.0" layoutY="298.0" mnemonicParsing="false" onAction="#telaRelatorio" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Relatório Geral" textFill="WHITE" />
+                  <Label layoutX="282.0" layoutY="146.0" text="Bem-vindo," textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="291.0" layoutY="164.0" text="Usuário" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="botaoRedo" layoutX="270.0" layoutY="324.0" mnemonicParsing="false" onAction="#telaRedo" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: #fff; -fx-text-alignment: CENTER;" text="Undo | Redo" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

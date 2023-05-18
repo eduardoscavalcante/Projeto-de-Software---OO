@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="439.0" prefWidth="314.0" scaleShape="false">
+         <children>
+            <Label layoutX="202.0" layoutY="22.0" prefHeight="30.0" prefWidth="223.0" text="Adicionar Movimentação" textFill="#64a8bf">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="491.0" layoutY="386.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #64A8BF; -fx-cursor: hand;" text="Adicionar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="-14.0" layoutY="3.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Voltar" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <Icons525View fill="#64a8bf" glyphName="ARROW" selectionFill="#64a8bf" />
+               </graphic>
+            </Button>
+            <TextField fx:id="nome" layoutX="239.0" layoutY="167.0" promptText="ID do Responsável" />
+            <TextField fx:id="tamanho" layoutX="239.0" layoutY="223.0" promptText="Origem" />
+            <TextField fx:id="cor" layoutX="239.0" layoutY="275.0" promptText="Destino" />
+            <TextField fx:id="marca" layoutX="239.0" layoutY="325.0" promptText="Data (dd/mm/aaaa)" />
+            <Label layoutX="242.0" layoutY="90.0" text="Informe o ID do Produto:" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Identificação" layoutX="239.0" layoutY="110.0" promptText="ID do Produto:" />
+            <Label layoutX="262.0" layoutY="203.0" text="Informe a Origem:" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="261.0" layoutY="256.0" text="Informe o Destino:" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="230.0" layoutY="148.0" text="Informe o ID do Responsável:" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="218.0" layoutY="305.0" text="Informe a Data da Movimentação:" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Line endX="136.0" layoutX="295.0" layoutY="53.0" startX="-100.0" stroke="#64a8bf" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

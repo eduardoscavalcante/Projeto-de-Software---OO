@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controllerAddFuncionario">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+      <AnchorPane prefHeight="439.0" prefWidth="314.0" scaleShape="false">
+         <children>
+            <Label layoutX="217.0" layoutY="22.0" text="Editar Funcionário" textFill="#64a8bf">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="491.0" layoutY="386.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #64A8BF; -fx-cursor: hand;" text="Editar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="botaoVoltarEdit" layoutX="-14.0" layoutY="3.0" mnemonicParsing="false" onAction="#voltarFuncionario" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Voltar" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <Icons525View fill="#64a8bf" glyphName="ARROW" selectionFill="#64a8bf" />
+               </graphic>
+            </Button>
+            <TextField fx:id="nome" layoutX="105.0" layoutY="164.0" promptText="Nome Completo" />
+            <TextField fx:id="tamanho" layoutX="105.0" layoutY="220.0" promptText="e-mail" />
+            <TextField fx:id="cor" layoutX="105.0" layoutY="272.0" promptText="Telefone" />
+            <TextField fx:id="preco" layoutX="364.0" layoutY="107.0" promptText="Cargo" />
+            <TextField fx:id="marca" layoutX="105.0" layoutY="322.0" promptText="CPF" />
+            <Label layoutX="98.0" layoutY="87.0" text="Informe o ID do Funcionário:" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Identificação" layoutX="105.0" layoutY="107.0" promptText="ID do Funconário" />
+            <Label layoutX="121.0" layoutY="200.0" text="Informe o e-mail:" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="124.0" layoutY="253.0" text="Informe o telefone:" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="101.0" layoutY="145.0" text="Informe o Nome Completo:" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="125.0" layoutY="303.0" text="Inoforme o CPF:" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="391.0" layoutY="87.0" text="Informe o Cargo:" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="CombCategoria" layoutX="364.0" layoutY="164.0" prefWidth="150.0" promptText="Tipo de Usuário" scaleShape="false" style="-fx-background-color: white;" />
+            <Line endX="100.0" layoutX="300.0" layoutY="55.0" startX="-100.0" stroke="#64a8bf" />
+            <Label layoutX="393.0" layoutY="145.0" text="Tipo de Usuário:" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
