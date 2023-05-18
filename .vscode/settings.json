@@ -1,0 +1,18 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Ronaldo\\Documents\\Projetos\\javafx-sdk-20\\lib\\javafx.base.jar",
+        "c:\\Users\\Ronaldo\\Documents\\Projetos\\javafx-sdk-20\\lib\\javafx.controls.jar",
+        "c:\\Users\\Ronaldo\\Documents\\Projetos\\javafx-sdk-20\\lib\\javafx.fxml.jar",
+        "c:\\Users\\Ronaldo\\Documents\\Projetos\\javafx-sdk-20\\lib\\javafx.graphics.jar",
+        "c:\\Users\\Ronaldo\\Documents\\Projetos\\javafx-sdk-20\\lib\\javafx.media.jar",
+        "c:\\Users\\Ronaldo\\Documents\\Projetos\\javafx-sdk-20\\lib\\javafx.swing.jar",
+        "c:\\Users\\Ronaldo\\Documents\\Projetos\\javafx-sdk-20\\lib\\javafx.web.jar",
+        "c:\\Users\\Ronaldo\\Documents\\Projetos\\javafx-sdk-20\\lib\\javafx-swt.jar",
+        "c:\\Users\\Ronaldo\\Documents\\Projetos\\outras_dependencias_icones\\fontawesomefx-commons-9.1.2.jar",
+        "c:\\Users\\Ronaldo\\Documents\\Projetos\\outras_dependencias_icones\\fontawesomefx-icons525-4.2.0-9.1.2.jar",
+        "c:\\Users\\Ronaldo\\Documents\\Projetos\\itextpdf-5.5.13.3\\itextpdf-5.5.13.3.jar",
+        "c:\\Users\\Ronaldo\\Documents\\Projetos\\itextpdf-5.5.13.3\\itextpdf-5.5.13.3-javadoc.jar",
+        "c:\\Users\\Ronaldo\\Documents\\Projetos\\itextpdf-5.5.13.3\\itextpdf-5.5.13.3-sources.jar"
+    ]
+}

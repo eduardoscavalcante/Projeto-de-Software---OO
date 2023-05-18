@@ -3,7 +3,13 @@ package classes;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class App {
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class App extends Application{
 
     Scanner input = new Scanner(System.in);
 
@@ -44,7 +50,9 @@ public class App {
         return opt;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
+
+        launch (args);
 
         Scanner input = new Scanner(System.in);
         Produtos produto = new Produtos();
@@ -178,6 +186,130 @@ public class App {
                     option = startOptions();
                     break;
             }
+        }
+    }
+    private static Stage stage;
+    private static Scene telaHome;
+    private static Scene telaProdutos;
+    private static Scene telaAddProdutos;
+    private static Scene telaEditProdutos;
+    private static Scene telaRemoveProdutos;
+    private static Scene telaFuncionarios;
+    private static Scene telaAddFuncionarios;
+    private static Scene telaEditFuncionarios;
+    private static Scene telaRemoveFuncionario;
+    private static Scene telaMovimentacao;
+    private static Scene telaSelecionarFunc;
+    private static Scene telaAddVendedor;
+    private static Scene telaAddGerente;
+
+    public void start(Stage primaryStage) throws Exception {
+        stage = primaryStage;
+
+            //tela principal
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/view/home.fxml"));
+        Parent root1 = fxmlLoader1.load();
+        telaHome = new Scene(root1);
+            //tela de produto
+        FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/view/produtos/produtos.fxml"));
+        Parent root2 = fxmlLoader2.load();
+        telaProdutos = new Scene(root2);
+            //tela de adicionar produto 
+        FXMLLoader fxmlLoader3 = new FXMLLoader(getClass().getResource("/view/produtos/add-produto.fxml"));
+        Parent root3 = fxmlLoader3.load();
+        telaAddProdutos = new Scene(root3);
+            //tela de editar produto
+        FXMLLoader fxmlLoader4 = new FXMLLoader(getClass().getResource("/view/produtos/editar-produto.fxml"));
+        Parent root4 = fxmlLoader4.load();
+        telaEditProdutos = new Scene(root4);
+            //tela de remover produto
+        FXMLLoader fxmlLoader5 = new FXMLLoader(getClass().getResource("/view/produtos/removeProduto.fxml"));
+        Parent root5 = fxmlLoader5.load();
+        telaRemoveProdutos = new Scene(root5);
+            //tela de funcionarios
+        FXMLLoader fxmlLoader6 = new FXMLLoader(getClass().getResource("/view/Funcionarios/funcionario.fxml"));
+        Parent root6 = fxmlLoader6.load();
+        telaFuncionarios = new Scene(root6);
+            //tela de adicionar funcionarios
+        FXMLLoader fxmlLoader7 = new FXMLLoader(getClass().getResource("/view/Funcionarios/add-funcionario.fxml"));
+        Parent root7 = fxmlLoader7.load();
+        telaAddFuncionarios = new Scene(root7);
+            //tela de editar funcionario
+        FXMLLoader fxmlLoader8 = new FXMLLoader(getClass().getResource("/view/Funcionarios/editar-funcionario.fxml"));
+        Parent root8 = fxmlLoader8.load();
+        telaEditFuncionarios = new Scene(root8);
+            //tela de remover funcionario
+        FXMLLoader fxmlLoader9 = new FXMLLoader(getClass().getResource("/view/Funcionarios/removeFuncionario.fxml"));
+        Parent root9 = fxmlLoader9.load();
+        telaRemoveFuncionario = new Scene(root9);
+            //tela de movimentações
+        FXMLLoader fxmlLoader10 = new FXMLLoader(getClass().getResource("/view/movimentacao/movimentacao.fxml"));
+        Parent root10 = fxmlLoader10.load();
+        telaMovimentacao = new Scene(root10);
+            //tela de selecionar tipo de funcionario
+        FXMLLoader fxmlLoader11 = new FXMLLoader(getClass().getResource("/view/Funcionarios/selecFuncionario.fxml"));
+        Parent root11 = fxmlLoader11.load();
+        telaSelecionarFunc = new Scene(root11);
+            //tela de adicionar vendedor
+        FXMLLoader fxmlLoader12 = new FXMLLoader(getClass().getResource("/view/Funcionarios/add-vendedor.fxml"));
+        Parent root12 = fxmlLoader12.load();
+        telaAddVendedor = new Scene(root12);
+            //tela de adicionar gerente
+        FXMLLoader fxmlLoader13 = new FXMLLoader(getClass().getResource("/view/Funcionarios/add-gerente.fxml"));
+        Parent root13 = fxmlLoader13.load();
+        telaAddGerente = new Scene(root13);
+        
+
+        primaryStage.setTitle("Sistema de gerenciamento de produtos");
+        primaryStage.setScene(telaHome);
+        primaryStage.show();
+
+
+    }
+    //escolhndo telas
+    public static void changeScreen(String scr){
+        switch(scr){
+            case "main":
+                stage.setScene(telaHome);
+                break;
+            case "produto":
+                stage.setScene(telaProdutos);
+                break;
+            case "add_produto":
+                stage.setScene(telaAddProdutos);
+                break;
+            case "edit_produto":
+                stage.setScene(telaEditProdutos);
+                break;
+            case "remove_produto":
+                stage.setScene(telaRemoveProdutos);
+                break;
+            case "funcionario":
+                stage.setScene(telaFuncionarios);
+                break;
+            case "add_funcionario":
+                stage.setScene(telaAddFuncionarios);
+                break;
+            case "edit_funcionario":
+                stage.setScene(telaEditFuncionarios);
+                break;
+            case "remove_funcionario":
+                stage.setScene(telaRemoveFuncionario);
+                break;
+            case "movimentacao":
+                stage.setScene(telaMovimentacao);
+                break;
+            case "selecionar_funcionario":
+                stage.setScene(telaSelecionarFunc);
+                break;
+            case "add_vendedor":
+                stage.setScene(telaAddVendedor);
+                break;
+            case "add_gerente":
+                stage.setScene(telaAddGerente);
+                break;
+
+                
         }
     }
 }
