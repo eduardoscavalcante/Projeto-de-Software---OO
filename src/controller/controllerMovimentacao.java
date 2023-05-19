@@ -21,7 +21,7 @@ public class controllerMovimentacao {
 
     @FXML
     void addBotao(ActionEvent event) {
-
+        App.changeScreen("add_movimentacao");
     }
 
     @FXML

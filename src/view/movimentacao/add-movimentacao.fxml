@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controllerMovimentacaoAdd">
    <children>
       <AnchorPane prefHeight="439.0" prefWidth="314.0" scaleShape="false">
          <children>
@@ -23,7 +23,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="-14.0" layoutY="3.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Voltar" textFill="#64a8bf">
+            <Button fx:id="botaoVoltar" layoutX="-14.0" layoutY="3.0" mnemonicParsing="false" onAction="#voltar" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Voltar" textFill="#64a8bf">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -31,16 +31,16 @@
                   <Icons525View fill="#64a8bf" glyphName="ARROW" selectionFill="#64a8bf" />
                </graphic>
             </Button>
-            <TextField fx:id="nome" layoutX="239.0" layoutY="167.0" promptText="ID do Responsável" />
-            <TextField fx:id="tamanho" layoutX="239.0" layoutY="223.0" promptText="Origem" />
-            <TextField fx:id="cor" layoutX="239.0" layoutY="275.0" promptText="Destino" />
-            <TextField fx:id="marca" layoutX="239.0" layoutY="325.0" promptText="Data (dd/mm/aaaa)" />
+            <TextField layoutX="239.0" layoutY="167.0" promptText="ID do Responsável" />
+            <TextField layoutX="239.0" layoutY="223.0" promptText="Origem" />
+            <TextField layoutX="239.0" layoutY="275.0" promptText="Destino" />
+            <TextField layoutX="239.0" layoutY="325.0" promptText="Data (dd/mm/aaaa)" />
             <Label layoutX="242.0" layoutY="90.0" text="Informe o ID do Produto:" textFill="#64a8bf">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="Identificação" layoutX="239.0" layoutY="110.0" promptText="ID do Produto:" />
+            <TextField layoutX="239.0" layoutY="110.0" promptText="ID do Produto:" />
             <Label layoutX="262.0" layoutY="203.0" text="Informe a Origem:" textFill="#64a8bf">
                <font>
                   <Font name="System Bold" size="12.0" />

@@ -188,6 +188,8 @@ public class App extends Application{
             }
         }
     }
+
+        //telas
     private static Stage stage;
     private static Scene telaHome;
     private static Scene telaProdutos;
@@ -202,6 +204,7 @@ public class App extends Application{
     private static Scene telaSelecionarFunc;
     private static Scene telaAddVendedor;
     private static Scene telaAddGerente;
+    private static Scene telaAddMovimentacao;
 
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
@@ -230,10 +233,6 @@ public class App extends Application{
         FXMLLoader fxmlLoader6 = new FXMLLoader(getClass().getResource("/view/Funcionarios/funcionario.fxml"));
         Parent root6 = fxmlLoader6.load();
         telaFuncionarios = new Scene(root6);
-            //tela de adicionar funcionarios
-        FXMLLoader fxmlLoader7 = new FXMLLoader(getClass().getResource("/view/Funcionarios/add-funcionario.fxml"));
-        Parent root7 = fxmlLoader7.load();
-        telaAddFuncionarios = new Scene(root7);
             //tela de editar funcionario
         FXMLLoader fxmlLoader8 = new FXMLLoader(getClass().getResource("/view/Funcionarios/editar-funcionario.fxml"));
         Parent root8 = fxmlLoader8.load();
@@ -242,7 +241,7 @@ public class App extends Application{
         FXMLLoader fxmlLoader9 = new FXMLLoader(getClass().getResource("/view/Funcionarios/removeFuncionario.fxml"));
         Parent root9 = fxmlLoader9.load();
         telaRemoveFuncionario = new Scene(root9);
-            //tela de movimentações
+        //     //tela de movimentações
         FXMLLoader fxmlLoader10 = new FXMLLoader(getClass().getResource("/view/movimentacao/movimentacao.fxml"));
         Parent root10 = fxmlLoader10.load();
         telaMovimentacao = new Scene(root10);
@@ -258,6 +257,10 @@ public class App extends Application{
         FXMLLoader fxmlLoader13 = new FXMLLoader(getClass().getResource("/view/Funcionarios/add-gerente.fxml"));
         Parent root13 = fxmlLoader13.load();
         telaAddGerente = new Scene(root13);
+            //tela de adicionar movimentação
+        FXMLLoader fxmlLoader14 = new FXMLLoader(getClass().getResource("/view/movimentacao/add-movimentacao.fxml"));
+        Parent root14 = fxmlLoader14.load();
+        telaAddMovimentacao = new Scene(root14);
         
 
         primaryStage.setTitle("Sistema de gerenciamento de produtos");
@@ -287,12 +290,9 @@ public class App extends Application{
             case "funcionario":
                 stage.setScene(telaFuncionarios);
                 break;
-            case "add_funcionario":
-                stage.setScene(telaAddFuncionarios);
-                break;
             case "edit_funcionario":
-                stage.setScene(telaEditFuncionarios);
-                break;
+                 stage.setScene(telaEditFuncionarios);
+                 break;
             case "remove_funcionario":
                 stage.setScene(telaRemoveFuncionario);
                 break;
@@ -308,8 +308,8 @@ public class App extends Application{
             case "add_gerente":
                 stage.setScene(telaAddGerente);
                 break;
-
-                
+            case "add_movimentacao":
+                stage.setScene(telaAddMovimentacao);
         }
     }
 }

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="206.0" prefWidth="351.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controllerSelecionarFuncionario">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="206.0" prefWidth="351.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controllerFuncionarioSelecionar">
    <children>
       <Button fx:id="botaoVoltarSelect" mnemonicParsing="false" onAction="#voltarFuncionario" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Voltar" textFill="#64a8bf">
          <font>
@@ -20,13 +20,16 @@
       </Button>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Label layoutX="77.0" layoutY="14.0" text="Selecione o cargo do funcionario">
+            <Button fx:id="botaoSelecionar" layoutX="141.0" layoutY="131.0" mnemonicParsing="false" onAction="#selecButton" style="-fx-background-color: #64A8BF; -fx-cursor: hand;" text="Selecionar" textFill="WHITE">
                <font>
-                  <Font size="14.0" />
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <ComboBox fx:id="combSelecionar" layoutX="103.0" layoutY="77.0" prefWidth="150.0" promptText="Cargo" style="-fx-background-color: white;" />
+            <Label layoutX="83.0" layoutY="30.0" text="Selecione o Cargo do funcionario:" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="botaoSelecionar" layoutX="141.0" layoutY="141.0" mnemonicParsing="false" onAction="#selecButton" text="Selecionar" />
-            <ComboBox fx:id="combSelecionar" layoutX="101.0" layoutY="74.0" prefWidth="150.0" promptText="Funcionario" />
          </children>
       </AnchorPane>
    </children>

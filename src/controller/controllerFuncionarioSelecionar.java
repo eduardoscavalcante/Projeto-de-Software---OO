@@ -10,7 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
-public class controllerSelecionarFuncionario implements Initializable{
+public class controllerFuncionarioSelecionar implements Initializable{
 
     GerenciamentoFuncionarios gf = new GerenciamentoFuncionarios();
     private String[] opcao_funcionario = {"Vendedor","Gerente"};

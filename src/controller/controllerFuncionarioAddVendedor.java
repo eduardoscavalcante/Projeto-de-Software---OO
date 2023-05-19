@@ -8,7 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class controllerAddVendedor {
+public class controllerFuncionarioAddVendedor {
     GerenciamentoFuncionarios gf = new GerenciamentoFuncionarios();
     
     @FXML
@@ -37,7 +37,7 @@ public class controllerAddVendedor {
 
     @FXML
     void voltarFuncionario(ActionEvent event) {
-        App.changeScreen("funcionario");
+        App.changeScreen("selecionar_funcionario");
     }
     @FXML
     void addVendedor(ActionEvent event) {
@@ -55,7 +55,7 @@ public class controllerAddVendedor {
 
         Funcionarios v = new Vendedor(id, nome, email, telefone, cpf, cargo, mVendas);
         // gf.correcaoId(v);
-        gf.addVendedor(v);
+        //gf.addVendedor(v);
         gf.imprimirFuncionarios();
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Gerenciamento de Produtos");

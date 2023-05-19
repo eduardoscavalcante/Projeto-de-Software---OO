@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class controllerProdutos {
+public class controllerProduto {
 
     Gerenciamento gp = new Gerenciamento();
     Produtos produto = new Produtos();

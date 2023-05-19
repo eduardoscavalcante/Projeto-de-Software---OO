@@ -40,17 +40,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="203.0" prefWidth="248.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controllerAddFuncionario">
+<VBox prefHeight="203.0" prefWidth="248.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controllerFuncionarioAddGerente">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Label layoutX="8.0" layoutY="38.0" text="Informe o número do ID a ser removido:">
+            <TextField layoutX="51.0" layoutY="87.0" promptText="Remover funcionario" />
+            <Button layoutX="90.0" layoutY="142.0" mnemonicParsing="false" style="-fx-background-color: #64A8BF; -fx-cursor: hand;" text="Remover" textFill="WHITE">
                <font>
-                  <Font name="Oswald Regular" size="13.0" />
-               </font>
-            </Label>
-            <TextField layoutX="49.0" layoutY="74.0" promptText="ID" />
-            <Button layoutX="92.0" layoutY="131.0" mnemonicParsing="false" text="Remover" />
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
             <Button fx:id="backRemove" mnemonicParsing="false" onAction="#voltarFuncionario" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Voltar" textFill="#64a8bf">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -59,6 +57,11 @@
                   <Icons525View fill="#64a8bf" glyphName="ARROW" selectionFill="#64a8bf" />
                </graphic>
             </Button>
+            <Label layoutX="44.0" layoutY="53.0" text="Informe o ID do Funcionário:" textFill="#64a8bf">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
