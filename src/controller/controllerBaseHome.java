@@ -14,7 +14,7 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
-public class controllerHome {
+public class controllerBaseHome {
 
     @FXML
     private Button botaoRedo;
