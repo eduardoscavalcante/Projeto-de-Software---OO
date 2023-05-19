@@ -137,6 +137,7 @@ public class App extends Application{
                     System.out.println();
                     try {
                         mov.adicionar();
+                        System.out.println(mov);
                         gm.correcaoId(mov);
                         gm.adicionarMovimentacao(mov);
                     }catch(Exception e){

@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 
 public class controllerMovimentacao {
 
+
     @FXML
     private Button botaoAdicionar;
 
@@ -37,6 +38,10 @@ public class controllerMovimentacao {
     @FXML
     void voltarMain(ActionEvent event) {
         App.changeScreen("main");
+    }
+
+    public void mov (Movimentacao m){
+
     }
 
 }

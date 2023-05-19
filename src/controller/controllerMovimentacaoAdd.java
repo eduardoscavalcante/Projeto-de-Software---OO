@@ -7,6 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class controllerMovimentacaoAdd {
+    
+    Movimentacao mov = new Movimentacao();
 
     @FXML
     private Button adicionar;
@@ -27,8 +29,18 @@ public class controllerMovimentacaoAdd {
     private TextField origem;
 
     @FXML
-    void botaoAdicionar(ActionEvent event) {
+    private TextField destino;
 
+    @FXML
+    void botaoAdicionar(ActionEvent event) {
+        mov.setId(Integer.parseInt(idProduto.getText()));
+        mov.setIdResponsavel(Integer.parseInt(idResponsavel.getText()));
+        mov.setIdProduto(Integer.parseInt(idProduto.getText()));
+        mov.setTipoProduto("NULL");
+        mov.setOrigem(origem.getText());
+        mov.setDataMovimentacao(data.getText());
+
+        System.out.println("--------" + mov.getId() + "-----------");
     }
 
     @FXML

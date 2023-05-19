@@ -33,7 +33,7 @@
             </Button>
             <TextField fx:id="idResponsavel" layoutX="239.0" layoutY="167.0" promptText="ID do Responsável" />
             <TextField fx:id="origem" layoutX="239.0" layoutY="223.0" promptText="Origem" />
-            <TextField layoutX="239.0" layoutY="275.0" promptText="Destino" />
+            <TextField fx:id="destino" layoutX="239.0" layoutY="275.0" promptText="Destino" />
             <TextField fx:id="data" layoutX="239.0" layoutY="325.0" promptText="Data (dd/mm/aaaa)" />
             <Label layoutX="242.0" layoutY="90.0" text="Informe o ID do Produto:" textFill="#64a8bf">
                <font>
