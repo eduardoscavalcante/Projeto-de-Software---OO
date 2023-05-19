@@ -18,7 +18,7 @@
                   <Font name="Tahoma Bold" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="491.0" layoutY="386.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #64A8BF; -fx-cursor: hand;" text="Adicionar" textFill="WHITE">
+            <Button fx:id="adicionar" layoutX="491.0" layoutY="386.0" mnemonicParsing="false" onAction="#botaoAdicionar" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #64A8BF; -fx-cursor: hand;" text="Adicionar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -31,16 +31,16 @@
                   <Icons525View fill="#64a8bf" glyphName="ARROW" selectionFill="#64a8bf" />
                </graphic>
             </Button>
-            <TextField layoutX="239.0" layoutY="167.0" promptText="ID do Responsável" />
-            <TextField layoutX="239.0" layoutY="223.0" promptText="Origem" />
+            <TextField fx:id="idResponsavel" layoutX="239.0" layoutY="167.0" promptText="ID do Responsável" />
+            <TextField fx:id="origem" layoutX="239.0" layoutY="223.0" promptText="Origem" />
             <TextField layoutX="239.0" layoutY="275.0" promptText="Destino" />
-            <TextField layoutX="239.0" layoutY="325.0" promptText="Data (dd/mm/aaaa)" />
+            <TextField fx:id="data" layoutX="239.0" layoutY="325.0" promptText="Data (dd/mm/aaaa)" />
             <Label layoutX="242.0" layoutY="90.0" text="Informe o ID do Produto:" textFill="#64a8bf">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField layoutX="239.0" layoutY="110.0" promptText="ID do Produto:" />
+            <TextField fx:id="idProduto" layoutX="239.0" layoutY="110.0" promptText="ID do Produto:" />
             <Label layoutX="262.0" layoutY="203.0" text="Informe a Origem:" textFill="#64a8bf">
                <font>
                   <Font name="System Bold" size="12.0" />
