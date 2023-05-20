@@ -2,13 +2,13 @@ package classes;
 
 import java.util.Scanner;
 
-public class Movimentacao implements Base{
+public class Movimentacao {
 
     private String dataMovimentacao;
     private String Destino;
     private String Origem;
     private int idProduto;
-    private String tipoProduto;
+    //private String tipoProduto;
     private int idResponsavel;
     private int id;
 
@@ -39,13 +39,13 @@ public class Movimentacao implements Base{
         return idProduto;
     }
 
-    public void setTipoProduto(String tipoProduto){
-        this.tipoProduto = tipoProduto;
-    }
+    // public void setTipoProduto(String tipoProduto){
+    //     this.tipoProduto = tipoProduto;
+    // }
 
-    public String getTipoProduto() {
-        return tipoProduto;
-    }
+    // public String getTipoProduto() {
+    //     return tipoProduto;
+    // }
 
     public void setDestino(String Destino){
         this.Destino = Destino;
@@ -78,7 +78,7 @@ public class Movimentacao implements Base{
             System.out.println("Identificação da Movimentação: " + getId());
             System.out.println("Data da Movimentação: " + getDataMovimentacao());
             System.out.println("Produto: " + getIdProduto());
-            System.out.println("Categoria do Produto: " +  getTipoProduto());
+            //System.out.println("Categoria do Produto: " +  getTipoProduto());
             System.out.println("Origem da Movimentação: " + getOrigem());
             System.out.println("Destino da Movimentação: " + getDestino());
             System.out.println("ID do Responsavel da Movimentação: " + getIdResponsavel());
@@ -88,40 +88,47 @@ public class Movimentacao implements Base{
         }
         System.out.println();
     }
+    
+    public void adicionar(int idMovimentacao, int idResponsavel, int idProduto, String origem, String destino, String data) throws Exception {// Adição de uma movimentacao
 
-    public void adicionar() throws Exception {// Adição de uma movimentacao
+        setId(idMovimentacao);
+        setIdResponsavel(idResponsavel);
+        setIdProduto(idProduto);
+        setOrigem(origem);
+        setDestino(destino);
+        setDataMovimentacao(data);
+        // int aux1;
+        // String aux2;
 
-        int aux1;
-        String aux2;
-
-        System.out.println("Informe o código de identificação da Movimentação: ");
-        aux1 = input.nextInt();
-        input.nextLine();
-        setId(aux1);
-        System.out.println("Informe a Identificação do Responsavel: ");
-        aux1 = input.nextInt();
-        setIdResponsavel(aux1);
-        input.nextLine();
-        System.out.println("Informe a Identificação do Produto:  ");
-        aux1 = input.nextInt();
-        setIdProduto(aux1);
-        input.nextLine();
-        //Categoria do Produto
-        aux2 = tp.CategoriaProduto();
-        setTipoProduto(aux2);
-        //Categoria do Produto
-        System.out.println("Informe O Destino do Produto: ");
-        aux2 = input.nextLine();
-        setDestino(aux2);
-        System.out.println("Informe a Origem do Produto:");
-        aux2 = input.nextLine();
-        setOrigem(aux2);
-        System.out.println("Informe a Data da Movimentação do Produto:(hh:mm DD/MM/YYYY)");
-        aux2 = input.nextLine();
-        setDataMovimentacao(aux2);
-        System.out.println();
-        imprimir();
+        // System.out.println("Informe o código de identificação da Movimentação: ");
+        // aux1 = input.nextInt();
+        // input.nextLine();
+        // setId(aux1);
+        // System.out.println("Informe a Identificação do Responsavel: ");
+        // aux1 = input.nextInt();
+        // setIdResponsavel(aux1);
+        // input.nextLine();
+        // System.out.println("Informe a Identificação do Produto:  ");
+        // aux1 = input.nextInt();
+        // setIdProduto(aux1);
+        // input.nextLine();
+        // //Categoria do Produto
+        // aux2 = tp.CategoriaProduto();
+        // setTipoProduto(aux2);
+        // //Categoria do Produto
+        // System.out.println("Informe O Destino do Produto: ");
+        // aux2 = input.nextLine();
+        // setDestino(aux2);
+        // System.out.println("Informe a Origem do Produto:");
+        // aux2 = input.nextLine();
+        // setOrigem(aux2);
+        // System.out.println("Informe a Data da Movimentação do Produto:(hh:mm DD/MM/YYYY)");
+        // aux2 = input.nextLine();
+        // setDataMovimentacao(aux2);
+        // System.out.println();
+        // imprimir();
     }
+    //public void adicionar(int idMovimentacao, int idResponsavel, int idProduto, String origem, String data) throws Exception{}
 
     public void M_Inicial() {// função de apoio
 
@@ -132,74 +139,74 @@ public class Movimentacao implements Base{
 
     public void editar() throws Exception{// Alterar detalhes de uma movimentacao
 
-        int opcao = 1;
-        int aux1;
-        String aux2;
-        double aux3;
+        // int opcao = 1;
+        // int aux1;
+        // String aux2;
+        // double aux3;
 
-        while (opcao != 8) {
+        // while (opcao != 8) {
 
-            M_Inicial();
-            opcao = input.nextInt();
-            input.nextLine();
-            switch (opcao) {
-                case 1:
-                    System.out.println("Informe o Novo Id (atual: " + getId() + "): ");
-                    aux1 = input.nextInt();
-                    setId(aux1);
-                    input.nextLine();
-                    System.out.println();
-                    break;
-                case 2:
-                    System.out.println("Informe a Nova Identificação do Responsavel (atual: " + getIdResponsavel() + "): ");
-                    aux1 = input.nextInt();
-                    setIdResponsavel(aux1);
-                    input.nextLine();
-                    System.out.println();
-                    break;
-                case 3:
-                    System.out.println("Informe a Nova Identificação do Produto (atual: " + getIdProduto() + "): ");
-                    aux1 = input.nextInt();
-                    setIdProduto(aux1);
-                    input.nextLine();
-                    System.out.println();
-                    break;
-                case 4:
-                    System.out.println("Categoria Atual: " + getTipoProduto());
-                    //Categoria do Produto
-                    aux2 = tp.CategoriaProduto();
-                    setTipoProduto(aux2);
-                    //Categoria do Produto
-                    System.out.println();
-                    break;
-                case 5:
-                    System.out.println("Informe O Novo Destino do Produto (atual: " + getDestino() + "): ");
-                    aux2 = input.nextLine();
-                    setDestino(aux2);
-                    System.out.println();
-                    break;
-                case 6:
-                    System.out.println("Informe a Nova Origem do Produto (atual: " + getOrigem() + "): ");
-                    aux2 = input.nextLine();
-                    setOrigem(aux2);
-                    System.out.println();
-                    break;
-                case 7:
-                    System.out.println("Informe a Nova Data da Movimentação do Produto:(hh:mm DD/MM/YYYY) (atual: " + getDataMovimentacao() + "): ");
-                    aux2 = input.nextLine();
-                    setDataMovimentacao(aux2);
-                    System.out.println();
-                    break;
-                case 8:
-                    System.out.println("Modificações Salvas!!");
-                    System.out.println();
-                    break;
-                default:
-                    System.out.println("Opção Invalida!!!");
-                    System.out.println("Digite Novamente");
-                    System.out.println();
-            }
-        }
+        //     M_Inicial();
+        //     opcao = input.nextInt();
+        //     input.nextLine();
+        //     switch (opcao) {
+        //         case 1:
+        //             System.out.println("Informe o Novo Id (atual: " + getId() + "): ");
+        //             aux1 = input.nextInt();
+        //             setId(aux1);
+        //             input.nextLine();
+        //             System.out.println();
+        //             break;
+        //         case 2:
+        //             System.out.println("Informe a Nova Identificação do Responsavel (atual: " + getIdResponsavel() + "): ");
+        //             aux1 = input.nextInt();
+        //             setIdResponsavel(aux1);
+        //             input.nextLine();
+        //             System.out.println();
+        //             break;
+        //         case 3:
+        //             System.out.println("Informe a Nova Identificação do Produto (atual: " + getIdProduto() + "): ");
+        //             aux1 = input.nextInt();
+        //             setIdProduto(aux1);
+        //             input.nextLine();
+        //             System.out.println();
+        //             break;
+        //         case 4:
+        //             System.out.println("Categoria Atual: " + getTipoProduto());
+        //             //Categoria do Produto
+        //             aux2 = tp.CategoriaProduto();
+        //             setTipoProduto(aux2);
+        //             //Categoria do Produto
+        //             System.out.println();
+        //             break;
+        //         case 5:
+        //             System.out.println("Informe O Novo Destino do Produto (atual: " + getDestino() + "): ");
+        //             aux2 = input.nextLine();
+        //             setDestino(aux2);
+        //             System.out.println();
+        //             break;
+        //         case 6:
+        //             System.out.println("Informe a Nova Origem do Produto (atual: " + getOrigem() + "): ");
+        //             aux2 = input.nextLine();
+        //             setOrigem(aux2);
+        //             System.out.println();
+        //             break;
+        //         case 7:
+        //             System.out.println("Informe a Nova Data da Movimentação do Produto:(hh:mm DD/MM/YYYY) (atual: " + getDataMovimentacao() + "): ");
+        //             aux2 = input.nextLine();
+        //             setDataMovimentacao(aux2);
+        //             System.out.println();
+        //             break;
+        //         case 8:
+        //             System.out.println("Modificações Salvas!!");
+        //             System.out.println();
+        //             break;
+        //         default:
+        //             System.out.println("Opção Invalida!!!");
+        //             System.out.println("Digite Novamente");
+        //             System.out.println();
+        //     }
+        // }
         imprimir();
     }
 }

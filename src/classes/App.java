@@ -136,8 +136,7 @@ public class App extends Application{
                 case 7: // realiza uma movimentação de estoque
                     System.out.println();
                     try {
-                        mov.adicionar();
-                        System.out.println(mov);
+                        //mov.adicionar();
                         gm.correcaoId(mov);
                         gm.adicionarMovimentacao(mov);
                     }catch(Exception e){
@@ -188,6 +187,18 @@ public class App extends Application{
                     break;
             }
         }
+    }
+
+
+    // implementa movimentações
+    static Movimentacao mov = new Movimentacao();
+    static GerenciamentoMovimentacao gm = new GerenciamentoMovimentacao();
+    public static void dadosMovimentacao(int idMovimentacao, int idResponsavel, int idProduto, String origem, String destino, String data) throws Exception{
+        mov.adicionar(idMovimentacao, idResponsavel, idProduto, origem, destino, data);
+        gm.correcaoId(mov);
+        gm.adicionarMovimentacao(mov);
+        System.out.println("Aqui começa");
+        gm.imprimirMovimentacao();
     }
 
         //telas

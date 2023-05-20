@@ -3,18 +3,21 @@ package controller;
 import classes.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class controllerMovimentacaoAdd {
     
-    Movimentacao mov = new Movimentacao();
 
     @FXML
     private Button adicionar;
 
     @FXML
     private Button botaoVoltar;
+
+    @FXML
+    private TextField idMovimentacao;
 
     @FXML
     private TextField data;
@@ -32,15 +35,13 @@ public class controllerMovimentacaoAdd {
     private TextField destino;
 
     @FXML
-    void botaoAdicionar(ActionEvent event) {
-        mov.setId(Integer.parseInt(idProduto.getText()));
-        mov.setIdResponsavel(Integer.parseInt(idResponsavel.getText()));
-        mov.setIdProduto(Integer.parseInt(idProduto.getText()));
-        mov.setTipoProduto("NULL");
-        mov.setOrigem(origem.getText());
-        mov.setDataMovimentacao(data.getText());
-
-        System.out.println("--------" + mov.getId() + "-----------");
+    void botaoAdicionar(ActionEvent event) throws Exception {
+        App.dadosMovimentacao(Integer.parseInt(idMovimentacao.getText()), Integer.parseInt(idResponsavel.getText()), Integer.parseInt(idProduto.getText()), origem.getText(), destino.getText(), data.getText());
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Movimentações");
+        alert.setHeaderText("MOVIMENTAÇÃO ADICIONADA!");
+        alert.show();
+        App.changeScreen("movimentacao");
     }
 
     @FXML

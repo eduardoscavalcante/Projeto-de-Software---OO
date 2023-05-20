@@ -17,7 +17,7 @@ public class GerenciamentoMovimentacao {
 			System.out.println("Identificação da Movimentação: " + m.getId());
 			System.out.println("Data da Movimentação: " + m.getDataMovimentacao());
 			System.out.println("Produto: " + m.getIdProduto());
-			System.out.println("Categoria do Produto: " +  m.getTipoProduto());
+			//System.out.println("Categoria do Produto: " +  m.getTipoProduto());
 			System.out.println("Origem da Movimentação: " + m.getOrigem());
 			System.out.println("Destino da Movimentação: " + m.getDestino());
 			System.out.println("ID do Responsavel da Movimentação: " + m.getIdResponsavel());
@@ -73,7 +73,7 @@ public class GerenciamentoMovimentacao {
 					System.out.println("Digite Novamente");
 					System.out.println("Informe o código de identificação da Movimentação: ");
 					aux1 = input.nextInt();
-					input.nextLine();
+					//input.nextLine();
 					m.setId(aux1);
 					correcaoId(m);
 					break;
