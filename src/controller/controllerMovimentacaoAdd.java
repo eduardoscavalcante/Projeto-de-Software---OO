@@ -37,10 +37,6 @@ public class controllerMovimentacaoAdd {
     @FXML
     void botaoAdicionar(ActionEvent event) throws Exception {
         App.dadosMovimentacao(Integer.parseInt(idMovimentacao.getText()), Integer.parseInt(idResponsavel.getText()), Integer.parseInt(idProduto.getText()), origem.getText(), destino.getText(), data.getText());
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Movimentações");
-        alert.setHeaderText("MOVIMENTAÇÃO ADICIONADA!");
-        alert.show();
         App.changeScreen("movimentacao");
     }
 

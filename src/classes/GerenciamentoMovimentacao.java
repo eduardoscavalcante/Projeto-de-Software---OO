@@ -2,6 +2,9 @@ package classes;
 
 import java.util.List;
 import java.util.Scanner;
+
+import javafx.scene.control.Alert;
+
 import java.util.ArrayList;
 
 public class GerenciamentoMovimentacao {
@@ -9,6 +12,10 @@ public class GerenciamentoMovimentacao {
 
 	public void adicionarMovimentacao(Movimentacao cp) {
 		movimentacao.add(cp);
+		Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Movimentações");
+        alert.setHeaderText("MOVIMENTAÇÃO ADICIONADA!");
+        alert.show();
 	}
 
 	public void imprimirMovimentacao() {
@@ -65,21 +72,46 @@ public class GerenciamentoMovimentacao {
 
 		int i, aux1;
 
+		boolean idExistente = false;
+
 		if(movimentacao.size() > 0){
 			for (i = 0; i < movimentacao.size(); i++) {
 				int idteste = movimentacao.get(i).getId();
 				if (idteste == busca) {
-					System.out.println("ID Ja Existente!!");
-					System.out.println("Digite Novamente");
-					System.out.println("Informe o código de identificação da Movimentação: ");
-					aux1 = input.nextInt();
-					//input.nextLine();
-					m.setId(aux1);
-					correcaoId(m);
-					break;
+					Alert alert = new Alert(Alert.AlertType.INFORMATION);
+					alert.setTitle("Movimentação");
+					alert.setHeaderText("ID Ja Existente!! \nMovimentação não adicionada!");
+					alert.show();
+					idExistente = true;
+					// System.out.println("ID Ja Existente!!");
+					// System.out.println("Digite Novamente");
+					// System.out.println("Informe o código de identificação da Movimentação: ");
+					// aux1 = input.nextInt();
+					// //input.nextLine();
+					// m.setId(aux1);
+					// correcaoId(m);
+					// break;
 				}
 			}
 		}
 		return m;
+	}
+	public boolean correcaoId2(int Id){
+		int i;
+		boolean idExistente = false;
+		if(movimentacao.size() > 0){
+			for (i = 0; i < movimentacao.size(); i++) {
+				int idteste = movimentacao.get(i).getId();
+				if (idteste == Id) {
+					Alert alert = new Alert(Alert.AlertType.ERROR);
+					alert.setTitle("Movimentação");
+					alert.setHeaderText("Movimentação não Adicionada!");
+					alert.setContentText("ID Da Movimentação Já Existente!");
+					alert.show();
+					idExistente = true;
+				}
+			}
+		}
+		return idExistente;
 	}
 }

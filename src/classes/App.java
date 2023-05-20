@@ -195,10 +195,10 @@ public class App extends Application{
     public static void dadosMovimentacao(int idMovimentacao, int idResponsavel, int idProduto, String origem, String destino, String data) throws Exception{
         Movimentacao mov = new Movimentacao();
         mov.adicionar(idMovimentacao, idResponsavel, idProduto, origem, destino, data);
-        gm.correcaoId(mov);
-        gm.adicionarMovimentacao(mov);
-        System.out.println("Aqui começa");
-        gm.imprimirMovimentacao();
+        boolean idExistente = gm.correcaoId2(idMovimentacao);
+        if (idExistente == false)gm.adicionarMovimentacao(mov);
+        //System.out.println("Aqui começa");
+        //gm.imprimirMovimentacao();
     }
 
         //telas
