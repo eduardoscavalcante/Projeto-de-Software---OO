@@ -8,8 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class controllerFuncionarioAddGerente {
-
-    GerenciamentoFuncionarios gf = new GerenciamentoFuncionarios();
     
     @FXML
     private TextField IdentificaçãoG;
@@ -44,29 +42,21 @@ public class controllerFuncionarioAddGerente {
     }
 
     @FXML
-    void AddGerente(ActionEvent event) {
-        long cpfint = Long.parseLong(cpfG.getText());
-        int idint = Integer.parseInt(IdentificaçãoG.getText());
-        long telefoneint = Long.parseLong(telefoneG.getText());
-        int supGint = Integer.parseInt(supG.getText());
-        int cargo = 2;
-        String nome = nomeG.getText();
-        long cpf = cpfint;
-        int id = idint;
-        String email = emailG.getText();
-        long telefone = telefoneint;
-        int pSuperv = supGint;
-        // Dados para a tabela para a tabela
-        gerenteTabela.iden = idint;
-        gerenteTabela.name = nome;
-        gerenteTabela.carg = "Gerente";
-        gerenteTabela.contact = email;
-        System.out.println(gerenteTabela.iden);
+    void AddGerente(ActionEvent event) throws NumberFormatException, Exception {
 
-        Funcionarios v = new Gerente(id, nome, email, telefone, cpf, cargo, pSuperv);
-        // gf.correcaoId(v);
-        //gf.addVendedor(v);
-        gf.imprimirFuncionarios();
+        App.dadosFuncionario(Integer.parseInt(IdentificaçãoG.getText()), Long.parseLong(cpfG.getText()), Long.parseLong(telefoneG.getText()), Integer.parseInt(supG.getText()), nomeG.getText(), emailG.getText(), 2);
+        // long cpfint = Long.parseLong(cpfG.getText());
+        // int idint = Integer.parseInt(IdentificaçãoG.getText());
+        // long telefoneint = Long.parseLong(telefoneG.getText());
+        // int supGint = Integer.parseInt(supG.getText());
+        // int cargo = 2;
+        // String nome = nomeG.getText();
+        // long cpf = cpfint;
+        // int id = idint;
+        // String email = emailG.getText();
+        // long telefone = telefoneint;
+        // int pSuperv = supGint;
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Gerenciamento de Produtos");
         alert.setHeaderText("GERENTE ADICIONADO!");

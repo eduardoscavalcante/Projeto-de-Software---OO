@@ -102,7 +102,7 @@ public class App extends Application{
                 case 2: // adiciona novo funcionário
                     System.out.println();
                     try {
-                        gf.gerenciamentoCargo();
+                        //gf.gerenciamentoCargo();
                     }catch(Exception e){
                         System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
                     }
@@ -199,6 +199,14 @@ public class App extends Application{
         if (idExistente == false)gm.adicionarMovimentacao(mov);
         //System.out.println("Aqui começa");
         //gm.imprimirMovimentacao();
+    }
+
+    // implementando funcionarios
+    static GerenciamentoFuncionarios gf = new GerenciamentoFuncionarios();
+    public static void dadosFuncionario(int Identificação, long cpf, long telefone, int supOrMeta, String nome, String email, int aux) throws Exception{
+        gf.gerenciamentoCargo(Identificação, cpf, telefone, supOrMeta, nome, email, aux);
+        System.out.println("**Aqui começa**");
+        gf.imprimirFuncionarios();
     }
 
         //telas
