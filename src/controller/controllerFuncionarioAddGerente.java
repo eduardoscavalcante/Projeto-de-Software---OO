@@ -56,11 +56,6 @@ public class controllerFuncionarioAddGerente {
         // String email = emailG.getText();
         // long telefone = telefoneint;
         // int pSuperv = supGint;
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Gerenciamento de Produtos");
-        alert.setHeaderText("GERENTE ADICIONADO!");
-        alert.show();
         App.changeScreen("funcionario");
     }
 

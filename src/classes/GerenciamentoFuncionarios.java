@@ -2,6 +2,9 @@ package classes;
 
 import java.util.List;
 import java.util.Scanner;
+
+import javafx.scene.control.Alert;
+
 import java.util.ArrayList;
 
 public class GerenciamentoFuncionarios {
@@ -60,22 +63,22 @@ public class GerenciamentoFuncionarios {
 	}
 	
 	//CORREÇÃO ID
-	public Funcionarios correcaoId(Funcionarios f) {
+	public boolean correcaoId(int Id) {
 
-		Scanner input = new Scanner(System.in);
-
-		int busca;
-		busca = f.getId();
-
-		int i, aux1;
+		int busca, i;
+		busca = Id;
+		boolean idExistente = false;
 
 		if(funcionarios.size() > 0){
 			for (i = 0; i < funcionarios.size(); i++) {
 				int idteste = funcionarios.get(i).getId();
 				if (idteste == busca) {
-					System.out.println("ID Ja Existente!!");
-					System.out.println("Digite Novamente");
-					System.out.println("Informe o código de identificação do funcionario: ");
+					Alert alert = new Alert(Alert.AlertType.ERROR);
+					alert.setTitle("Gerente");
+					alert.setHeaderText("Gerente não Adicionado!");
+					alert.setContentText("ID Do Gerente Já Existente!");
+					alert.show();
+					idExistente = true;
 					//aux1 = input.nextInt();
 					//input.nextLine();
 					//f.setId(aux1);
@@ -84,7 +87,7 @@ public class GerenciamentoFuncionarios {
 				}
 			}
 		}
-		return f;
+		return idExistente;
 	}
 
 	public void M_Inicial() {// função de apoio
@@ -96,19 +99,32 @@ public class GerenciamentoFuncionarios {
 	public void gerenciamentoCargo(int identificação, long cpf, long telefone, int supOrMeta, String nome, String email, int aux) throws Exception{
 		
 		int flag = 0;
+		boolean idExistente;
 
 		while (flag != 1){
 
 			switch(aux){
 				case 1:
 					Funcionarios v = new Vendedor(identificação, nome, email, telefone, cpf, aux, supOrMeta);
-					correcaoId(v);
-					funcionarios.add(v);
+					idExistente = correcaoId(identificação);
+					if (idExistente == false){
+						funcionarios.add(v);
+						Alert alert = new Alert(Alert.AlertType.INFORMATION);
+						alert.setTitle("Gerenciamento de Produtos");
+						alert.setHeaderText("GERENTE ADICIONADO!");
+						alert.show();
+					}
 					flag = 1;
 				case 2:
 					Funcionarios g = new Gerente(identificação, nome, email, telefone, cpf, aux, supOrMeta);
-					correcaoId(g);
-					funcionarios.add(g);
+					idExistente = correcaoId(identificação);
+					if(idExistente == false) {
+						funcionarios.add(g);
+						Alert alert = new Alert(Alert.AlertType.INFORMATION);
+						alert.setTitle("Gerenciamento de Produtos");
+						alert.setHeaderText("GERENTE ADICIONADO!");
+						alert.show();
+					}
 					flag = 1;
 			}
 		}
