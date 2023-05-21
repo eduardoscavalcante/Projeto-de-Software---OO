@@ -40,28 +40,31 @@ public class controllerFuncionarioAddVendedor {
         App.changeScreen("selecionar_funcionario");
     }
     @FXML
-    void addVendedor(ActionEvent event) {
-        long cpfint = Long.parseLong(cpfV.getText());
-        int idint = Integer.parseInt(IdentificaçãoV.getText());
-        long telefoneint = Long.parseLong(telefoneV.getText());
-        int mVendasint = Integer.parseInt(metaV.getText());
-        int cargo = 1;
-        String nome = nomeV.getText();
-        long cpf = cpfint;
-        int id = idint;
-        String email = emailV.getText();
-        long telefone = telefoneint;
-        int mVendas = mVendasint;
+    void addVendedor(ActionEvent event) throws NumberFormatException, Exception {
+        App.dadosFuncionario(Integer.parseInt(IdentificaçãoV.getText()), Long.parseLong(cpfV.getText()), Long.parseLong(telefoneV.getText()), Integer.parseInt(metaV.getText()), nomeV.getText(), emailV.getText(), 1);
+        App.changeScreen("funcionario");
+        
+        // long cpfint = Long.parseLong(cpfV.getText());
+        // int idint = Integer.parseInt(IdentificaçãoV.getText());
+        // long telefoneint = Long.parseLong(telefoneV.getText());
+        // int mVendasint = Integer.parseInt(metaV.getText());
+        // int cargo = 1;
+        // String nome = nomeV.getText();
+        // long cpf = cpfint;
+        // int id = idint;
+        // String email = emailV.getText();
+        // long telefone = telefoneint;
+        // int mVendas = mVendasint;
 
-        Funcionarios v = new Vendedor(id, nome, email, telefone, cpf, cargo, mVendas);
+        // Funcionarios v = new Vendedor(id, nome, email, telefone, cpf, cargo, mVendas);
         // gf.correcaoId(v);
         //gf.addVendedor(v);
-        gf.imprimirFuncionarios();
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Gerenciamento de Produtos");
-        alert.setHeaderText("VENDEDOR ADICIONADO!");
-        alert.show();
-        App.changeScreen("funcionario");
+        // gf.imprimirFuncionarios();
+        // Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        // alert.setTitle("Gerenciamento de Produtos");
+        // alert.setHeaderText("VENDEDOR ADICIONADO!");
+        // alert.show();
+        // App.changeScreen("funcionario");
         
     }
 

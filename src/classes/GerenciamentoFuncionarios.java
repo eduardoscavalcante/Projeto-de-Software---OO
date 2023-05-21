@@ -74,9 +74,9 @@ public class GerenciamentoFuncionarios {
 				int idteste = funcionarios.get(i).getId();
 				if (idteste == busca) {
 					Alert alert = new Alert(Alert.AlertType.ERROR);
-					alert.setTitle("Gerente");
-					alert.setHeaderText("Gerente não Adicionado!");
-					alert.setContentText("ID Do Gerente Já Existente!");
+					alert.setTitle("Funcionarios");
+					alert.setHeaderText("Funcionario não Adicionado!");
+					alert.setContentText("ID Do Funcionario Já Existente!");
 					alert.show();
 					idExistente = true;
 					//aux1 = input.nextInt();
@@ -110,22 +110,24 @@ public class GerenciamentoFuncionarios {
 					if (idExistente == false){
 						funcionarios.add(v);
 						Alert alert = new Alert(Alert.AlertType.INFORMATION);
-						alert.setTitle("Gerenciamento de Produtos");
-						alert.setHeaderText("GERENTE ADICIONADO!");
+						alert.setTitle("Gerenciamento de Funcionarios");
+						alert.setHeaderText("Vendendor ADICIONADO!");
 						alert.show();
 					}
 					flag = 1;
+					break;
 				case 2:
 					Funcionarios g = new Gerente(identificação, nome, email, telefone, cpf, aux, supOrMeta);
 					idExistente = correcaoId(identificação);
 					if(idExistente == false) {
 						funcionarios.add(g);
 						Alert alert = new Alert(Alert.AlertType.INFORMATION);
-						alert.setTitle("Gerenciamento de Produtos");
+						alert.setTitle("Gerenciamento de Funcionarios");
 						alert.setHeaderText("GERENTE ADICIONADO!");
 						alert.show();
 					}
 					flag = 1;
+					break;
 			}
 		}
 

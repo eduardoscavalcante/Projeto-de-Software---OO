@@ -205,7 +205,7 @@ public class App extends Application{
     static GerenciamentoFuncionarios gf = new GerenciamentoFuncionarios();
     public static void dadosFuncionario(int Identificação, long cpf, long telefone, int supOrMeta, String nome, String email, int aux) throws Exception{
         gf.gerenciamentoCargo(Identificação, cpf, telefone, supOrMeta, nome, email, aux);
-        //System.out.println("**Aqui começa**");
+        System.out.println("**Aqui começa**");
         gf.imprimirFuncionarios();
     }
 
