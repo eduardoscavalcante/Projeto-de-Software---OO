@@ -44,12 +44,12 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <TableView fx:id="tabelaFuncionarios" layoutX="86.0" layoutY="81.0" prefHeight="107.0" prefWidth="458.0">
+            <TableView fx:id="tabelaFuncionarios" editable="true" layoutX="67.0" layoutY="82.0" prefHeight="123.0" prefWidth="496.0">
               <columns>
                 <TableColumn fx:id="tabId" prefWidth="28.0" text="ID" />
                 <TableColumn fx:id="tabNome" minWidth="0.0" prefWidth="210.0" text="Nome" />
-                  <TableColumn fx:id="tabCargo" minWidth="0.0" prefWidth="53.0" text="Cargo" />
-                  <TableColumn fx:id="TabEmail" minWidth="0.0" prefWidth="166.0" text="e-mail" />
+                  <TableColumn fx:id="tabCargo" minWidth="0.0" prefWidth="110.0" text="Cargo" />
+                  <TableColumn fx:id="TabEmail" minWidth="0.0" prefWidth="147.0" text="e-mail" />
               </columns>
             </TableView>
             <Button layoutX="240.0" layoutY="263.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #64b881; -fx-cursor: hand;" text="Gerar Relatório" textFill="WHITE">

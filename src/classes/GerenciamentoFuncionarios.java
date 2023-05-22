@@ -16,13 +16,8 @@ public class GerenciamentoFuncionarios {
 		});
 	}
 
-	public int buscaId(){
-		Scanner input = new Scanner(System.in);
-
-		System.out.println("Informe o número do ID a ser localizado: ");
-		int busca;
-		busca = input.nextInt();
-
+	public int buscaId(int id){
+		int busca = id;
 		int i;
 		System.out.println();
 
@@ -37,21 +32,21 @@ public class GerenciamentoFuncionarios {
 	}
 
 	public void editarFuncionarios() {
-		int indice = buscaId();
-		if (indice == -1){
-			System.out.println("ID de produto não encontrado! Tente novamente");
-			System.out.println();
-		}else {
-			try {
-				funcionarios.get(indice).editar();
-			}catch(Exception e){
-				System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
-			}
-		}
+		// int indice = buscaId();
+		// if (indice == -1){
+		// 	System.out.println("ID de produto não encontrado! Tente novamente");
+		// 	System.out.println();
+		// }else {
+		// 	try {
+		// 		funcionarios.get(indice).editar();
+		// 	}catch(Exception e){
+		// 		System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
+		// 	}
+		// }
 	}
 
-	public void removerfuncionarios() {
-		int indice = buscaId();
+	public void removerfuncionarios(int id) {
+		int indice = buscaId(id);
 		if (indice == -1){
 			System.out.println("ID de produto não encontrado! Tente novamente");
 			System.out.println();
@@ -79,16 +74,22 @@ public class GerenciamentoFuncionarios {
 					alert.setContentText("ID Do Funcionario Já Existente!");
 					alert.show();
 					idExistente = true;
-					//aux1 = input.nextInt();
-					//input.nextLine();
-					//f.setId(aux1);
-					//correcaoId(f);
 					break;
 				}
 			}
 		}
 		return idExistente;
 	}
+
+	public static boolean idExistente;
+	public void setCorrecaoId(boolean idExistente){
+		GerenciamentoFuncionarios.idExistente = idExistente; 
+	}
+
+	public static boolean getCorrecaoId(){
+		return idExistente; 
+	}
+
 
 	public void M_Inicial() {// função de apoio
 		System.out.println("Qual o cargo do funcionário a ser adicionado?");
@@ -107,11 +108,12 @@ public class GerenciamentoFuncionarios {
 				case 1:
 					Funcionarios v = new Vendedor(identificação, nome, email, telefone, cpf, aux, supOrMeta);
 					idExistente = correcaoId(identificação);
+					setCorrecaoId(idExistente);
 					if (idExistente == false){
 						funcionarios.add(v);
 						Alert alert = new Alert(Alert.AlertType.INFORMATION);
 						alert.setTitle("Gerenciamento de Funcionarios");
-						alert.setHeaderText("Vendendor ADICIONADO!");
+						alert.setHeaderText("VENDEDOR ADICIONADO!");
 						alert.show();
 					}
 					flag = 1;
@@ -119,6 +121,7 @@ public class GerenciamentoFuncionarios {
 				case 2:
 					Funcionarios g = new Gerente(identificação, nome, email, telefone, cpf, aux, supOrMeta);
 					idExistente = correcaoId(identificação);
+					setCorrecaoId(idExistente);
 					if(idExistente == false) {
 						funcionarios.add(g);
 						Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -130,82 +133,5 @@ public class GerenciamentoFuncionarios {
 					break;
 			}
 		}
-
-		// Scanner input = new Scanner(System.in);
-
-		// int flag = 0;
-
-		// int cargo = -1;
-		// String nome;
-		// long cpf;
-		// int id;
-		// String email;
-		// long telefone;
-		// int mVendas;
-		// int pSuperv;
-
-		// while (flag != 1) {
-		// M_Inicial();
-		// 	cargo = input.nextInt();
-		// 	input.nextLine();
-		// 	switch(cargo){
-		// 		case 1:
-		// 			System.out.println("Informe o código de identificação do vendedor: ");
-		// 			id = input.nextInt();
-		// 			input.nextLine();
-		// 			System.out.println("Informe o Nome Completo: ");
-		// 			nome = input.nextLine();
-		// 			System.out.println("Informe o Email: ");
-		// 			email = input.nextLine();
-		// 			System.out.println("Informe o Telefone(somente numeros): ");
-		// 			telefone = input.nextLong();
-		// 			input.nextLine();
-		// 			System.out.println("Informe o CPF: ");
-		// 			cpf = input.nextLong();
-		// 			input.nextLine();
-		// 			System.out.println("Informe a Meta Mensal das Vendas: ");
-		// 			mVendas = input.nextInt();
-		// 			input.nextLine();
-		// 			System.out.println();
-
-		// 			Funcionarios v = new Vendedor(id, nome, email, telefone, cpf, cargo, mVendas);
-		// 			correcaoId(v);
-		// 			funcionarios.add(v);
-
-		// 			System.out.println("Vendedor "+ nome +" cadastrado com sucesso!");
-		// 			flag = 1;
-		// 			break;
-		// 		case 2:
-		// 			System.out.println("Informe o código de identificação do gerente: ");
-		// 			id = input.nextInt();
-		// 			input.nextLine();
-		// 			System.out.println("Informe o Nome Completo: ");
-		// 			nome = input.nextLine();
-		// 			System.out.println("Informe o Email: ");
-		// 			email = input.nextLine();
-		// 			System.out.println("Informe o Telefone(somente numeros): ");
-		// 			telefone = input.nextLong();
-		// 			input.nextLine();
-		// 			System.out.println("Informe o CPF: ");
-		// 			cpf = input.nextLong();
-		// 			input.nextLine();
-		// 			System.out.println("Informe a Quantidade de Pessoas Supervisionadas: ");
-		// 			pSuperv = input.nextInt();
-		// 			input.nextLine();
-		// 			System.out.println();
-
-		// 			Funcionarios g = new Gerente(id, nome, email, telefone, cpf, cargo, pSuperv);
-		// 			correcaoId(g);
-		// 			funcionarios.add(g);
-
-		// 			System.out.println("Gerente "+ nome +" cadastrado com sucesso!");
-		// 			flag = 1;
-		// 			break;
-		// 		default:
-		// 			System.out.println("Opção Invalida!!!");
-		// 			System.out.println("Digite Novamente");
-		// 			System.out.println();
-		// 	}
-		// }
 	}
 }

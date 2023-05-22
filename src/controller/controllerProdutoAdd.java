@@ -60,32 +60,8 @@ public class controllerProdutoAdd implements Initializable{
 		
 	}
 
-    // public int id;
-    // public float precoConvert;
-    // public int quantidadeConvert;
-    //adiciona um produto
     public void add(ActionEvent event) throws Exception{
         App.dadosProduto(Integer.parseInt(Identificação.getText()), nome.getText(), tamanho.getText(), cor.getText(), marca.getText(), Float.parseFloat(preco.getText()),fabricante.getText(), fornecedor.getText(), Integer.parseInt(quantidade.getText()), CombCategoria.getValue());
-        
-        // System.out.println(CombCategoria.getValue());
-        // produto.setId(id);
-        // id = Integer.parseInt(Identificação.getText());
-        // precoConvert = Float.parseFloat(preco.getText());
-        // quantidadeConvert = Integer.parseInt(quantidade.getText());
-        // produto.setCor(cor.getText());
-        // produto.setNome(nome.getText());
-        // produto.setTamanho(tamanho.getText());
-        // produto.setMarca(marca.getText());
-        // produto.setPreco(precoConvert);
-        // //produto.setCategoria(1);
-        // produto.setFabricante(fabricante.getText());
-        // produto.setFornecedor(fornecedor.getText());
-        // produto.setQuantidade(quantidadeConvert);
-        // produto.setStatus("Em estoque");
-        // Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        //     alert.setTitle("Gerenciamento de Produtos");
-        //     alert.setHeaderText("PRODUTO ADICIONADO!");
-        //     alert.show();
         App.changeScreen("produto");
     }
 }

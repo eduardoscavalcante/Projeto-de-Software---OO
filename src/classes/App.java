@@ -3,6 +3,8 @@ package classes;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import model.*;
+import controller.*;
 import controller.controllerProdutoAdd;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -130,7 +132,7 @@ public class App extends Application{
                     break;
                 case 6: // remove funcionario existente
                     System.out.println();
-                    gf.removerfuncionarios();
+                    //gf.removerfuncionarios();
                     System.out.println();
                     option = startOptions();
                     break;
@@ -206,8 +208,10 @@ public class App extends Application{
     static GerenciamentoFuncionarios gf = new GerenciamentoFuncionarios();
     public static void dadosFuncionario(int Identificação, long cpf, long telefone, int supOrMeta, String nome, String email, int aux) throws Exception{
         gf.gerenciamentoCargo(Identificação, cpf, telefone, supOrMeta, nome, email, aux);
-        System.out.println("**Aqui começa**");
         gf.imprimirFuncionarios();
+    }
+    public static void removerfuncionario(int id){
+        gf.removerfuncionarios(id);
     }
 
     // implementando produtos
@@ -233,15 +237,19 @@ public class App extends Application{
     private static Scene telaFuncionarios;
     private static Scene telaAddFuncionarios;
     private static Scene telaEditFuncionarios;
-    private static Scene telaRemoveFuncionario;
+    private static Scene telaEditarFuncionario;
     private static Scene telaMovimentacao;
     private static Scene telaSelecionarFunc;
     private static Scene telaAddVendedor;
     private static Scene telaAddGerente;
     private static Scene telaAddMovimentacao;
 
+    private DataModel dataModel;
+
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
+
+        dataModel = new DataModel();
 
             //tela principal
         FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/view/home.fxml"));
@@ -268,13 +276,13 @@ public class App extends Application{
         Parent root6 = fxmlLoader6.load();
         telaFuncionarios = new Scene(root6);
             //tela de editar funcionario
-        FXMLLoader fxmlLoader8 = new FXMLLoader(getClass().getResource("/view/Funcionarios/editar-funcionario.fxml"));
+        FXMLLoader fxmlLoader8 = new FXMLLoader(getClass().getResource("/view/Funcionarios/editarFuncionario.fxml"));
         Parent root8 = fxmlLoader8.load();
         telaEditFuncionarios = new Scene(root8);
             //tela de remover funcionario
-        FXMLLoader fxmlLoader9 = new FXMLLoader(getClass().getResource("/view/Funcionarios/removeFuncionario.fxml"));
+        FXMLLoader fxmlLoader9 = new FXMLLoader(getClass().getResource("/view/Funcionarios/selecionarEdicao.fxml"));
         Parent root9 = fxmlLoader9.load();
-        telaRemoveFuncionario = new Scene(root9);
+        telaEditarFuncionario = new Scene(root9);
         //     //tela de movimentações
         FXMLLoader fxmlLoader10 = new FXMLLoader(getClass().getResource("/view/movimentacao/movimentacao.fxml"));
         Parent root10 = fxmlLoader10.load();
@@ -295,7 +303,15 @@ public class App extends Application{
         FXMLLoader fxmlLoader14 = new FXMLLoader(getClass().getResource("/view/movimentacao/add-movimentacao.fxml"));
         Parent root14 = fxmlLoader14.load();
         telaAddMovimentacao = new Scene(root14);
-        
+
+        //Implementação da TableView de Funcionarios
+        controllerFuncionario tableController = fxmlLoader6.getController();
+        tableController.setDataModel(dataModel);
+        controllerFuncionarioAddGerente inputGController = fxmlLoader13.getController();
+        inputGController.setDataModel(dataModel);
+        controllerFuncionarioAddVendedor inputVController = fxmlLoader12.getController();
+        inputVController.setDataModel(dataModel);
+
 
         primaryStage.setTitle("Sistema de gerenciamento de produtos");
         primaryStage.setScene(telaHome);
@@ -327,8 +343,8 @@ public class App extends Application{
             case "edit_funcionario":
                  stage.setScene(telaEditFuncionarios);
                  break;
-            case "remove_funcionario":
-                stage.setScene(telaRemoveFuncionario);
+            case "editar_funcionario_selecao":
+                stage.setScene(telaEditarFuncionario);
                 break;
             case "movimentacao":
                 stage.setScene(telaMovimentacao);

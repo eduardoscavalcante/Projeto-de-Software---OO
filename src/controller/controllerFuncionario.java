@@ -1,14 +1,10 @@
 package controller;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import classes.*;
-import controller.controllerFuncionarioAddGerente.gerenteTabela;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -38,14 +34,11 @@ public class controllerFuncionario implements Initializable{
 
     @FXML
     void editBotao(ActionEvent event) {
-        App.changeScreen("edit_funcionario");
+        App.changeScreen("editar_funcionario_selecao");
     }
 
     @FXML
     void removeBotao(ActionEvent event) {
-        App.changeScreen("remove_funcionario");
-        //Colocar na tabela
-        //System.out.println(gerenteTabela.iden);
     }
 
     @FXML
@@ -55,41 +48,43 @@ public class controllerFuncionario implements Initializable{
 
     
     @FXML
-    private TableView<gerenteTabela> tabelaFuncionarios;
+    private TableView<DataEntry> tabelaFuncionarios;
 
     @FXML
-    private TableColumn<gerenteTabela, String> TabEmail;
+    private TableColumn<DataEntry, String> TabEmail;
 
     @FXML
-    private TableColumn<gerenteTabela, String> tabCargo;
+    private TableColumn<DataEntry, String> tabCargo;
 
     @FXML
-    private TableColumn<gerenteTabela, Integer> tabId;
+    private TableColumn<DataEntry, Integer> tabId;
 
     @FXML
-    private TableColumn<gerenteTabela, String> tabNome;
+    private TableColumn<DataEntry, String> tabNome;
+
+    private DataModel dataModel;
     
-    private List<gerenteTabela> listGerente = new ArrayList<gerenteTabela>();
-
-    private ObservableList<gerenteTabela> observableListgerente;
+    public void setDataModel(DataModel dataModel) {
+        this.dataModel = dataModel;
+        tabelaFuncionarios.setItems(dataModel.getDataList());
+    }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        carregarTable();
-    }
-    public void carregarTable(){
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        tabNome.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
+        TabEmail.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
+        tabId.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
+        tabCargo.setCellValueFactory(cellData -> cellData.getValue().cargoProperty());
 
-        // tabNome.setCellValueFactory(new PropertyValueFactory<String>("string"));
-        // tabCargo.setCellValueFactory(new PropertyValueFactory<String>("string2"));
-        // TabEmail.setCellValueFactory(new PropertyValueFactory<String>("string3"));
-        // tabId.setCellValueFactory(new PropertyValueFactory<Integer>("i"));
-        
-        // gerenteTabela g1 = new gerenteTabela("null", "null", "null", 0);
-
-        // listGerente.add(g1);
-        observableListgerente = FXCollections.observableArrayList((listGerente));
-
-        tabelaFuncionarios.setItems(observableListgerente);
+        botaoRemover.setOnAction(event -> removeSelectedEntry());
     }
 
+    private void removeSelectedEntry() {
+        DataEntry selectedEntry = tabelaFuncionarios.getSelectionModel().getSelectedItem();
+        if (selectedEntry != null) {
+            dataModel.removeData(selectedEntry);
+        }
+        int id = tabId.getCellData(selectedEntry);
+        App.removerfuncionario(id);
+    }
 }

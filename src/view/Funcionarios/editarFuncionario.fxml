@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="215.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controllerFuncionarioEdicao">
+   <children>
+      <AnchorPane prefHeight="142.0" prefWidth="208.0">
+         <children>
+            <AnchorPane prefHeight="215.0" prefWidth="323.0">
+               <children>
+                  <Button fx:id="voltarSelecao" layoutY="-1.0" mnemonicParsing="false" onAction="#voltarSelecao" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Voltar" textFill="#64a8bf">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <Icons525View fill="#64a8bf" glyphName="ARROW" selectionFill="#64a8bf" />
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="novoValor" layoutX="62.0" layoutY="108.0" prefHeight="26.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                  <Label fx:id="label" layoutX="10.0" layoutY="51.0" text="Digite aqui o novo valor para: " textFill="#64a8bf">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="submeter" layoutX="125.0" layoutY="157.0" mnemonicParsing="false" onAction="#submeter" style="-fx-background-color: #64A8BF;" text="Subimeter" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
