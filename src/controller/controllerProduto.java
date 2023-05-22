@@ -1,14 +1,17 @@
 package controller;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import classes.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
-public class controllerProduto {
-
-    Gerenciamento gp = new Gerenciamento();
-    Produtos produto = new Produtos();
+public class controllerProduto implements Initializable{
 
     @FXML
     private Button adicionarProduto;
@@ -27,6 +30,38 @@ public class controllerProduto {
 
     @FXML
     private Button backRemove;
+
+    @FXML
+    private TableColumn<Produtos, String> categoria;
+
+    @FXML
+    private TableColumn<Produtos, String> fabricante;
+
+    @FXML
+    private TableColumn<Produtos, String> fornecedor;
+
+    @FXML
+    private TableColumn<Produtos, Integer> id;
+
+    @FXML
+    private TableColumn<Produtos, String> marca;
+
+    @FXML
+    private TableColumn<Produtos, String> nome;
+
+    @FXML
+    private TableColumn<Produtos, Float> preco;
+
+    @FXML
+    private TableColumn<Produtos, Integer> quantidade;
+    
+    @FXML
+    private TableView<Produtos> tabela;
+
+    @FXML
+    private TableColumn<Produtos, String> tamanho;
+
+    
 
     @FXML
     void addProduto(ActionEvent event) {
@@ -55,7 +90,11 @@ public class controllerProduto {
 
     @FXML
     void gerarRelatorio(ActionEvent event) {
-        produto.imprimir();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        
     }
 
 }

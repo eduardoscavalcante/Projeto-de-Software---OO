@@ -2,7 +2,6 @@ package classes;
 
 import java.util.Scanner;
 
-import controller.controllerProdutoAdd;
 
 public class Produtos{
 
