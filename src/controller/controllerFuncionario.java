@@ -34,6 +34,12 @@ public class controllerFuncionario implements Initializable{
 
     @FXML
     void editBotao(ActionEvent event) {
+        DataEntry selectedEntry = tabelaFuncionarios.getSelectionModel().getSelectedItem();
+        if (selectedEntry != null) {
+            int id = tabId.getCellData(selectedEntry);
+            System.out.println(id);
+            controllerFuncionarioEdicao.recebeId(id);
+        }
         App.changeScreen("editar_funcionario_selecao");
     }
 

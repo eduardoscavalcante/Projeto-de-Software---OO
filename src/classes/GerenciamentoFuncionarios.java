@@ -1,7 +1,6 @@
 package classes;
 
 import java.util.List;
-import java.util.Scanner;
 
 import javafx.scene.control.Alert;
 
@@ -31,18 +30,13 @@ public class GerenciamentoFuncionarios {
 		return (-1);
 	}
 
-	public void editarFuncionarios() {
-		// int indice = buscaId();
-		// if (indice == -1){
-		// 	System.out.println("ID de produto não encontrado! Tente novamente");
-		// 	System.out.println();
-		// }else {
-		// 	try {
-		// 		funcionarios.get(indice).editar();
-		// 	}catch(Exception e){
-		// 		System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
-		// 	}
-		// }
+	public void editarFuncionarios(int id, String dado, String dadoEditado) {
+		int indice = buscaId(id);
+			try {
+				funcionarios.get(indice).editar(dado, dadoEditado);
+			}catch(Exception e){
+				System.out.println("Ocorreu um Erro na Leitura de 1 ou + Dados!");
+			}
 	}
 
 	public void removerfuncionarios(int id) {

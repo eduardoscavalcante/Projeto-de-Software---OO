@@ -21,6 +21,15 @@ public class controllerFuncionarioEdicao {
     @FXML
     private Button voltarSelecao;
 
+    private static int idDaEdicao;
+    private static String dadoDaEdicao;
+    public static void recebeDado(String dado){
+        dadoDaEdicao = dado;
+    }
+    public static void recebeId(int id){
+        idDaEdicao = id;
+    }
+    
     @FXML
     void voltarSelecao(ActionEvent event) {
         App.changeScreen("editar_funcionario_selecao");
@@ -28,10 +37,12 @@ public class controllerFuncionarioEdicao {
 
     @FXML 
     void submeter(ActionEvent event){
-        System.out.println("so um print");
+        App.editarFuncionario(idDaEdicao, dadoDaEdicao, novoValor.getText());
+        System.out.println("so um print: " + idDaEdicao);
+        System.out.println("Dado: " + dadoDaEdicao);
     }
 
     public void displayLabel(String dado){
-        label.setText("Digite o novo valor para:" + dado);
+        label.setText("Digite o novo valor para:");
     }
 }

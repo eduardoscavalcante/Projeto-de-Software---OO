@@ -120,7 +120,7 @@ public class App extends Application{
                     break;
                 case 4: // edita funcionário existente
                     System.out.println();
-                    gf.editarFuncionarios();
+                    // gf.editarFuncionarios();
                     System.out.println();
                     option = startOptions();
                     break;
@@ -212,6 +212,9 @@ public class App extends Application{
     }
     public static void removerfuncionario(int id){
         gf.removerfuncionarios(id);
+    }
+    public static void editarFuncionario(int id, String dado, String dadoEditado){
+        gf.editarFuncionarios(id, dado, dadoEditado);
     }
 
     // implementando produtos

@@ -31,10 +31,10 @@ public class controllerFuncionarioSelecionarEdicao implements Initializable {
 
     @FXML
     void botaoEditarSelecao(ActionEvent event) throws IOException {
+        controllerFuncionarioEdicao.recebeDado(selecionarDado.getValue());
         App.changeScreen("edit_funcionario");
-        // String dado = selecionarDado.getValue();
-        // controllerFuncionarioEdicao.displaylabel(dado);
     }
+
     @FXML
     void voltarFuncionario(ActionEvent event) {
         App.changeScreen("funcionario");

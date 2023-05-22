@@ -58,62 +58,30 @@ public abstract class Funcionarios{
                 + "Cargo(6);\n" + "Sair(7).");
     }
 
-    public void editar() throws Exception{// Alterar detalhes de um empregado
-        int opcao = 1;
-
-        while (opcao != 7) {
-            M_Inicial();
-            opcao = input.nextInt();
-            input.nextLine();
-            switch (opcao) {
-                case 1:
-                    System.out.println("Informe o Novo Id (atual: " + getId() + "): ");
-                    id = input.nextInt();
-                    this.id = id;
-                    input.nextLine();
-                    System.out.println();
-                    break;
-                case 2:
-                    System.out.println("Informe o Novo Nome (atual: " + getNome() + "): ");
-                    nome = input.nextLine();
-                    this.nome = nome;
-                    System.out.println();
-                    break;
-                case 3:
-                    System.out.println("Informe o Novo Email: (atual: " + getEmail() + "): ");
-                    email = input.nextLine();
-                    this.email = email;
-                    System.out.println();
-                    break;
-                case 4:
-                    System.out.println("Informe o Novo Telefone(somente numeros): (atual: " + getTelefone() + "): ");
-                    telefone = input.nextLong();
-                    this.telefone = telefone;
-                    input.nextLine();
-                    System.out.println();
-                    break;
-                case 5:
-                    System.out.println("Informe o Novo CPF(somente numeros): (atual: " + getCPF() + "): ");
-                    cpf = input.nextLong();
-                    this.cpf = cpf;
-                    input.nextLine();
-                    System.out.println();
-                    break;
-                case 6:
-                    System.out.println("Informe o Novo Cargo: (atual: " + getCargo() + "): ");
-                    cargo = input.nextInt();
-                    this.cargo = cargo;
-                    System.out.println();
-                    break;
-                case 7:
-                    System.out.println("Modificações Salvas!!");
-                    System.out.println();
-                    break;
-                default:
-                    System.out.println("Opção Invalida!!!");
-                    System.out.println("Digite Novamente");
-                    System.out.println();
-            }
+    public void editar(String dado, String dadoDaEdicao) throws Exception{// Alterar detalhes de um empregado
+        int opcao = 0;
+        if (dado == "Nome") opcao = 1;
+        else if (dado == "Email") opcao = 2;
+        else if (dado == "Telefone") opcao = 3;
+        else if (dado == "CPF") opcao = 4;
+        else if (dado == "Supervisão ou Meta") opcao = 5;
+        System.out.println(opcao);
+        switch (opcao) {
+            case 1:
+                this.nome = dadoDaEdicao;
+                break;
+            case 2:
+                this.email = dadoDaEdicao;
+                break;
+            case 3:
+                this.telefone = Integer.parseInt(dadoDaEdicao);
+                break;
+            case 4:
+                this.cpf = Long.parseLong(dadoDaEdicao);
+                break;
+            case 5:
+                // meta ou supervisão
+                break;
         }
     }
 }
