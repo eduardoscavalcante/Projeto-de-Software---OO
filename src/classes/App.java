@@ -219,8 +219,7 @@ public class App extends Application{
         produto.adicionar(id, nome, tamanho, cor, marca, preco, fabricante, fornecedor, quantidade, categoria);
         ge.verificaQuantidade(produto);
         ge.adicionaProduto(produto);
-        gp.correcaoId(produto);
-        gp.adicionarProdutos(produto);
+        if (gp.correcaoId2(id) == false)gp.adicionarProdutos(produto);
         gp.imprimirProdutos();
     }
 

@@ -2,6 +2,9 @@ package classes;
 
 import java.util.List;
 import java.util.Scanner;
+
+import javafx.scene.control.Alert;
+
 import java.util.ArrayList;
 
 public class Gerenciamento {
@@ -110,5 +113,24 @@ public class Gerenciamento {
 			}
 		}
 		return p;
+	}
+
+	public boolean correcaoId2(int Id){
+		int i;
+		boolean idExistente = false;
+		if(produtos.size() > 0){
+			for (i = 0; i < produtos.size(); i++) {
+				int idteste = produtos.get(i).getId();
+				if (idteste == Id) {
+					Alert alert = new Alert(Alert.AlertType.ERROR);
+					alert.setTitle("Produtos");
+					alert.setHeaderText("Produto não Adicionado!");
+					alert.setContentText("ID Do Produto Já Existente!");
+					alert.show();
+					idExistente = true;
+				}
+			}
+		}
+		return idExistente;
 	}
 }
