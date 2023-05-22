@@ -3,6 +3,7 @@ package classes;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import controller.controllerProdutoAdd;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -82,7 +83,7 @@ public class App extends Application{
                 case 1: // adiciona novo produto
                     System.out.println();
                     try {
-                        produto.adicionar();
+                        //produto.adicionar();
                         //State
                         ge.verificaQuantidade(produto);
                         ge.adicionaProduto(produto);
@@ -207,6 +208,20 @@ public class App extends Application{
         gf.gerenciamentoCargo(Identificação, cpf, telefone, supOrMeta, nome, email, aux);
         System.out.println("**Aqui começa**");
         gf.imprimirFuncionarios();
+    }
+
+    // implementando produtos
+    static Gerenciamento gp = new Gerenciamento();
+    static GerenciamentoEstado ge = new GerenciamentoEstado();
+    public static void dadosProduto(int id, String nome, String tamanho, String cor, String marca, float preco, String fabricante, String fornecedor, int quantidade, String categoria) throws Exception{
+        Produtos produto = new Produtos();
+        System.out.println("Até aqui está chegando");
+        produto.adicionar(id, nome, tamanho, cor, marca, preco, fabricante, fornecedor, quantidade, categoria);
+        ge.verificaQuantidade(produto);
+        ge.adicionaProduto(produto);
+        gp.correcaoId(produto);
+        gp.adicionarProdutos(produto);
+        gp.imprimirProdutos();
     }
 
         //telas

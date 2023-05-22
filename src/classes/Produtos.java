@@ -2,7 +2,9 @@ package classes;
 
 import java.util.Scanner;
 
-public class Produtos implements Base{
+import controller.controllerProdutoAdd;
+
+public class Produtos{
 
     public int id;
     public String nome;
@@ -130,46 +132,60 @@ public class Produtos implements Base{
         System.out.println();
     }
 
-    public void adicionar () throws Exception {// Adição de um produto
+    public void adicionar (int id, String nome, String tamanho, String cor, String marca, float preco, String fabricante, String fornecedor, int quantidade, String categoria) throws Exception {// Adição de um produto
 
-        int aux1;
-        String aux2;
-        float aux3;
 
-        System.out.println("Informe o código de identificação do produto: ");
-        aux1 = input.nextInt();
-        input.nextLine();
-        setId(aux1);
-        System.out.println("Informe o Nome: ");
-        aux2 = input.nextLine();
-        setNome(aux2);
-        System.out.println("Informe o Tamanho: ");
-        aux2 = input.nextLine();
-        setTamanho(aux2);
-        System.out.println("Informe a cor: ");
-        aux2 = input.nextLine();
-        setCor(aux2);
-        System.out.println("Informe a marca: ");
-        aux2 = input.nextLine();
-        setMarca(aux2);
-        System.out.println("Informe o preco: ");
-        aux3 = input.nextFloat();
-        input.nextLine();
-        setPreco(aux3);
-        //Categoria do Produto
-        aux2 = tp.CategoriaProduto();
-        setCategoria(aux2);
-        //Categoria do Produto
-        System.out.println("Informe o fabricante: ");
-        aux2 = input.nextLine();
-        setFabricante(aux2);
-        System.out.println("Informe o fornecedor: ");
-        aux2 = input.nextLine();
-        setFornecedor(aux2);
-        System.out.println("Informe a quantidade: ");
-        aux1 = input.nextInt();
-        input.nextLine();
-        setQuantidade(aux1);
+        setId(id);
+        setNome(nome);
+        setTamanho(tamanho);
+        setCor(cor);
+        setMarca(marca);
+        setPreco(preco);
+        setFabricante(fabricante);
+        setFornecedor(fornecedor);
+        setQuantidade(quantidade);
+        setCategoria(categoria);
+
+
+         // produtoAdd.cor.getText();
+        // int aux1;
+        // String aux2;
+        // float aux3;
+
+        // System.out.println("Informe o código de identificação do produto: ");
+        // aux1 = input.nextInt();
+        // input.nextLine();
+        // setId(aux1);
+        // System.out.println("Informe o Nome: ");
+        // aux2 = input.nextLine();
+        // setNome(aux2);
+        // System.out.println("Informe o Tamanho: ");
+        // aux2 = input.nextLine();
+        // setTamanho(aux2);
+        // System.out.println("Informe a cor: ");
+        // aux2 = input.nextLine();
+        // setCor(aux2);
+        // System.out.println("Informe a marca: ");
+        // aux2 = input.nextLine();
+        // setMarca(aux2);
+        // System.out.println("Informe o preco: ");
+        // aux3 = input.nextFloat();
+        // input.nextLine();
+        // setPreco(aux3);
+        // //Categoria do Produto
+        // aux2 = tp.CategoriaProduto();
+        // setCategoria(aux2);
+        // //Categoria do Produto
+        // System.out.println("Informe o fabricante: ");
+        // aux2 = input.nextLine();
+        // setFabricante(aux2);
+        // System.out.println("Informe o fornecedor: ");
+        // aux2 = input.nextLine();
+        // setFornecedor(aux2);
+        // System.out.println("Informe a quantidade: ");
+        // aux1 = input.nextInt();
+        // input.nextLine();
+        // setQuantidade(aux1);
     }
 
     public void M_Inicial() {// função de apoio

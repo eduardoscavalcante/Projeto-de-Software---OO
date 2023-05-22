@@ -87,7 +87,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <ComboBox fx:id="CombCategoria" layoutX="364.0" layoutY="322.0" prefWidth="150.0" promptText="Categoria" scaleShape="false" style="-fx-background-color: white; -fx-font color: RED;" />
+            <ComboBox fx:id="CombCategoria" layoutX="364.0" layoutY="322.0" prefWidth="150.0" promptText="Categoria" scaleShape="false" style="-fx-background-color: white;" />
             <Label layoutX="376.0" layoutY="253.0" text="Informe a quantidade:" textFill="#64a8bf">
                <font>
                   <Font name="System Bold" size="12.0" />
